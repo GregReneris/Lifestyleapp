@@ -27,11 +27,11 @@ const useStyles = makeStyles({
 
 export default function OutlinedCard() {
   const classes = useStyles();
-//   const name = "Tyson"
+  const name = "Tyson"
 
   return (
-    <Container width="100vw" height='50vh' >
-    {/* <Typography variant="h3">Hello {name}!</Typography> */}
+    <Container >
+    <Typography variant="h3">Hello {name}!</Typography>
     <Card className={classes.root} variant="outlined">
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>

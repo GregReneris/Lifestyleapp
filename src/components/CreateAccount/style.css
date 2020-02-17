@@ -37,3 +37,9 @@ h5 {
     position: relative;
 }
 
+.copyright {
+    background-color: blanchedalmond;
+    max-width: fit-content;
+    opacity: 50%;
+
+}

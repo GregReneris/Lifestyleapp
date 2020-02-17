@@ -30,7 +30,6 @@ export default function MenuAppBar() {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  const name = "Tyson";
 
   const handleChange = event => {
     setAuth(event.target.checked);
@@ -54,8 +53,8 @@ export default function MenuAppBar() {
           label={auth ? 'Logout' : 'Login'}
         />
       </FormGroup>
-          <Typography variant="h6" className={classes.title}>
-             Hello {name}!
+          <Typography variant="h6" className={classes.title} >
+          spontinAIty
           </Typography>
           {auth && (
             <div>
