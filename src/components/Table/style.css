@@ -1,0 +1,32 @@
+
+.container {
+ margin: 0 auto;
+ width: 80%;
+ background-color: rgba(205, 206, 209, 0.4);
+ padding-top: 3%;
+ margin-bottom: 3%;
+}
+
+.tableHeader {
+background-color: lightgrey;
+}
+
+h1 {
+    font-family: 'Bree Serif', serif;
+    color: #f0c48a;
+    font-size: 5em;
+}
+
+h3 {
+font-family: 'Nunito', sans-serif;
+color: rgb(51, 55, 83);
+font-size: 3em;
+}
+
+h5 {
+    font-family: 'Nunito', sans-serif;
+    color: rgb(20, 23, 47);
+    font-size: 1.5em;
+}
+
+
