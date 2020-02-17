@@ -2,7 +2,7 @@
 
 
 body {
-    background-image: url("../images/sea.jpg");
+    background-image: url("../images/hiking.jpg");
     background-size: 100vw;
     background-position-x: relative;
 }
@@ -10,7 +10,11 @@ body {
 .container {
  margin: 0 auto;
  width: 80%;
- background-color: rgba(205, 206, 209, 0.4);
+ background-color: rgba(205, 206, 209, 0.8);
+}
+
+.tableHeader {
+background-color: lightgrey;
 }
 
 h1 {
