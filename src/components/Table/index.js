@@ -19,22 +19,24 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-  createData('Hike', 159, 6.0, 24, 4.0),
-  createData('Concert', 237, 9.0, 37, 4.3),
-  createData('Dance Class', 262, 16.0, 24, 6.0),
-  createData('Networking', 305, 3.7, 67, 4.3),
-  createData('Cooking Class', 356, 16.0, 49, 3.9),
+  createData('Hike', "1/1/2020", 6.1, 2.5, "Poo Poo Point is a beautiful hike in Issaquah, WA."),
+  createData('Concert', "1/6/2020", 0, 3, "The Rolling Stones is the best concert experience ever."),
+  createData('Dance Class', "1/24/2020", 0, 1, "Learning how to Waltz is the best way to get a date."),
+  createData('Networking', "2/5/2020", 0, 2, "Networking with full-stack developers is the best way to get a job."),
+  createData('Cooking Class', "2/15/2020", 0, 3, "Learn how to cook food with the best chefs in the PNW."),
 ];
 
 export default function SimpleTable() {
   const classes = useStyles();
 
   return (
+      <div>
+          <div className="container">
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Activity</TableCell>
+            <div className="tableHeader"><TableCell>Activity</TableCell></div>
             <TableCell align="right">Date</TableCell>
             <TableCell align="right">Distance&nbsp;(mi)</TableCell>
             <TableCell align="right">Duration&nbsp;(hrs)</TableCell>
@@ -56,5 +58,7 @@ export default function SimpleTable() {
         </TableBody>
       </Table>
     </TableContainer>
+    </div>
+    </div>
   );
 }
