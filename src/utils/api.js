@@ -19,6 +19,10 @@ const API = {
     },
     isAuthenticated:()=>{
         return axios.get(`${URL}/api/auth/loggedinuser`,{withCredentials:true});
+    },
+    createUser: (user) =>{
+        return axios.post(`${URL}/api/auth/signup`, {withCredentials:true})
     }
+
 }
 export default API
