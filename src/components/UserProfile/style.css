@@ -13,6 +13,12 @@ body {
  background-color: rgba(205, 206, 209, 0.8);
 }
 
+.tablething {
+    margin: 0 auto;
+    width: 80%;
+    background-color: rgba(205, 206, 209, 0.8);
+   }
+
 .tableHeader {
 background-color: lightgrey;
 }
@@ -27,6 +33,12 @@ h3 {
 font-family: 'Nunito', sans-serif;
 color: rgb(51, 55, 83);
 font-size: 3em;
+}
+
+h4 {
+    font-family: 'Nunito', sans-serif;
+    color: rgb(20, 23, 47);
+    font-size: 2em;
 }
 
 h5 {

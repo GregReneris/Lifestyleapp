@@ -39,7 +39,7 @@ export default function MenuAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" className="appbar" style={{background:"#DFE4EC", height:"15vh" }}>
+      <AppBar position="static" className="appbar" style={{background:"rgba(205, 206, 209, 0.3)", height:"15vh" }}>
         <Toolbar>
           <FormGroup>
         
