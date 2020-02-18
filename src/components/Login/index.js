@@ -4,7 +4,6 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Link from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-
 const useStyles = makeStyles(theme => ({
   root: {
     '& .MuiTextField-root': {
@@ -13,42 +12,58 @@ const useStyles = makeStyles(theme => ({
     },
   },
 }));
-
-function LoginPage() {
+export default function Login(props) {
+  const [login, setLogin] = useState({
+      name: "",
+      password: ""
+  })
+  const handleInputChange = event => {
+      const { name, value } = event.target;
+      setLogin({
+          ...login,
+          [name]: value
+      })
+  }
+  const handleFormSubmit = event => {
+      event.preventDefault();
+      API.login(login).then(res=>{
+          console.log(res.data)
+      }).catch(err=>{
+          console.log(err);
+      })
+  }
+    }
     return (
-        <div>
-            <h1>spontinAIty</h1>
-            <div className="container">
-            <h3>Login</h3>
-            
-        <TextField
-          id="outlined-password-input"
-          label="Email"
-          type="email"
-          autoComplete="current-email"
-          variant="outlined"
-        />
-        <br/>
-        <br/>
-        <TextField
-          id="outlined-password-input"
-          label="Password"
-          type="password"
-          autoComplete="current-password"
-          variant="outlined"
-        />
-        <br/>
-        <br/>
-        <Button variant="contained">Submit</Button>
-        <br/>
-        
-        {/* <Link> */}
-        <h5>Create Account</h5>
-        {/* </Link> */}
-        <br/>
-            </div>   
-        </div>
+      <div>
+          <h1>spontinAIty</h1>
+          <div className="container">
+          <h3>Login</h3>
+      <TextField
+        id="outlined-password-input"
+        label="Email"
+        type="email"
+        autoComplete="current-email"
+        variant="outlined"
+      />
+      <br/>
+      <br/>
+      <TextField
+        id="outlined-password-input"
+        label="Password"
+        type="password"
+        autoComplete="current-password"
+        variant="outlined"
+      />
+      <br/>
+      <br/>
+      <Button variant="contained">Submit</Button>
+      <br/>
+      {/* <Link> */}
+      <h5>Create Account</h5>
+      {/* </Link> */}
+      <br/>
+          </div>   
+      </div>
     )
-}
-
+    }
 export default LoginPage;

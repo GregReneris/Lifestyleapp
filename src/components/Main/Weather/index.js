@@ -5,11 +5,14 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
+import Typography from '@material-ui/core/Typography'
+import Grid from '@material-ui/core/Grid';
+
 
 
 const useStyles = makeStyles({
   root: {
+    display: 'flex',
     minWidth: 275,
   },
   bullet: {
@@ -23,32 +26,49 @@ const useStyles = makeStyles({
   pos: {
     marginBottom: 12,
   },
+  media: {
+    height: 0,
+    paddingTop: '56.25%', // 16:9,
+    marginTop:'30'
+  },
 });
+
+// componentDidMount(); {
+//  const location = User.location
+// }
 
 export default function OutlinedCard() {
   const classes = useStyles();
   const name = "Tyson"
 
   return (
-    <Container >
-    <Typography variant="h3">Hello {name}!</Typography>
-    <Card className={classes.root} variant="outlined">
-      <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Current Weather
+    <Container maxWidth="sm" style={{ backgroundColor: '#cfe8fc', height: '50vh', width: '100vw' }} >
+      <Typography variant="h3">Hello {name}!</Typography>
+      <Grid
+        container
+        direction="row"
+        justify="center"
+        alignItems="center"
+      >
+        <br/>
+        <Card className={classes.root} variant="outlined">
+          <CardContent>
+      
+            <Typography className={classes.title} color="textSecondary" gutterBottom>
+              Current Weather
         </Typography>
-        <Typography variant="h5" component="h2">
-          Sunny
-        </Typography>
-        <CardMedia 
-        component="img"
-        height="140"
-          className={classes.media}
-          image="../../images/Weather/sunny.png"
-          title="Sunny"
-        />
-      </CardContent>
-    </Card>
+            <Typography variant="h5" component="h2">
+
+            </Typography>
+            <CardMedia 
+              className={classes.media}
+              image={require('../../images/Weather/sunny.png')}
+              title="Sunny"
+            />
+          </CardContent>
+        </Card>
+      </Grid>
     </Container>
   );
 }
+
