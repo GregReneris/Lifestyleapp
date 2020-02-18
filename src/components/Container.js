@@ -4,9 +4,12 @@ import '../App';
 // import LoginPage from './Login/index'
 import Weather from './Main/Weather/index'
 import AppBar from './Main/AppBar/index'
+import Time from './Main/Time/index'
 // import CreateAccount from './CreateAccount/index'
 // import UserProfile from './UserProfile/index'
 // import Table from './Table/index'
+import EventType from './Main/EventType/index'
+import Carousel from './Main/Carousel/index'
 
 function App() {
   return (
@@ -15,6 +18,9 @@ function App() {
       {/* <LoginPage/> */}
       <AppBar/>
       <Weather/>
+      <Time/>
+      <EventType/>
+      <Carousel/>
       {/* <CreateAccount/> */}
       {/* <LoginPage/> */}
       {/* <UserProfile/> */}
