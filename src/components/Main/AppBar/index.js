@@ -1,5 +1,4 @@
 // import React, { Component } from "react";
-import "./style.css";
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -12,6 +11,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import "./style.css";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -45,7 +45,7 @@ export default function MenuAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className="appbar" style={{background:"#DFE4EC", height:"15vh" }}>
         <Toolbar>
           <FormGroup>
         <FormControlLabel
