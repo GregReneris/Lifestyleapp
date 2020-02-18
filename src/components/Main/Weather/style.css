@@ -1,5 +1,7 @@
-.Container {
-   width: 20vw;
-   height: 50vh;
-}
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Nunito&display=swap');
 
+.container {
+   width: 100vw;
+   height: 50vh;
+   background-color: #cfe8fc;
+}

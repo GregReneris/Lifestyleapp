@@ -42,7 +42,9 @@ export default function OutlinedCard() {
   const name = "Tyson"
 
   return (
-    <Container maxWidth="sm" style={{ backgroundColor: '#cfe8fc', height: '50vh', width: '100vw' }} >
+    <div>
+      <div className="container">
+   
       <Typography variant="h3">Hello {name}!</Typography>
       <Grid
         container
@@ -68,7 +70,9 @@ export default function OutlinedCard() {
           </CardContent>
         </Card>
       </Grid>
-    </Container>
+    
+    </div>
+    </div>
   );
 }
 

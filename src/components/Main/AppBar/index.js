@@ -1,5 +1,4 @@
 // import React, { Component } from "react";
-import "./style.css";
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -12,6 +11,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import "./style.css";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -45,16 +45,13 @@ export default function MenuAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className="appbar" style={{background:"#dfe4ec", height:"15vh" }}>
         <Toolbar>
           <FormGroup>
-        <FormControlLabel
-          control={<Switch checked={auth} onChange={handleChange} aria-label="login switch" />}
-          label={auth ? 'Logout' : 'Login'}
-        />
+        
       </FormGroup>
           <Typography variant="h6" className={classes.title} >
-          spontinAIty
+          <h1>spontinAIty</h1>
           </Typography>
           {auth && (
             <div>
@@ -66,7 +63,7 @@ export default function MenuAppBar() {
                 color="inherit"
               >
                 <AccountCircle />
-              </IconButton>
+              </IconButton >
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}

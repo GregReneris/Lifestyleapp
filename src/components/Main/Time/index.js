@@ -34,7 +34,7 @@ export default function DatePickers() {
           What day do you want to adventure?
     </Typography>
       </Grid>
-      <br />>
+      <br />
     <Grid
         container
         direction="row"
