@@ -1,10 +1,10 @@
-import React from 'react';
+import React,{useState} from 'react';
 import "./style.css";
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Link from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-
+import AppBar from '../Main/AppBar/index'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Login(props) {
+function LoginPage(props) {
   const [login, setLogin] = useState({
       name: "",
       password: ""
@@ -29,16 +29,16 @@ export default function Login(props) {
   }
   const handleFormSubmit = event => {
       event.preventDefault();
-      API.login(login).then(res=>{
-          console.log(res.data)
-      }).catch(err=>{
-          console.log(err);
-      })
+      // API.login(login).then(res=>{
+      //     console.log(res.data)
+      // }).catch(err=>{
+      //     console.log(err);
+      // })
   }
-    }
+
     return (
       <div>
-          <h1>spontinAIty</h1>
+        <AppBar/>
           <div className="container">
           <h3>Login</h3>
       <TextField
@@ -68,5 +68,6 @@ export default function Login(props) {
           </div>   
       </div>
     )
+}
 
 export default LoginPage;

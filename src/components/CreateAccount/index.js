@@ -3,6 +3,7 @@ import "./style.css";
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import AppBar from '../Main/AppBar/index'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -19,7 +20,8 @@ function CreateAccount() {
 
   return (
     <div>
-      <h1>spontinAIty</h1>
+      <AppBar/>
+      
       <div className="container">
         <h3>Create Account</h3>
 
@@ -53,9 +55,9 @@ function CreateAccount() {
           <br />
           <TextField
             id="outlined-password-input"
-            label="Zipcode"
-            type="number"
-            autoComplete="current-zipcode"
+            label="City"
+            type="text"
+            autoComplete="current-City"
             variant="outlined"
           />
           <br />
