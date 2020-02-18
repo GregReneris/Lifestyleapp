@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App';
+import "./style.css";
 // import Navbar from '../components/Navbar/index'
 // import LoginPage from './Login/index'
 import Weather from './Main/Weather/index'
@@ -16,11 +17,13 @@ function App() {
     <div className="App">
       {/* <Navbar/> */}
       {/* <LoginPage/> */}
+      <div className="mainimg">
       <AppBar/>
       <Weather/>
       <Time/>
       <EventType/>
       <Carousel/>
+      </div>
       {/* <CreateAccount/> */}
       {/* <LoginPage/> */}
       {/* <UserProfile/> */}
