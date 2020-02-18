@@ -28,7 +28,7 @@ const useStyles = makeStyles({
   },
   media: {
     height: 0,
-    paddingTop: '56.25%', // 16:9,
+    paddingTop: '100%', // 16:9,
     marginTop:'30'
   },
 });
@@ -42,37 +42,30 @@ export default function OutlinedCard() {
   const name = "Tyson"
 
   return (
-    <div>
-      <div className="container">
-   
+    <Container id="wcon" style={{ backgroundColor: '#cfe8fc', height: '50vh', width: '100vw' }} >
       <Typography variant="h3">Hello {name}!</Typography>
       <Grid
         container
         direction="row"
         justify="center"
-        alignItems="center"
-      >
-        <br/>
-        <Card className={classes.root} variant="outlined">
+        alignItems="center">
+        <Card id="wcard" className={classes.root} variant="outlined ">
           <CardContent>
-      
             <Typography className={classes.title} color="textSecondary" gutterBottom>
               Current Weather
         </Typography>
-            <Typography variant="h5" component="h2">
-
-            </Typography>
             <CardMedia 
               className={classes.media}
               image={require('../../images/Weather/sunny.png')}
               title="Sunny"
             />
+            <Typography variant="h5" component="h2">
+              Sunny
+            </Typography>
           </CardContent>
         </Card>
       </Grid>
-    
-    </div>
-    </div>
+    </Container>
   );
 }
 

@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Nunito&display=swap');
-
-.container {
+#wcon {
    width: 100vw;
    height: 50vh;
-   background-color: #cfe8fc;
+}
+
+#wcard {
+   background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 }

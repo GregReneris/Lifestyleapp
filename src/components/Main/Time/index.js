@@ -4,6 +4,10 @@ import TextField from '@material-ui/core/TextField';
 import Date from "../Date/index"
 import { Typography } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -16,10 +20,23 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(1),
     width: 200,
   },
+  root: {
+    width: '100%',
+  },
+  heading: {
+    fontSize: theme.typography.pxToRem(15),
+    flexBasis: '33.33%',
+    flexShrink: 0,
+  },
+  secondaryHeading: {
+    fontSize: theme.typography.pxToRem(15),
+    color: theme.palette.text.secondary,
+  },
 }));
 
 export default function DatePickers() {
   const classes = useStyles();
+  const [expanded, setExpanded] = React.useState(false);
 
   return (
 
@@ -30,9 +47,14 @@ export default function DatePickers() {
         justify="center"
         alignItems="center"
       >
-        <Typography variant="h3">
+        <Typography variant="h4">
           What day do you want to adventure?
     </Typography>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
       </Grid>
       <br />
     <Grid
