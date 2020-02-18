@@ -1,4 +1,3 @@
-// import React, { Component } from "react";
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -6,8 +5,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
@@ -31,9 +28,6 @@ export default function MenuAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
-  const handleChange = event => {
-    setAuth(event.target.checked);
-  };
 
   const handleMenu = event => {
     setAnchorEl(event.currentTarget);
@@ -48,13 +42,10 @@ export default function MenuAppBar() {
       <AppBar position="static" className="appbar" style={{background:"#DFE4EC", height:"15vh" }}>
         <Toolbar>
           <FormGroup>
-        <FormControlLabel
-          control={<Switch checked={auth} onChange={handleChange} aria-label="login switch" />}
-          label={auth ? 'Logout' : 'Login'}
-        />
+        
       </FormGroup>
           <Typography variant="h6" className={classes.title} >
-          spontinAIty
+          <h1>spontinAIty</h1>
           </Typography>
           {auth && (
             <div>
@@ -66,7 +57,7 @@ export default function MenuAppBar() {
                 color="inherit"
               >
                 <AccountCircle />
-              </IconButton>
+              </IconButton >
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}
