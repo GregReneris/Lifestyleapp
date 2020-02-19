@@ -15,8 +15,8 @@ body {
 
 h1 {
     font-family: 'Bree Serif', serif;
-    color: #f0c48a;
-    font-size: 5em;
+    color: #eeae5a;
+    font-size: 4em;
 }
 
 h3 {
@@ -28,7 +28,7 @@ font-size: 3em;
 h5 {
     font-family: 'Nunito', sans-serif;
     color: rgb(20, 23, 47);
-    font-size: 1em;
+    font-size: .7em;
 }
 
 .hikingImg {
@@ -37,13 +37,3 @@ h5 {
     position: relative;
 }
 
-.copyright {
-    margin: 0 auto;
-    width: 100vw;
-    font-size: 1.5em;
-    font-family: 'Nunito', sans-serif;
-    color: rgb(20, 23, 47);
-    background-color: rgba(186, 186, 186, 0.9);
-    margin-top: 2%;
-    margin-bottom: 2%;
-}
