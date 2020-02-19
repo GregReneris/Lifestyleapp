@@ -1,6 +1,6 @@
 #wcon {
     width: 100vw;
-    height: 25vh;
+   max-height: fit-content;
     padding: 10px;
     border: 1px black solid;
     border-radius: 25px;

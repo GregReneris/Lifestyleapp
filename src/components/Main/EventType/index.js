@@ -3,6 +3,8 @@ import "./style.css";
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHiking } from '@fortawesome/free-solid-svg-icons'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -11,6 +13,8 @@ const useStyles = makeStyles(theme => ({
     },
   },
 }));
+
+const element = <FontAwesomeIcon icon={faHiking} />
 
 export default function ContainedButtons() {
   const classes = useStyles();
@@ -23,7 +27,8 @@ export default function ContainedButtons() {
       </Button>
 
         <Button variant="contained" color="secondary">
-          Hike
+        <FontAwesomeIcon icon="faHiking" />
+        Hike
       </Button>
       </div>
     </Container>

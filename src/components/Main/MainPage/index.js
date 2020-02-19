@@ -4,7 +4,12 @@ import AppBar from '../AppBar/index'
 import Time from '../Time/index'
 import EventType from '../EventType/index'
 import Carousel from '../Carousel/index'
+
+import Event from '../Event/index.js'
+import Table from '../../Table/index'
+
 import "./style.css";
+
 
 function MainPage() {
     return (
@@ -15,6 +20,9 @@ function MainPage() {
                 <Time/>
                 <EventType />
                 <Carousel />
+                <Event/>
+                <Table id="wcom"/>
+
             </div>
         </div>
     );
