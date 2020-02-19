@@ -20,30 +20,50 @@ const useStyles = makeStyles(theme => ({
 function CreateAccount(props) {
   const classes = useStyles();
 
-  const [formdata, setformdata]= useState ({
+  const [formdata, setformdata] = useState ({
     name : "",
     password : "",
     email : "",
     city : ""
   })    
+  // console.log ("FORM DATA")
+  // console.log (formdata);
+  // console.log ("SET FORM DATA")
+  // console.log (setformdata);
   
+  
+
   //TODO: HANDLE INPUT CHANGE for each input field in the form. 
 
-  // function handleSubmit(event) {
-  //   event.preventDefault();
-  //   const data = new FormData(event.target)
-  
-  //   fetch("localhost:8080/api/auth/signup", {
-  //     method: 'POST',
-  //     body: data
-  //   });
-  // }
+  function handleSubmit(event) {
+    event.preventDefault();
+    // const data = new FormData(event.target)
+  console.log ("got to handle submit");
+  console.log(formdata);
+    fetch("http://localhost:8080/api/auth/signup", {
+      method: 'POST',
+      headers: {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type" : "application/json"
+      },
+      body: JSON.stringify(formdata)
+    });
+  }
   
 function handleInputChange (event) {
     event.preventDefault()
-    let formdata = [...this.state.formdata];
-    this.setState({ formdata: formdata});
-
+    // console.log(event.target.name);
+    // console.log(event.target.value);
+    let newdata = {...formdata}
+    newdata[event.target.name] = event.target.value
+    setformdata(newdata)
+    // console.log (event.target.username.value); 
+    // console.log (event.target.elements.username.value); 
+    // console.log (event.target.value);
+    
+    //let newdata = [...event.state.formdata];
+    // event.setState({ formdata: formdata});
+    
     
   };
 
@@ -54,7 +74,7 @@ function handleInputChange (event) {
       <div className="container">
         <h3>Create Account</h3>
 
-        <form className={classes.root} noValidate autoComplete="off"  action="localhost:8080/api/auth/signup" method="POST">
+        <form className={classes.root} noValidate autoComplete="off" >
           <TextField
             id="outlined-password-input"
             label="Name"
@@ -103,7 +123,7 @@ function handleInputChange (event) {
           />
           <br />
           <br />
-          <Button variant="contained" value="Create Profile" >Submit</Button>
+          <Button variant="contained" value="Create Profile" onClick={handleSubmit} >Submit</Button>
           <br />
           <br />
         </form>
