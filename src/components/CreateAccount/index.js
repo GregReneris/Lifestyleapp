@@ -129,7 +129,7 @@ function handleInputChange (event) {
           <br />
         </form>
       </div>
-      <p class="copyright" alignItems="center"> Copyright © 2020, all rights reserved</p>
+      <p class="copyright" alignItems="center"> Copyright © 2020 All Rights Reserved</p>
     </div>
   )
 }
