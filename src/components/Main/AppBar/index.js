@@ -38,6 +38,9 @@ export default function MenuAppBar() {
     setAnchorEl(null);
   };
 
+  
+
+
   return (
     <div className={classes.root}>
       <AppBar position="static" className="appbar" style={{ background: "rgba(205, 206, 209, 0.3)", height: "15vh" }}>
