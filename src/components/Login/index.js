@@ -64,6 +64,7 @@ function LoginPage (props) {
       <Link to='/create'><h5>Create Account</h5></Link>
       <br/>
           </div>   
+          <p class="copyright" alignItems="center"> Copyright © 2020 All Rights Reserved</p>
       </div>
     )
 }

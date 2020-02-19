@@ -40,11 +40,11 @@ function CreateAccount() {
             {/* TODO: add variable for name pulled from db */}
             
     <div className={classes.root}>
-      <Grid container spacing={4}>
-        <Grid item xs={4}><h5>Email:</h5>
+      <Grid container spacing={2}>
+        <Grid item xs={2}><h5>Email:</h5>
           
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={8}>
               <TextField
           id="outlined-password-input"
           label="Email"
@@ -54,13 +54,13 @@ function CreateAccount() {
           variant="outlined"
         />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={2}>
           <Button variant="contained">Update</Button>
         </Grid>
 
-        <Grid item xs={4}><h5>City:</h5>
+        <Grid item xs={2}><h5>City:</h5>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={8}>
           
           <TextField
           id="outlined-password-input"
@@ -72,7 +72,7 @@ function CreateAccount() {
         />
           
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={2}>
           <Button variant="contained">Update</Button>
         </Grid>
       </Grid>
@@ -85,6 +85,7 @@ function CreateAccount() {
     <Table/>
     <br/>
     </div>
+    <p className="copyright" alignItems="center"> Copyright © 2020 All Rights Reserved</p>
     </div>
   );
 }
