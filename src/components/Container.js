@@ -2,8 +2,8 @@ import React from 'react';
 import '../App';
 import "./style.css";
 // import LoginPage from './Login/index'
-// import CreateAccount from './CreateAccount/index'
-import UserProfile from './UserProfile/index'
+import CreateAccount from './CreateAccount/index'
+// import UserProfile from './UserProfile/index'
 // import MainPage from './Main/MainPage/index'
 
 
@@ -12,9 +12,9 @@ function App() {
     <div className="App">
       {/* <LoginPage/> */}
       {/* <MainPage/> */}
-      {/* <CreateAccount/> */}
+      <CreateAccount/>
       {/* <LoginPage/> */}
-      <UserProfile/>
+      {/* <UserProfile/> */}
     </div>
   );
 }
