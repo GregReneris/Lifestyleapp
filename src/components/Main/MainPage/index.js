@@ -12,7 +12,7 @@ function MainPage() {
             <div className="mainimg">
                 <AppBar />
                 <Weather />
-                <Time />
+                <Time/>
                 <EventType />
                 <Carousel />
             </div>

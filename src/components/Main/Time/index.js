@@ -4,10 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import Date from "../Date/index"
 import { Typography } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -39,7 +36,7 @@ export default function DatePickers() {
   const [expanded, setExpanded] = React.useState(false);
 
   return (
-
+    <Container id="wcon">
     <form className={classes.container} noValidate>
       <Grid
         container
@@ -68,12 +65,15 @@ export default function DatePickers() {
           label="Pick A Day"
           type="date"
           defaultValue={Date}
+          classes={{ root: classes.maxWidth }}
           className={classes.textField}
           InputLabelProps={{
             shrink: true,
           }}
+          
         />
       </Grid>
     </form>
+    </Container>
   );
 }

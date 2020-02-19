@@ -1,9 +1,19 @@
 #wcon {
    width: 100vw;
    height: 50vh;
+   padding: 10px;
 }
+
 
 #wcard {
    background: rgb(238,174,202);
 background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+#hello {
+   padding: 20px;
+}
+
+#cw {
+   padding-top: 10px;
 }

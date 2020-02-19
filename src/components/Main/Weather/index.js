@@ -13,7 +13,8 @@ import Grid from '@material-ui/core/Grid';
 const useStyles = makeStyles({
   root: {
     display: 'flex',
-    minWidth: 275,
+    minWidth: 250,
+    flexDirection: "column",
   },
   bullet: {
     display: 'inline-block',
@@ -33,17 +34,13 @@ const useStyles = makeStyles({
   },
 });
 
-// componentDidMount(); {
-//  const location = User.location
-// }
-
 export default function OutlinedCard() {
   const classes = useStyles();
   const name = "Tyson"
 
   return (
     <Container id="wcon" style={{ backgroundColor: '#cfe8fc', height: '50vh', width: '100vw' }} >
-      <Typography variant="h3">Hello {name}!</Typography>
+      <Typography id="hello" variant="h3">Hello {name}!</Typography>
       <Grid
         container
         direction="row"
@@ -59,7 +56,7 @@ export default function OutlinedCard() {
               image={require('../../images/Weather/sunny.png')}
               title="Sunny"
             />
-            <Typography variant="h5" component="h2">
+            <Typography variant="h5" component="h2" id="cw">
               Sunny
             </Typography>
           </CardContent>

@@ -39,13 +39,13 @@ export default function MenuAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" className="appbar" style={{background:"#DFE4EC", height:"15vh" }}>
+      <AppBar position="static" className="appbar" style={{ background: "rgba(205, 206, 209, 0.3)", height: "15vh" }}>
         <Toolbar>
           <FormGroup>
-        
-      </FormGroup>
+
+          </FormGroup>
           <Typography variant="h6" className={classes.title} >
-          <h1>spontinAIty</h1>
+              <h1>spontinAIty</h1>
           </Typography>
           {auth && (
             <div>
@@ -73,8 +73,8 @@ export default function MenuAppBar() {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={handleClose}>My Profile</MenuItem>
+                <MenuItem onClick={handleClose}>Logout</MenuItem>
               </Menu>
             </div>
           )}
