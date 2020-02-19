@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import "./style.css";
+import {Link} from "react-router-dom";
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import AppBar from '../Main/AppBar/index';
 import API from "../../utils/api"
+import "./style.css";
 
 
 
@@ -123,7 +124,7 @@ function handleInputChange (event) {
           />
           <br />
           <br />
-          <Button variant="contained" value="Create Profile" onClick={handleSubmit} >Submit</Button>
+          <Link to='/main'><Button variant="contained" value="Create Profile" onClick={handleSubmit} >Submit</Button></Link>
           <br />
           <br />
         </form>
