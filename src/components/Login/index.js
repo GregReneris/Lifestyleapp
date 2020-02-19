@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import "./style.css";
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function LoginPage(props) {
+function LoginPage (props) {
   const [login, setLogin] = useState({
       name: "",
       password: ""
@@ -35,7 +35,6 @@ function LoginPage(props) {
       //     console.log(err);
       // })
   }
-
     return (
       <div>
         <AppBar/>

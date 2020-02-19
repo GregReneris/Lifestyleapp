@@ -1,0 +1,9 @@
+#wcon {
+    width: 100vw;
+    height: 50vh;
+    padding: 10px;
+ }
+ 
+ .hideElem {
+    display: none;
+}

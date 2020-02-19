@@ -29,4 +29,6 @@ h5 {
     font-size: 1.5em;
 }
 
-
+.hideElem {
+    display: none;
+}

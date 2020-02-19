@@ -1,0 +1,13 @@
+#wcon {
+    width: 100vw;
+    height: 50vh;
+ }
+ 
+ .hideElem {
+    display: none;
+}
+
+/* #date {
+    width: 3000px !important;
+} */
+
