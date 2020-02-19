@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Link from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-
+import AppBar from '../Main/AppBar/index'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -37,7 +37,7 @@ function LoginPage (props) {
   }
     return (
       <div>
-          <h1>spontinAIty</h1>
+        <AppBar/>
           <div className="container">
           <h3>Login</h3>
       <TextField

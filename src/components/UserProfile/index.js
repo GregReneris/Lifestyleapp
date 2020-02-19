@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import Table from '../Table/index'
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import AppBar from '../Main/AppBar/index'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -18,13 +19,13 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const useMyStyles = makeStyles(theme => ({
-    root: {
-      flexGrow: 1,
-    },
+    // root: {
+    //   flexGrow: 1,
+    // },
     paper: {
       padding: theme.spacing(2),
       textAlign: 'center',
-      color: theme.palette.text.secondary,
+      color: theme.palette.text.primary,
     },
   }));
 
@@ -32,18 +33,18 @@ function CreateAccount() {
     const classes = useMyStyles();
     return (
         <div>
-            <h1>spontinAIty</h1>
+          <AppBar/>
+            
             <div className="container">
             <h3>Hello, Tyson!</h3>
             {/* TODO: add variable for name pulled from db */}
             
     <div className={classes.root}>
       <Grid container spacing={4}>
-        <Grid item xs={4}>
-          <Paper className={classes.paper}>Email:</Paper>
+        <Grid item xs={4}><h5>Email:</h5>
+          
         </Grid>
         <Grid item xs={4}>
-          <Paper className={classes.paper}>
               <TextField
           id="outlined-password-input"
           label="Email"
@@ -52,38 +53,38 @@ function CreateAccount() {
           //TODO: add variable for email pulled from db
           variant="outlined"
         />
-        </Paper>
         </Grid>
         <Grid item xs={4}>
-          <Paper className={classes.paper}><Button variant="contained">Update</Button></Paper>
+          <Button variant="contained">Update</Button>
         </Grid>
 
-        <Grid item xs={4}>
-          <Paper className={classes.paper}>Zipcode:</Paper>
+        <Grid item xs={4}><h5>City:</h5>
         </Grid>
         <Grid item xs={4}>
-          <Paper className={classes.paper}>
+          
           <TextField
           id="outlined-password-input"
-          label="Zipcode"
-          type="number"
-          autoComplete="current-zipcode"
-           //TODO: add variable for zipcode pulled from db
+          label="City"
+          type="text"
+          autoComplete="current-City"
+           //TODO: add variable for City pulled from db
           variant="outlined"
         />
-          </Paper>
+          
         </Grid>
         <Grid item xs={3}>
-          <Paper className={classes.paper}><Button variant="contained">Update</Button></Paper>
+          <Button variant="contained">Update</Button>
         </Grid>
       </Grid>
     </div>
-        <h5>Congratulations! You got off the couch so many times. You should be proud.</h5>
     <br/>
     </div>
     <br/>
+    <div className="tablething">
+        <h4>Congratulations! You got off the couch so many times. You should be proud.</h4>
     <Table/>
     <br/>
+    </div>
     </div>
   );
 }
@@ -102,13 +103,13 @@ export default CreateAccount;
           variant="outlined"
         /></h5>
         <Button variant="contained">Update</Button>
-        <h5>Zipcode:
+        <h5>City:
         <TextField
           id="outlined-password-input"
-          label="Zipcode"
+          label="City"
           type="number"
-          autoComplete="current-zipcode"
-           //TODO: add variable for zipcode pulled from db
+          autoComplete="current-City"
+           //TODO: add variable for City pulled from db
           variant="outlined"
         /></h5>
         <Button variant="contained">Update</Button>
