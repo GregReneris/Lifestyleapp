@@ -1,50 +1,49 @@
 import React from 'react';
-import "./style.css";
 import { makeStyles } from '@material-ui/core/styles';
-import { red } from '@material-ui/core/colors';
 import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import Container from '@material-ui/core/Container';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        maxWidth: 345,
+        flexGrow: 1,
     },
-    media: {
-        height: 0,
-        paddingTop: '56.25%', // 16:9
-    },
-    expand: {
-        transform: 'rotate(0deg)',
-        marginLeft: 'auto',
-        transition: theme.transitions.create('transform', {
-            duration: theme.transitions.duration.shortest,
-        }),
-    },
-    expandOpen: {
-        transform: 'rotate(180deg)',
-    },
-    avatar: {
-        backgroundColor: red[500],
+    paper: {
+        height: 140,
+        width: 100,
     },
     control: {
         padding: theme.spacing(2),
-    }
+    },
 }));
 
-export default function RecipeReviewCard() {
+export default function SpacingGrid() {
+    const [spacing, setSpacing] = React.useState(2);
     const classes = useStyles();
-    const [expanded, setExpanded] = React.useState(false);
-    const spacing = React.useState(2);
 
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
+    const handleChange = event => {
+        setSpacing(Number(event.target.value));
     };
 
     return (
-        <Grid container justify = "center" container className={classes.root} spacing={2}>
-
-           
-        </Grid>
-
+        <Container id="wcon">
+            <Grid container className={classes.root} spacing={3}>
+                <Grid item xs={12}>
+                    <Grid container justify="center" spacing={spacing}>
+                        {[0, 1, 2, 3].map(value => (
+                            <Grid key={value} item>
+                                <Paper className={classes.paper} />
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Grid>
+                <Grid item xs={12}>
+                </Grid>
+            </Grid>
+            <Button variant="outlined" disabled>
+                Next
+            </Button>
+        </Container>
     );
 }
-

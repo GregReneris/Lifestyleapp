@@ -1,6 +1,6 @@
 #wcon {
    width: 100vw;
-   height: 50vh;
+   max-height: fit-content;
    padding: 10px;
 }
 
@@ -11,9 +11,9 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
 }
 
 #hello {
-   padding: 20px;
+   padding: 5px;
 }
 
 #cw {
-   padding-top: 10px;
+   padding-top: 5px;
 }
