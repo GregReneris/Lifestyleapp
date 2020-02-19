@@ -37,3 +37,13 @@ h5 {
     position: relative;
 }
 
+.copyright {
+    margin: 0 auto;
+    width: 100vw;
+    font-size: 1.5em;
+    font-family: 'Nunito', sans-serif;
+    color: rgb(20, 23, 47);
+    background-color: rgba(186, 186, 186, 0.9);
+    margin-top: 2%;
+    margin-bottom: 2%;
+}

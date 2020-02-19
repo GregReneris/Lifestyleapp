@@ -37,18 +37,18 @@ function CreateAccount(props) {
   //TODO: HANDLE INPUT CHANGE for each input field in the form. 
 
   function handleSubmit(event) {
-    event.preventDefault();
-    // const data = new FormData(event.target)
-  console.log ("got to handle submit");
-  console.log(formdata);
-    fetch("http://localhost:8080/api/auth/signup", {
-      method: 'POST',
-      headers: {
-        "Accept": "application/json, text/plain, */*",
-        "Content-Type" : "application/json"
-      },
-      body: JSON.stringify(formdata)
-    });
+  //   event.preventDefault();
+  //   // const data = new FormData(event.target)
+  // console.log ("got to handle submit");
+  // console.log(formdata);
+  //   fetch("http://localhost:8080/api/auth/signup", {
+  //     method: 'POST',
+  //     headers: {
+  //       "Accept": "application/json, text/plain, */*",
+  //       "Content-Type" : "application/json"
+  //     },
+  //     body: JSON.stringify(formdata)
+  //   });
   }
   
 function handleInputChange (event) {

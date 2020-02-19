@@ -38,8 +38,12 @@ h5 {
 }
 
 .copyright {
-    background-color: blanchedalmond;
-    max-width: fit-content;
-    opacity: 50%;
-
+    margin: 0 auto;
+    width: 100vw;
+    font-size: 1.5em;
+    font-family: 'Nunito', sans-serif;
+    color: rgb(20, 23, 47);
+    background-color: rgba(186, 186, 186, 0.9);
+    margin-top: 2%;
+    margin-bottom: 2%;
 }

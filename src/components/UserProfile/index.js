@@ -85,6 +85,7 @@ function CreateAccount() {
     <Table/>
     <br/>
     </div>
+    <p className="copyright" alignItems="center"> Copyright © 2020 All Rights Reserved</p>
     </div>
   );
 }
