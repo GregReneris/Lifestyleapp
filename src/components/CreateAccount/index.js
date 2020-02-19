@@ -1,11 +1,18 @@
 import React, {useState} from 'react';
-import {Link} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import AppBar from '../Main/AppBar/index';
 import API from "../../utils/api"
 import "./style.css";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
 
 
 
@@ -20,7 +27,7 @@ const useStyles = makeStyles(theme => ({
 
 function CreateAccount(props) {
   const classes = useStyles();
-
+  const history = useHistory();
   const [formdata, setformdata] = useState ({
     name : "",
     password : "",
@@ -37,19 +44,24 @@ function CreateAccount(props) {
   //TODO: HANDLE INPUT CHANGE for each input field in the form. 
 
   function handleSubmit(event) {
-  //   event.preventDefault();
-  //   // const data = new FormData(event.target)
-  // console.log ("got to handle submit");
-  // console.log(formdata);
-  //   fetch("http://localhost:8080/api/auth/signup", {
-  //     method: 'POST',
-  //     headers: {
-  //       "Accept": "application/json, text/plain, */*",
-  //       "Content-Type" : "application/json"
-  //     },
-  //     body: JSON.stringify(formdata)
-  //   });
-  }
+    event.preventDefault();
+    // const data = new FormData(event.target)
+  console.log ("got to handle submit");
+  console.log(formdata);
+    fetch("http://localhost:8080/api/auth/signup", {
+      method: 'POST',
+      headers: {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type" : "application/json"
+      },
+      body: JSON.stringify(formdata)
+    })
+    .then(event =>{
+      history.push("/main")
+    }
+    
+    )}
+  
   
 function handleInputChange (event) {
     event.preventDefault()
@@ -71,6 +83,7 @@ function handleInputChange (event) {
   return (
     <div>
       <AppBar/>
+      <Router>
       
       <div className="container">
         <h3>Create Account</h3>
@@ -130,6 +143,7 @@ function handleInputChange (event) {
         </form>
       </div>
       <p class="copyright" alignItems="center"> Copyright © 2020 All Rights Reserved</p>
+      </Router>
     </div>
   )
 }
