@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./style.css";
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -8,6 +8,8 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid';
 import ReactWeather from 'react-open-weather';
+import Moment from 'react-moment';
+
 
 
 const useStyles = makeStyles({
@@ -31,17 +33,36 @@ const useStyles = makeStyles({
     height: 0,
     paddingTop: '100%', // 16:9,
     marginTop: '30'
-  },
+  }
 });
+
+
 
 export default function OutlinedCard() {
   const classes = useStyles();
-  const name = "Tyson"
-  const city = ""
+  const [formdata, setformdata] = useState ({
+    name : "",
+    city : ""
+  })   
+
+  componentDidMount()
+
+
+  function componentDidMount(data) {
+    fetch('http://localhost:8080/api/user', {
+      method: 'GET',
+      headers: {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type" : "application/json"
+      }}
+
+    .then(res => res.json(data) , console.log (data))
+    .catch(console.log)
+    )};
 
   return (
     <Container id="wcon" style={{ backgroundColor: '#cfe8fc', height: '50vh', width: '100vw' }} >
-      <Typography id="hello" variant="h3">Hello {name}!</Typography>
+      <Typography id="hello" variant="h3">Hello Alexa!</Typography>
       <Grid
         container
         direction="row"
