@@ -94,14 +94,17 @@ function LoginPage (props) {
       <br/>
       <Link to='/main'><Button variant="contained" onClick={handleSubmit}>Login</Button></Link>
       <br/>
+      
       <Link to='/create'><h5>Create Account</h5></Link>
       <br/>
       </form>
           </div>   
           <p class="copyright" alignItems="center"> Copyright © 2020 All Rights Reserved</p>
           </Router>
+          
       </div>
-    )
+    
+  )
 }
 
 export default LoginPage;

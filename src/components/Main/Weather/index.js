@@ -40,14 +40,14 @@ export default function OutlinedCard() {
   const city = ""
 
   return (
-    <Container id="wcon" style={{ backgroundColor: '#cfe8fc', height: '50vh', width: '100vw' }} >
-      <Typography id="hello" variant="h3">Hello {name}!</Typography>
+    <Container id="wcon"  >
+      <Typography id="hello" variant="h3">Hello, {name}!</Typography>
       <Grid
         container
         direction="row"
         justify="center"
         alignItems="center">
-        <Card id="wcard" className={classes.root} variant="outlined ">
+        <Card id="wcard" className={classes.root} >
           <CardContent>
             <Typography className={classes.title} color="textSecondary" gutterBottom>
               Current Weather
