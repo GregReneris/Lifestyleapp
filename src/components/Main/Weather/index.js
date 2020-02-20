@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState,useEffect } from 'react';
 import "./style.css";
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid';
 import ReactWeather from 'react-open-weather';
 import Moment from 'react-moment';
+import API from "../../../utils/api";
 
 
 
@@ -40,59 +41,60 @@ const useStyles = makeStyles({
 
 export default function OutlinedCard() {
   const classes = useStyles();
-  const [formdata, setformdata] = useState ({
-    name : "",
-    city : ""
-  })   
-
-  componentDidMount()
+  const [formdata, setformdata] = useState({
+    name: "",
+    city: ""
+  })
 
 
-  function componentDidMount(data) {
-    fetch('http://localhost:8080/api/user', {
-      method: 'GET',
-      headers: {
-        "Accept": "application/json, text/plain, */*",
-        "Content-Type" : "application/json"
-      }}
 
-    .then(res => res.json(data) , console.log (data))
-    .catch(console.log)
-    )};
+  useEffect(()=> {
+    API.isAuthenticated().then(res => {
+      console.log(res.data);
+      setformdata({
+        name:res.data.name,
+        city:res.data.city
+      })
+    }).catch(err=>{
+      console.log("error")
+      console.log(err.errorCode);
+    })
+  },[])
 
-  return (
-    <Container id="wcon" style={{ backgroundColor: '#cfe8fc', height: '50vh', width: '100vw' }} >
-      <Typography id="hello" variant="h3">Hello Alexa!</Typography>
-      <Grid
-        container
-        direction="row"
-        justify="center"
-        alignItems="center">
-        <Card id="wcard" className={classes.root} variant="outlined ">
-          <CardContent>
-            <Typography className={classes.title} color="textSecondary" gutterBottom>
-              Current Weather
+
+    return (
+      <Container id="wcon" style={{ backgroundColor: '#cfe8fc', height: '50vh', width: '100vw' }} >
+        <Typography id="hello" variant="h3">Hello Alexa!</Typography>
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          alignItems="center">
+          <Card id="wcard" className={classes.root} variant="outlined ">
+            <CardContent>
+              <Typography className={classes.title} color="textSecondary" gutterBottom>
+                Current Weather
         </Typography>
-            {/* <CardMedia 
+              {/* <CardMedia 
               className={classes.media}
               image={require('../../images/Weather/sunny.png')}
               title="Sunny"
             /> */}
-            <CardMedia />
-            <ReactWeather
-              forecast="today"
-              unit="imperial"
-              apikey="e7196856e41701aad2ab6aa22965b557"
-              type="city"
-              city="Seattle"
-            />
-            {/* <Typography variant="h5" component="h2" id="cw">
+              <CardMedia />
+              <ReactWeather
+                forecast="today"
+                unit="imperial"
+                apikey="e7196856e41701aad2ab6aa22965b557"
+                type="city"
+                // city="Seattle"
+              />
+              {/* <Typography variant="h5" component="h2" id="cw">
               Sunny
             </Typography> */}
-          </CardContent>
-        </Card>
-      </Grid>
-    </Container>
-  );
-}
+            </CardContent>
+          </Card>
+        </Grid>
+      </Container>
+    );
+  }
 
