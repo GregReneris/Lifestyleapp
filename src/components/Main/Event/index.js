@@ -73,8 +73,8 @@ export default function RecipeReviewCard() {
       />
       <CardMedia
         className={classes.media}
-        square
-        imageURL="https://picsum.photos/200"
+        square = "true"
+        imageurl="https://picsum.photos/200"
         title="Paella dish"
       />
       {/* <CardMedia square imageUrl='https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg' /> */}

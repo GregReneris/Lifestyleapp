@@ -8,7 +8,7 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid';
 import ReactWeather from 'react-open-weather';
-import Moment from 'react-moment';
+// import Moment from 'react-moment';
 import API from "../../../utils/api";
 
 
