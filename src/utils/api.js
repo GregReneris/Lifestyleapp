@@ -22,6 +22,9 @@ const API = {
     },
     createUser: (user) =>{
         return axios.post(`${URL}/api/auth/signup`, {withCredentials:true})
+    },
+    searchPlaces: (search) =>{
+        return axios.get(`${URL}/api/places/${search}`)
     }
 
 }

@@ -48,7 +48,7 @@ export default function MenuAppBar() {
           <FormGroup>
 
           </FormGroup>
-          <Typography variant="h6" className={classes.title} >
+          <Typography  className={classes.title} >
               <h1>spontinAIty</h1>
           </Typography>
           {auth && (
