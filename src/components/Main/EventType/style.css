@@ -2,10 +2,15 @@
     width: 100vw;
    max-height: fit-content;
     padding: 10px;
-    border: 1px black solid;
     border-radius: 25px;
  }
  
  .hideElem {
     display: none;
 }
+
+.container {
+    margin: 0 auto;
+    width: 30%;
+    background-color: rgba(205, 206, 209, 0.7);
+   }

@@ -62,18 +62,18 @@ export default function OutlinedCard() {
   },[])
 
 
-    return (
-      <Container id="wcon" style={{ backgroundColor: '#cfe8fc', height: '50vh', width: '100vw' }} >
-        <Typography id="hello" variant="h3">Hello Alexa!</Typography>
-        <Grid
-          container
-          direction="row"
-          justify="center"
-          alignItems="center">
-          <Card id="wcard" className={classes.root} variant="outlined ">
-            <CardContent>
-              <Typography className={classes.title} color="textSecondary" gutterBottom>
-                Current Weather
+  return (
+    <Container id="wcon"  >
+      <Typography id="hello" variant="h3">Hello!</Typography>
+      <Grid
+        container
+        direction="row"
+        justify="center"
+        alignItems="center">
+        <Card id="wcard" className={classes.root} >
+          <CardContent>
+            <Typography className={classes.title} color="textSecondary" gutterBottom>
+              Current Weather
         </Typography>
               {/* <CardMedia 
               className={classes.media}

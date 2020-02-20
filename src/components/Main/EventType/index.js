@@ -20,17 +20,19 @@ export default function ContainedButtons() {
   const classes = useStyles();
 
   return (
-    <Container id="wcon">
-      <div className={classes.root}>
-        <Button variant="contained" color="primary">
+    <div className="container">
+    <div className="row1">
+        <Button className="btn1" variant="contained" color="lightBlue">
           Event
       </Button>
 
-        <Button variant="contained" color="secondary">
+
+        <Button className="btn2" variant="contained" color="lightBlue">
         <FontAwesomeIcon icon="faHiking" />
         Hike
       </Button>
       </div>
-    </Container>
+      </div>
+    
   );
 }

@@ -36,44 +36,47 @@ export default function DatePickers() {
   const [expanded, setExpanded] = React.useState(false);
 
   return (
-    <Container id="wcon">
-      <form className={classes.container} noValidate>
-        <Grid
-          container
-          direction="row"
-          justify="center"
-          alignItems="center"
-        >
-          <Typography variant="h4">
-            What day do you want to adventure?
+    <div className="container">
+   
+    <form className={classes.container} noValidate>
+      <Grid
+        container
+        direction="row"
+        justify="center"
+        alignItems="center"
+      >
+        <Typography variant="h4">
     </Typography>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-        </Grid>
-        <br />
-        <Grid
-          container
-          direction="row"
-          justify="center"
-          alignItems="center"
-        >
-          <TextField
-            id="date"
-            label="Pick A Day"
-            type="date"
-            defaultValue={Date}
-            classes={{ root: classes.maxWidth }}
-            className={classes.textField}
-            InputLabelProps={{
-              shrink: true,
-            }}
-
+    
+      </Grid>
+      <br />
+    <Grid
+        container
+        direction="row"
+        justify="center"
+        alignItems="center"
+      >
+        <div className="backgroundThing">
+        <TextField
+          id="date"
+          label="Choose a day!"
+          type="date"
+          defaultValue={Date}
+          classes={{ root: classes.maxWidth }}
+          className={classes.textField}
+          InputLabelProps={{
+            shrink: true,
+          }}
           />
-        </Grid>
-      </form>
-    </Container>
+          </div>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+      </Grid>
+    </form>
+    
+    </div>
   );
 }

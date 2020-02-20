@@ -12,9 +12,9 @@
 
 h1 {
     font-family: 'Bree Serif', serif;
-    color: #f0c48a;
+    color: #eeae5a;
     font-size: 2em;
-    text-shadow:  2px 2px rgb(72, 72, 72);
+    /* text-shadow:  2px 2px rgb(72, 72, 72); */
 }
 
 h3 {
