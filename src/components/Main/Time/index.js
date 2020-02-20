@@ -36,7 +36,8 @@ export default function DatePickers() {
   const [expanded, setExpanded] = React.useState(false);
 
   return (
-    <Container id="wcon">
+    <div className="container">
+   
     <form className={classes.container} noValidate>
       <Grid
         container
@@ -45,13 +46,8 @@ export default function DatePickers() {
         alignItems="center"
       >
         <Typography variant="h4">
-          What day do you want to adventure?
     </Typography>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    
       </Grid>
       <br />
     <Grid
@@ -60,9 +56,10 @@ export default function DatePickers() {
         justify="center"
         alignItems="center"
       >
+        <div className="backgroundThing">
         <TextField
           id="date"
-          label="Pick A Day"
+          label="Choose a day!"
           type="date"
           defaultValue={Date}
           classes={{ root: classes.maxWidth }}
@@ -70,10 +67,16 @@ export default function DatePickers() {
           InputLabelProps={{
             shrink: true,
           }}
-          
-        />
+          />
+          </div>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
       </Grid>
     </form>
-    </Container>
+    
+    </div>
   );
 }

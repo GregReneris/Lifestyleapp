@@ -1,5 +1,30 @@
 .mainimg {
-    background-image: url("../../images/sea.jpg");
+    color: salmon;
+    /* background-image: url("../../images/hiking.jpg");
     background-size: 100%;
-    background-position-x: relative;
+    background-position-x: relative; */
+}
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+    background-color: rgba(205, 206, 209, 0.7);
+   }
+
+.row1 {
+    padding: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.btn1 {
+    padding: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.btn2 {
+    padding: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
 }

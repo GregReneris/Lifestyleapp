@@ -14,6 +14,7 @@ import "./style.css";
 function MainPage() {
     return (
         <div>
+
             <div className="mainimg">
                 <AppBar />
                 <Weather />
