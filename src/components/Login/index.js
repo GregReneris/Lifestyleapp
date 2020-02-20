@@ -4,6 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import AppBar from '../Main/AppBar/index'
+import API from "../../utils/api"
 import "./style.css";
 import {
   BrowserRouter as Router,
@@ -35,15 +36,14 @@ function LoginPage (props) {
    // const data = new FormData(event.target)
    console.log ("got to handle submit");
    console.log(formdata);
-     fetch("http://localhost:8080/api/auth/login", {
-       method: 'POST',
-       headers: {
-         "Accept": "application/json, text/plain, */*",
-         "Content-Type" : "application/json"
-       },
-       body: JSON.stringify(formdata)
-     })
-     .then(event =>{
+    //  fetch("http://localhost:8080/api/auth/login", {
+    //    method: 'POST',
+    //    headers: {
+    //      "Accept": "application/json, text/plain, */*",
+    //      "Content-Type" : "application/json"
+    //    },
+    //    body: JSON.stringify(formdata
+    API.login(formdata).then(event =>{
        history.push("/main")
      })
   }
