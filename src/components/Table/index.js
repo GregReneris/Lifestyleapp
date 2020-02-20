@@ -35,12 +35,13 @@ export default function SimpleTable() {
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
-          <TableRow>
-            <div className="tableHeader"><TableCell>Activity</TableCell></div>
+          <TableRow className="tableHeader">
+            <TableCell>Activity</TableCell>
             <TableCell align="right">Date</TableCell>
             <TableCell align="right">Distance&nbsp;(mi)</TableCell>
             <TableCell align="right">Duration&nbsp;(hrs)</TableCell>
             <TableCell align="right">Description&nbsp;</TableCell>
+            
           </TableRow>
         </TableHead>
         <TableBody>
