@@ -7,7 +7,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid';
-
+import ReactWeather from 'react-open-weather';
 
 
 const useStyles = makeStyles({
@@ -30,13 +30,14 @@ const useStyles = makeStyles({
   media: {
     height: 0,
     paddingTop: '100%', // 16:9,
-    marginTop:'30'
+    marginTop: '30'
   },
 });
 
 export default function OutlinedCard() {
   const classes = useStyles();
   const name = "Tyson"
+  const city = ""
 
   return (
     <Container id="wcon" style={{ backgroundColor: '#cfe8fc', height: '50vh', width: '100vw' }} >
@@ -51,14 +52,22 @@ export default function OutlinedCard() {
             <Typography className={classes.title} color="textSecondary" gutterBottom>
               Current Weather
         </Typography>
-            <CardMedia 
+            {/* <CardMedia 
               className={classes.media}
               image={require('../../images/Weather/sunny.png')}
               title="Sunny"
+            /> */}
+            <CardMedia />
+            <ReactWeather
+              forecast="today"
+              unit="imperial"
+              apikey="e7196856e41701aad2ab6aa22965b557"
+              type="city"
+              city="Seattle"
             />
-            <Typography variant="h5" component="h2" id="cw">
+            {/* <Typography variant="h5" component="h2" id="cw">
               Sunny
-            </Typography>
+            </Typography> */}
           </CardContent>
         </Card>
       </Grid>
