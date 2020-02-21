@@ -1,20 +1,19 @@
 import axios from "axios";
 const URL = "http://localhost:8080"
 
-
 const API = {
-    getAllAnimals: ()=>{
-        return axios.get(`${URL}/api/animals`)
-    },
-    getAllByClass: (className)=>{
-        return axios.get(`${URL}/api/animals/class/${className}`)
-    },
-    deleteAnimal: (id)=>{
-        return axios.delete(`${URL}/api/animals/delete/${id}`)
-    },
-    createAnimal : (animalToMake)=>{
-        return axios.post(`${URL}/api/animals`,animalToMake);
-    },
+    // getAllAnimals: ()=>{
+    //     return axios.get(`${URL}/api/animals`)
+    // },
+    // getAllByClass: (className)=>{
+    //     return axios.get(`${URL}/api/animals/class/${className}`)
+    // },
+    // deleteAnimal: (id)=>{
+    //     return axios.delete(`${URL}/api/animals/delete/${id}`)
+    // },
+    // createAnimal : (animalToMake)=>{
+    //     return axios.post(`${URL}/api/animals`,animalToMake);
+    // },
     login:(user)=>{
         return axios.post(`${URL}/api/auth/login`,user,{withCredentials:true})
     },
@@ -29,4 +28,4 @@ const API = {
     }
 
 }
-export default API
+export default API;
