@@ -63,23 +63,6 @@ class Carousel extends Component {
             <div style={{ display: "inline-block" }} className="row">
                  <Grid container className={classes.root} spacing={2}>
                 {this.props.activities.map(event => {
-<<<<<<< HEAD
-                        return (
-                            <Card >
-                    <CardContent >
-                       {event.activityName}
-                       {event.description}
-                       {/* <img src ={event.imgurl} /> */}
-                       
-                    </CardContent> 
-                    <Button data-id={event.id} onClick = {this.props.handleAdd2Event}> 
-                        <span data-id={event.id}>
-                            Click Me to Save This Activity! Reference id on this 
-                        </span>
-                    </Button>
-                </Card>
-                        )                
-=======
 
                     return (
                         <List style={flexContainer, { alignItems: 'center' }}>
@@ -99,6 +82,11 @@ class Carousel extends Component {
                                             <Typography variant="body2" color="textSecondary" component="p">
                                                 Travel Time {event.travelTime} minutes
                                             </Typography>
+                                            <Button data-id={event.id} onClick = {this.props.handleAdd2Event}> 
+                                                <span data-id={event.id}>
+                                                    Click Me to Save This Activity! Reference id on this 
+                                                </span>
+                                            </Button>
                                         </CardContent>
                                     </CardActionArea>
                                 </Card>
@@ -106,7 +94,6 @@ class Carousel extends Component {
                         </List>
                     )
 
->>>>>>> 6bcbab2d20235060cbfa2370c5a3b41936834da5
                 })}
                 </Grid>
             </div>
