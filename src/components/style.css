@@ -12,27 +12,30 @@
   }
 
   h1 {
-    font-family: 'Bree Serif', serif;
-    color: salmon;
+    font-family: 'Lobster';
+    color: #472629;
     font-size: 4em;
 }
 
 h3 {
-font-family: 'Nunito', sans-serif;
-color: #03a9f4;
+    font-family: 'Poiret One';
+color: #434f57;
 font-size: 3em;
+font-weight: 600;
 }
 
 h4 {
-    font-family: 'Nunito', sans-serif;
-    color: #03a9f4;
+    font-family: 'Poiret One';
+    color: #434f57;
     font-size: 2em;
+    font-weight: 400;
 }
 
 h5 {
-    font-family: 'Nunito', sans-serif;
-    color: #03a9f4;
+    font-family: 'Poiret One';
+    color: #434f57;
     font-size: 1.5em;
+    font-weight: 300;
 }
 
 .hikingImg {
@@ -40,3 +43,8 @@ h5 {
     height: auto;
     position: relative;
 }
+/* 
+font-family: 'Poiret One', ;
+font-family: 'Lobster', ;
+font-family: 'Galada', ;
+font-family: 'Bebas Neue', ; */

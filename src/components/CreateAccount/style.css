@@ -2,15 +2,18 @@
 
 
 .backgroundTwo {
-    background-image: url("../images/hiking.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/sanfran.jpg");
     background-size: 100vw;
-    background-position-x: relative;
+    /* background-position-x: relative; */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
 }
 
 .test2 {
     margin: 0 auto;
     width: 40%;
-    background-color: rgba(205, 206, 209, 0.9);
+    background-color: rgba(205, 206, 209, 0.6);
 }
 
 .imgbox {

@@ -5,11 +5,14 @@ width: 80%;
 background-color: rgba(205, 206, 209, 0.9);
 }
 
-.tableHeader {
-background-color: salmon;
+.tableHeader > th {
+background-color: #472629;
+color:white !important;
 }
 
 
 .hideElem {
     display: none;
 }
+
+
