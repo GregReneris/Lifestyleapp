@@ -94,8 +94,10 @@ function LoginPage(props) {
             <br />
             <br />
             <Link to='/main'><Button variant="contained" onClick={handleSubmit}>Login</Button></Link>
-            <Link style={{ textDecoration: 'none' }} to='/create'><h4>Create Account</h4></Link>
-            <br />
+            <br/>
+            <br/>
+            <Link style={{ textDecoration: 'none' }} to='/create'><h5><strong>Create Account</strong></h5></Link>
+            <br/>
           </form>
 
         </div>
