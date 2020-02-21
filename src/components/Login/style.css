@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif|Nunito&display=swap');
 
 
-body {
+.backgroundOne {
     background-image: url("../images/hiking.jpg");
     background-size: 100vw;
     background-position-x: relative;
 }
 
-.container {
+.test1 {
  margin: 0 auto;
  width: 30%;
  background-color: rgba(205, 206, 209, 0.7);
@@ -37,16 +37,4 @@ h5 {
     position: relative;
 }
 
-.copyright {
-    position: fixed;
-    margin: 0 auto;
-    width: 100vw;
-    font-size: 1em;
-    font-family: 'Nunito', sans-serif;
-    color: rgb(20, 23, 47);
-    background-color: rgba(186, 186, 186, 0.9);
-    margin-top: 2%;
-    position: static;
-    left: 0;
-    bottom: 0;
-  }
+
