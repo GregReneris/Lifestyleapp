@@ -20,18 +20,20 @@ const useStyles = makeStyles(theme => ({
 
 
 
-export default function ContainedButtons() {
+export default function ContainedButtons(props) {
   const classes = useStyles();
+  console.log("2BUTTON")
+  console.log(props)
 
   return (
     <div className="container">
     <div className="row1">
-        <Button className="btn1" variant="contained" color="default" >
+        <Button className="btn1" variant="contained" color="default" onClick={props.eventClick} >
           Event
       </Button>
 
 
-        <Button className="btn2" variant="contained" color="default">
+        <Button className="btn2" variant="contained" color="default" onClick={props.hikeClick} > 
         <FontAwesomeIcon icon="faHiking" />
         Hike
       </Button>

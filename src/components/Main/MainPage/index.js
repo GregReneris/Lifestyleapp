@@ -8,37 +8,42 @@ import Event from '../Event/index.js'
 import Table from '../../Table/index'
 import API from '../../../utils/api'
 
+import Button from '@material-ui/core/Button';
+
 import "./style.css";
 
 class MainPage extends React.Component {
 
         // changes needed to this state.
-      state = {
-      activities: [] 
+    state = {
+      activities: [ ] 
     };
 
-    handleOnClick = event => {
+    componentDidMount() {
+        // console.log("res")
+        // API.getEvents()
+        //   .then(res => { this.setState({activities: res.data}); })
+        //   .catch(err => console.log(err));
+      };
+
+    handleHikeClick = event => {
         event.preventDefault();
-        console.log("I'm running ths button");
+        console.log("I'm running ths handleHikeClick");
     
         // this.setState({activities:activities});
-      };
-    
+    };
       
-      apiCallActivity = event => {
+    handleEventClick = event => {
         event.preventDefault();
-        console.log("I'm running API CALL BUTTON AAAYY");
+        console.log("I'm running handleEventClick");
         // if(className === btn1){
             API.getEvents()  
             .then(res => {
-                console.log(res);
                 this.setState({activities: res.data})
-                console.log(res.data);
-                console.log("I'm ACTIVITIES **************:" + activities);
             })
         // }        
         // this.setState({activities:activities});
-      };
+    };
     
 
       // .then(
@@ -58,14 +63,16 @@ render() {
                 <AppBar />
                 <Weather />
                 <Time/>
-                <EventType
-                     onClick={this.handleOnClick}
-                     onClick={this.apiCallActivity}
+       
+                <EventType                  
+                    eventClick={this.handleEventClick}
+                    hikeClick={this.handleHikeClick}
                 />
                 <Carousel 
-                    key = {activities.id}
-                    description = {activities.description}  
-                    activityName = {activities.activityName}                    
+                    activities={this.state.activities}
+                    // key = {activities.id}
+                    // description = {activities.description}  
+                    // activityName = {activities.activityName}                    
                 />
                 <Event/>
                 <Table id="wcom"/>
