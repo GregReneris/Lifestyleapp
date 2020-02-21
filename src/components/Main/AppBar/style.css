@@ -11,31 +11,27 @@
     position: relative;
 }
 
+
 h1 {
-    font-family: 'Bree Serif', serif;
-    color: salmon;
+    font-family: 'Lobster';
+    color: #472629;
     font-size: 4em;
-}
-h2 {
-    font-family: 'Bree Serif', serif;
-    color: salmon;
-    font-size: 32pt;
 }
 
 h3 {
-font-family: 'Nunito', sans-serif;
-color: #03a9f4;
+    font-family: 'Poiret One';
+color: #434f57;
 font-size: 3em;
 }
 
 h4 {
-    font-family: 'Nunito', sans-serif;
-    color: #03a9f4;
+    font-family: 'Poiret One';
+    color: #434f57;
     font-size: 2em;
 }
 
 h5 {
-    font-family: 'Nunito', sans-serif;
-    color: #03a9f4;
+    font-family: 'Poiret One';
+    color: #434f57;
     font-size: 1.5em;
 }

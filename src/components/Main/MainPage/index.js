@@ -53,9 +53,9 @@ class MainPage extends React.Component {
 render() {
     return (
         <div>
+                <AppBar />
             <div className="backgroundThree">
             <div className="test3">
-                <AppBar />
                 <Weather />
                 <Time/>
                 <EventType  

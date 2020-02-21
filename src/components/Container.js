@@ -6,6 +6,7 @@ import LoginPage from './Login/index';
 import CreateAccount from './CreateAccount/index'
 import UserProfile from './UserProfile/index'
 import MainPage from './Main/MainPage/index'
+import Home from './Home/index'
 
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
               <MainPage/>
             </Route>
           <Route exact path = '/'>
-              <LoginPage/>
+              <Home/>
             </Route>
           </Switch>
         </Router>
