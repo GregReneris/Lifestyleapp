@@ -9,32 +9,11 @@
 
 .test1 {
  margin: 0 auto;
- width: 30%;
- background-color: rgba(205, 206, 209, 0.7);
-}
-
-h1 {
-    font-family: 'Bree Serif', serif;
-    color: #eeae5a;
-    font-size: 4em;
+ width: 40%;
+ background-color: rgba(205, 206, 209, 0.9);
 }
 
 h3 {
-font-family: 'Nunito', sans-serif;
-color: #03a9f4;
-font-size: 3em;
+    margin-top: 2%;
 }
-
-h5 {
-    font-family: 'Nunito', sans-serif;
-    color: #03a9f4;
-    font-size: .7em;
-}
-
-.hikingImg {
-    width: 100vw;
-    height: auto;
-    position: relative;
-}
-
 
