@@ -1,0 +1,45 @@
+#wcon {
+    width: 100vw;
+   max-height: fit-content;
+    padding: 10px;
+    border: 1px black solid;
+    border-radius: 25px;
+ }
+ 
+ .hideElem {
+    display: none;
+}
+
+ol.horizontal{
+    list-style-type: decimal;
+    width: 600px;
+}
+
+ol.horizontal li{
+    float: left;
+    width: 200px;
+    padding: 2px 0px;
+}
+
+#cardHolder {
+    max-height: 200px;
+}
+
+/* img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+} */
+
+/* .truncate {
+    width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+  } */

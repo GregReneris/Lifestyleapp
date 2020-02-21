@@ -1,0 +1,32 @@
+.backgroundThree {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/runner.jpg");
+    background-size: 100vw;
+    /* background-position-x: relative; */
+    background-size: cover;
+    background-position: center;
+    height: 200vh;
+}
+
+.test3 {
+    margin: 0 auto;
+    width: 80%;
+    background-color: rgba(205, 206, 209, 0.7);
+   }
+
+/* .row1 {
+    padding: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+} */
+
+/* .btn1 {
+    padding: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.btn2 {
+    padding: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+} */

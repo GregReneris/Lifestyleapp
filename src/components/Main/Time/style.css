@@ -1,0 +1,23 @@
+#wcon {
+    width: 100vw;
+    height: 50vh;
+ }
+ 
+ .hideElem {
+    display: none;
+}
+
+/* #date {
+    width: 3000px !important;
+} */
+
+.container {
+    margin: 0 auto;
+    width: 30%;
+    background-color: rgba(205, 206, 209, 0.7);
+   }
+
+   .backgroundThing {
+    
+       margin-bottom: 2%;
+   }

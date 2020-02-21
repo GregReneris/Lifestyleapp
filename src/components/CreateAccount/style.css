@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Nunito&display=swap');
+
+
+.backgroundTwo {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/sanfran.jpg");
+    background-size: 100vw;
+    /* background-position-x: relative; */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.test2 {
+    margin: 0 auto;
+    width: 40%;
+    background-color: rgba(205, 206, 209, 0.6);
+}
+
+.imgbox {
+    height: 30px;
+        padding-left: 10px;
+        border-radius: 4px;
+        border: 1px solid rgb(186, 178, 178);
+        box-shadow: 0px 0px 12px #EFEFEF;
+        width: 10%;
+        margin: 0 auto;
+        background-color: white;
+} 
+
