@@ -72,7 +72,7 @@ export default function OutlinedCard() {
   return (
     <Container id="wcon"  >
       <Typography id="hello" variant="h3"> Hello,  {data.name} in {data.city} </Typography>
-      <h1><i class="wi wi-night-sleet"></i></h1>
+      <h3><i class="wi wi-night-sleet"></i></h3>
       <Grid
         container
         direction="row"
