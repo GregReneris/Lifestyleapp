@@ -1,6 +1,5 @@
 import React,{useEffect} from 'react';
 import API from './utils/api'
-// import logo from './logo.svg';
 import './App.css';
 import Container from "../src/components/Container"
 
