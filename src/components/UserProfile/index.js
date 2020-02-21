@@ -35,7 +35,8 @@ function CreateAccount() {
         <div>
           <AppBar/>
             
-            <div className="container">
+          <div className="backgroundFour">
+          <div className="test4">
             <h3>Hello, Tyson!</h3>
             {/* TODO: add variable for name pulled from db */}
             
@@ -86,6 +87,7 @@ function CreateAccount() {
     <br/>
     </div>
     <p className="copyright" alignItems="center"> Copyright © 2020 All Rights Reserved</p>
+    </div>
     </div>
   );
 }
