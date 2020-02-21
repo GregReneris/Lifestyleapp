@@ -60,7 +60,7 @@ function CreateAccount(props) {
 
   function handleInputChange(event) {
     // event.preventDefault()
-   
+
     let newdata = { ...formdata }
     newdata[event.target.name] = event.target.value
     setformdata(newdata)
@@ -77,10 +77,9 @@ function CreateAccount(props) {
 
   return (
     <div>
-      <AppBar />
-      <Router>
-
-        <div className="container">
+      <div className="backgroundTwo">
+        <AppBar />
+        <div className="test2">
           <h3>Create Account</h3>
 
           <form className={classes.root} noValidate autoComplete="off" >
@@ -129,26 +128,26 @@ function CreateAccount(props) {
               variant="outlined"
               value={formdata.city}
               onChange={handleInputChange}
-        />
-        {places.length > 0 ? (
-          <div className="imgbox">
-            {places.map((place, index) => (
-              <div key={index}>
-                {place.structured_formatting.main_text}
+            />
+            {places.length > 0 ? (
+              <div className="imgbox">
+                {places.map((place, index) => (
+                  <div key={index}>
+                    {place.structured_formatting.main_text}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        ) : (<div />)}
-        
-          <br />
-        <br />
-        <Link to='/main'><Button variant="contained" value="Create Profile" onClick={handleSubmit} >Submit</Button></Link>
-        <br />
-        <br />
-        </form>
-    </div>
-    <p class="copyright" alignItems="center"> Copyright © 2020 All Rights Reserved</p>
-      </Router >
+            ) : (<div />)}
+
+            <br />
+            <br />
+            <Link to='/main'><Button variant="contained" value="Create Profile" onClick={handleSubmit} >Submit</Button></Link>
+            <br />
+            <br />
+          </form>
+        </div>
+        <p className="copyright" alignItems="center"> Copyright © 2020 All Rights Reserved</p>
+      </div >
     </div >
   )
 }

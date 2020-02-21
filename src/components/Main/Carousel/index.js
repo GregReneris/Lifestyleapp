@@ -63,6 +63,7 @@ class Carousel extends Component {
             <div style={{ display: "inline-block" }} className="row">
                  <Grid container className={classes.root} spacing={2}>
                 {this.props.activities.map(event => {
+
                     return (
                         <List style={flexContainer, { alignItems: 'center' }}>
                             <ListItem>
@@ -87,6 +88,7 @@ class Carousel extends Component {
                             </ListItem>
                         </List>
                     )
+
                 })}
                 </Grid>
             </div>
@@ -94,7 +96,5 @@ class Carousel extends Component {
 
         );
     }
-
-
 }
 export default withStyles(styles)(Carousel);

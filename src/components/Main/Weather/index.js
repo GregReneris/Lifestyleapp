@@ -70,23 +70,20 @@ export default function OutlinedCard() {
 
   return (
     <Container id="wcon"  >
-      <i class="wi wi-night-sleet"></i>
-      <Typography id="hello" variant="h3"> Hello  {data.name} in {data.city} !</Typography>
+      <Typography id="hello" variant="h3"> Hello,  {data.name} in {data.city} </Typography>
+      <h3><i class="wi wi-night-sleet"></i></h3>
       <Grid
         container
         direction="row"
         justify="center"
         alignItems="center">
         <Card id="wcard" className={classes.root} >
-          <CardContent>
-            <Typography className={classes.title} color="textSecondary" gutterBottom>
+          {/* <CardContent> */}
+            {/* <Typography className={classes.title} color="textSecondary" gutterBottom>
               Current Weather
-        </Typography>
-            <CardMedia />
-
-          
-
-          </CardContent>
+        </Typography> */}
+            {/* <CardMedia /> */}
+          {/* </CardContent> */}
         </Card>
       </Grid>
     </Container>

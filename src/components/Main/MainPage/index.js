@@ -13,7 +13,8 @@ import "./style.css";
 class MainPage extends React.Component {
 
     state = {
-        activities: [ ] 
+        activities: [ ],
+        selected: [ ] 
     };
 
 
@@ -37,12 +38,23 @@ class MainPage extends React.Component {
         })
     };
 
+    handleAddEvent2Click = event => { // non functional rn. Gosh.
+        event.preventDefault();
+        console.log ("Got Here")
+        API.addEvent()  
+        .then(res => {
+            this.setState({selected: res.data})
+        console.log (res.data);
+        })
+    };
+
+
 
 render() {
     return (
         <div>
-
-            <div className="mainimg">
+            <div className="backgroundThree">
+            <div className="test3">
                 <AppBar />
                 <Weather />
                 <Time/>
@@ -53,10 +65,13 @@ render() {
                 <Carousel 
                 // eventType={this.EventType}
                 activities={this.state.activities}
+                selected={this.state.selected}
+                handleAdd2Event={this.handleAddEvent2Click}
+
                  />
                 <Event/>
                 <Table id="wcom"/>
-
+                </div>
             </div>
             <p className="copyright" alignitems="center"> Copyright © 2020 All Rights Reserved</p>
         </div>
