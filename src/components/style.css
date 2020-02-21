@@ -10,3 +10,33 @@
     left: 0;
     bottom: 0;
   }
+
+  h1 {
+    font-family: 'Bree Serif', serif;
+    color: salmon;
+    font-size: 4em;
+}
+
+h3 {
+font-family: 'Nunito', sans-serif;
+color: #03a9f4;
+font-size: 3em;
+}
+
+h4 {
+    font-family: 'Nunito', sans-serif;
+    color: #03a9f4;
+    font-size: 2em;
+}
+
+h5 {
+    font-family: 'Nunito', sans-serif;
+    color: #03a9f4;
+    font-size: 1.5em;
+}
+
+.hikingImg {
+    width: 100vw;
+    height: auto;
+    position: relative;
+}

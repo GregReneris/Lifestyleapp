@@ -1,33 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif|Nunito&display=swap');
 
-/* .container {
- margin: 0 auto;
- width: 30%;
- background-color: rgba(205, 206, 209, 0.5);
-} */
-
 .appbar {
     height: 3%;
 }
 
-h1 {
-    font-family: 'Bree Serif', serif;
-    color: #eeae5a;
-    font-size: 2em;
-    /* text-shadow:  2px 2px rgb(72, 72, 72); */
-}
-
-h3 {
-font-family: 'Nunito', sans-serif;
-color: rgb(51, 55, 83);
-font-size: 3em;
-}
-
-h5 {
-    font-family: 'Nunito', sans-serif;
-    color: rgb(20, 23, 47);
-    font-size: 1em;
-}
 
 .hikingImg {
     width: 100vw;
@@ -35,3 +11,31 @@ h5 {
     position: relative;
 }
 
+h1 {
+    font-family: 'Bree Serif', serif;
+    color: salmon;
+    font-size: 4em;
+}
+h2 {
+    font-family: 'Bree Serif', serif;
+    color: salmon;
+    font-size: 32pt;
+}
+
+h3 {
+font-family: 'Nunito', sans-serif;
+color: #03a9f4;
+font-size: 3em;
+}
+
+h4 {
+    font-family: 'Nunito', sans-serif;
+    color: #03a9f4;
+    font-size: 2em;
+}
+
+h5 {
+    font-family: 'Nunito', sans-serif;
+    color: #03a9f4;
+    font-size: 1.5em;
+}

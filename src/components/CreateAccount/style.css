@@ -8,35 +8,10 @@
 }
 
 .test2 {
- margin: 0 auto;
- width: 30%;
- background-color: rgba(205, 206, 209, 0.7);
+    margin: 0 auto;
+    width: 40%;
+    background-color: rgba(205, 206, 209, 0.9);
 }
-
-h1 {
-    font-family: 'Bree Serif', serif;
-    color: #eeae5a;
-    font-size: 5em;
-}
-
-h3 {
-font-family: 'Nunito', sans-serif;
-color: #03a9f4;
-font-size: 3em;
-}
-
-h5 {
-    font-family: 'Nunito', sans-serif;
-    color: #03a9f4;
-    font-size: 1em;
-}
-
-.hikingImg {
-    width: 100vw;
-    height: auto;
-    position: relative;
-}
-
 
 .imgbox {
     height: 30px;

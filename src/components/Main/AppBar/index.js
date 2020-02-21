@@ -60,7 +60,7 @@ export default function MenuAppBar() {
                 onClick={handleMenu}
                 color="inherit"
               >
-                <AccountCircle />
+                <h2><AccountCircle /></h2>
               </IconButton >
               <Menu
                 id="menu-appbar"
