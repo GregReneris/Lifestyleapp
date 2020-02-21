@@ -84,7 +84,7 @@ class Carousel extends Component {
                                             </Typography>
                                             <Button data-id={event.id} onClick = {this.props.handleAdd2Event}> 
                                                 <span data-id={event.id}>
-                                                    Click Me to Save This Activity! Reference id on this 
+                                                    Save 
                                                 </span>
                                             </Button>
                                         </CardContent>
