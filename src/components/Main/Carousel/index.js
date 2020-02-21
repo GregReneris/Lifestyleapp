@@ -58,10 +58,16 @@ class Carousel extends Component {
             <div>
                 {this.props.activities.map(event => {
                         return (
-                            <Card>
-                    <CardContent>
+                            <Card >
+                    <CardContent >
                        {event.activityName}
+                       {event.description}
+                       {/* <img src ={event.imgurl} /> */}
+                       
                     </CardContent>
+                    {/* <Button onClick = {this.props.handleAdd2Event}> 
+                        Click Me to Save Jenny from the monsters!
+                    </Button> */}
                 </Card>
                         )                
                 })}

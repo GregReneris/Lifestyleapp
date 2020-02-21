@@ -40,8 +40,12 @@ const API = {
         return axios.get (`${URL}/api/hikes`)
     },
 
-    addEvent:(id) => {
-        return axios.get (`${URL}/api/addactivity/${id}`)
+    addEvent:(id) => { // this saves to activities array. non functional rn.
+        return axios.post (`${URL}/api/addactivity/${id}`)
+    },
+
+    addCompletedActivity:(id) => { // this is to save the selected activity to the user collections and put the activitiy in the completedActivities collection within.
+        return axios.post (`${URL}/api/saveEventToUser/${id}`)
     }
 
 }
