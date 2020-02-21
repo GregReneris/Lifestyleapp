@@ -39,9 +39,11 @@ class MainPage extends React.Component {
     };
 
     handleAddEvent2Click = event => { // non functional rn. Gosh.
-        event.preventDefault();
-        console.log ("Got Here")
-        API.addEvent()  
+        // id.preventDefault();
+        event.preventDefault()
+        const eventId= event.target.getAttribute(`data-id`)
+        console.log ("Got Here **********")
+        API.addEvent(eventId)  
         .then(res => {
             this.setState({selected: res.data})
         console.log (res.data);
