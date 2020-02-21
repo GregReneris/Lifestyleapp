@@ -1,11 +1,10 @@
-.mainimg {
-    color: salmon;
-    /* background-image: url("../../images/hiking.jpg");
+.backgroundThree {
+    background: salmon;
     background-size: 100%;
-    background-position-x: relative; */
+    background-position-x: relative;
 }
 
-.container {
+.test3 {
     margin: 0 auto;
     width: 80%;
     background-color: rgba(205, 206, 209, 0.7);

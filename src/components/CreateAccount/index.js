@@ -78,9 +78,10 @@ function CreateAccount(props) {
   return (
     <div>
       <AppBar />
-      <Router>
+     
 
-        <div className="container">
+        <div className="backgroundTwo">
+        <div className="test2">
           <h3>Create Account</h3>
 
           <form className={classes.root} noValidate autoComplete="off" >
@@ -147,8 +148,8 @@ function CreateAccount(props) {
         <br />
         </form>
     </div>
-    <p class="copyright" alignItems="center"> Copyright © 2020 All Rights Reserved</p>
-      </Router >
+    <p className="copyright" alignItems="center"> Copyright © 2020 All Rights Reserved</p>
+    </div >
     </div >
   )
 }

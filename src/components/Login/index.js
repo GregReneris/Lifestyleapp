@@ -62,10 +62,11 @@ function LoginPage (props) {
   
     return (
       <div>
-        <Router>
+     
         <Link to='/'></Link>
         <AppBar/>
-          <div className="container">
+          <div className="backgroundOne">
+          <div className="test1">
           <h3>Login</h3>
           <form className={classes.root} noValidate autoComplete="off" >
       <TextField
@@ -95,13 +96,14 @@ function LoginPage (props) {
       <Link to='/main'><Button variant="contained" onClick={handleSubmit}>Login</Button></Link>
       <br/>
       
-      <Link to='/create'><h5>Create Account</h5></Link>
+      <Link style={{ textDecoration: 'none' }} to='/create'><h5>Create Account</h5></Link>
       <br/>
       </form>
-          </div>   
-          <p class="copyright" alignItems="center"> Copyright © 2020 All Rights Reserved</p>
-          </Router>
-          
+          </div>  
+         
+          <p className="copyright" alignItems="center"> Copyright © 2020 All Rights Reserved</p>
+       
+          </div>
       </div>
     
   )

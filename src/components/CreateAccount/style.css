@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif|Nunito&display=swap');
 
 
-body {
+.backgroundTwo {
     background-image: url("../images/hiking.jpg");
     background-size: 100vw;
     background-position-x: relative;
 }
 
-.container {
+.test2 {
  margin: 0 auto;
  width: 30%;
  background-color: rgba(205, 206, 209, 0.7);
@@ -48,3 +48,4 @@ h5 {
         margin: 0 auto;
         background-color: white;
 } 
+

@@ -43,8 +43,8 @@ class MainPage extends React.Component {
 render() {
     return (
         <div>
-
-            <div className="mainimg">
+            <div className="backgroundThree">
+            <div className="test3">
                 <AppBar />
                 <Weather />
                 <Time/>
@@ -58,7 +58,7 @@ render() {
                  />
                 <Event/>
                 <Table id="wcom"/>
-
+                </div>
             </div>
             <p className="copyright" alignitems="center"> Copyright © 2020 All Rights Reserved</p>
         </div>
