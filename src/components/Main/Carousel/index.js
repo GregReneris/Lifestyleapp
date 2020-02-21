@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
@@ -10,7 +10,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles({
+const styles = theme => ({
     root: {
         minWidth: 275,
     },
@@ -28,17 +28,19 @@ const useStyles = makeStyles({
 });
 
 class Carousel extends Component {
-    state = {
-        events: []
-    }
+    // state = {
+    //     events: []
+    // }
 
-    componentDidMount() {
-        API.getEvents().then(event => {
-            console.log(event.data);
+    // componentDidMount() {
+    //     API.getEvents().then(event => {
+    //         console.log(event.data);
 
-            this.setState({ events: event.data })            
-        })
-    }
+    //         this.setState({ events: event.data })            
+    //     })
+    // }
+
+
 
     render() {
         // const [spacing, setSpacing] = React.useState(2);
@@ -48,11 +50,13 @@ class Carousel extends Component {
         //     setSpacing(Number(event.target.value));
         // };
 
-        console.log(this.state.events);
+        // console.log(this.state.events);
         
+        const { classes } = this.props;
+
         return (
             <div>
-                {this.state.events.map(event => {
+                {this.props.activities.map(event => {
                         return (
                             <Card>
                     <CardContent>
@@ -68,4 +72,4 @@ class Carousel extends Component {
 
 
 }
-export default Carousel;
+export default withStyles(styles)(Carousel);
