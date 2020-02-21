@@ -7,47 +7,7 @@ import Carousel from '../Carousel/index'
 import API from '../../../utils/api'
 import Event from '../Event/index.js'
 import Table from '../../Table/index'
-import API from '../../../utils/api'
-
 import "./style.css";
-
-class MainPage extends React.Component {
-
-        // changes needed to this state.
-      state = {
-      activities: [] 
-    };
-
-    handleOnClick = event => {
-        event.preventDefault();
-        console.log("I'm running ths button");
-    
-        // this.setState({activities:activities});
-      };
-    
-      
-      apiCallActivity = event => {
-        event.preventDefault();
-        console.log("I'm running API CALL BUTTON AAAYY");
-        // if(className === btn1){
-            API.getEvents()  
-            .then(res => {
-                console.log(res);
-                this.setState({activities: res.data})
-                console.log(res.data);
-                console.log("I'm ACTIVITIES **************:" + activities);
-            })
-        // }        
-        // this.setState({activities:activities});
-      };
-    
-
-      // .then(
-      //   API.getWeather("seattle")
-      //   .then(res) => {
-      //     setdata = {res.data}
-      //   }
-      // )
 
 
 class MainPage extends React.Component {
