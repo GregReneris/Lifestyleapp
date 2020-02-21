@@ -34,12 +34,6 @@ function CreateAccount(props) {
     email: "",
     city: ""
   })
-  // console.log ("FORM DATA")
-  // console.log (formdata);
-  // console.log ("SET FORM DATA")
-  // console.log (setformdata);
-
-
 
   //TODO: HANDLE INPUT CHANGE for each input field in the form. 
 
@@ -59,22 +53,17 @@ function CreateAccount(props) {
       .then(event => {
         history.push("/main")
       }
-
       )
   }
 
   const [places, setPlaces] = useState([]);
 
   function handleInputChange(event) {
-    event.preventDefault()
-    // console.log(event.target.name);
-    // console.log(event.target.value);
+    // event.preventDefault()
+   
     let newdata = { ...formdata }
     newdata[event.target.name] = event.target.value
     setformdata(newdata)
-    // console.log (event.target.username.value); 
-    // console.log (event.target.elements.username.value); 
-    // console.log (event.target.value);
 
     //let newdata = [...event.state.formdata];
     // event.setState({ formdata: formdata});
@@ -83,15 +72,8 @@ function CreateAccount(props) {
       setPlaces(res.data)
       console.log(res.data)
     })
-    // TODO: call api with event.target.value
-    // TODO: save api results to places in state
 
   };
-// useEffect(() => {
-//   setTimeout(() => {
-//     setPlaces([{address: "asdfa", city: "seattle"}, {address: "asdfasdf", city: "redmond"}]);
-//   }, 5000);
-// }, []);
 
   return (
     <div>
@@ -149,7 +131,7 @@ function CreateAccount(props) {
               onChange={handleInputChange}
         />
         {places.length > 0 ? (
-          <div className="places-dropdown">
+          <div className="imgbox">
             {places.map((place, index) => (
               <div key={index}>
                 {place.structured_formatting.main_text}
@@ -157,6 +139,7 @@ function CreateAccount(props) {
             ))}
           </div>
         ) : (<div />)}
+        
           <br />
         <br />
         <Link to='/main'><Button variant="contained" value="Create Profile" onClick={handleSubmit} >Submit</Button></Link>
