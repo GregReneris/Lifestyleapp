@@ -54,11 +54,10 @@ export default function OutlinedCard() {
       
       
       // .then(
-      //   API.getWeather("seattle")
+      //   API.getWeather()
       //   .then(res) => {
       //     setdata = {res.data}
-      //   }
-      // )
+      //   })
 
 
     }).catch(err => {

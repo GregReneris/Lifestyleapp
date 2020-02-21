@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Weather from '../Weather/index'
 import AppBar from '../AppBar/index'
 import Time from '../Time/index'
@@ -7,15 +7,14 @@ import Carousel from '../Carousel/index'
 import API from '../../../utils/api'
 import Event from '../Event/index.js'
 import Table from '../../Table/index'
-
 import "./style.css";
-
 
 
 class MainPage extends React.Component {
 
     state = {
-        activities: [ ] 
+        activities: [ ],
+        selected: [ ] 
     };
 
 
@@ -39,6 +38,17 @@ class MainPage extends React.Component {
         })
     };
 
+    handleAddEvent2Click = event => { // non functional rn. Gosh.
+        event.preventDefault();
+        console.log ("Got Here")
+        API.addEvent()  
+        .then(res => {
+            this.setState({selected: res.data})
+        console.log (res.data);
+        })
+    };
+
+
 
 render() {
     return (
@@ -55,6 +65,9 @@ render() {
                 <Carousel 
                 // eventType={this.EventType}
                 activities={this.state.activities}
+                selected={this.state.selected}
+                handleAdd2Event={this.handleAddEvent2Click}
+
                  />
                 <Event/>
                 <Table id="wcom"/>

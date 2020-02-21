@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 // import Container from '@material-ui/core/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHiking } from '@fortawesome/free-solid-svg-icons'
+// import API from '../../../utils/api'
 
 
 const useStyles = makeStyles(theme => ({
