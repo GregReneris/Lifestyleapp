@@ -1,6 +1,5 @@
 import axios from "axios";
 const URL = "http://localhost:8080"
-// const URL = "https://joesreactzoo-api.herokuapp.com"
 
 const API = {
     // getAllAnimals: ()=>{
@@ -24,8 +23,13 @@ const API = {
     createUser: (user) =>{
         return axios.post(`${URL}/api/auth/signup`, {withCredentials:true})
     },
+    
     searchPlaces: (search) =>{
         return axios.get(`${URL}/api/places/${search}`)
+    },
+
+    getWeather: (city) => {
+        return axios.get(`${URL}/api/weather/${city}`)
     }
 
 }
