@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function SpacingGrid() {
+function SpacingGrid(props) {
     const [spacing, setSpacing] = React.useState(2);
     const classes = useStyles();
 
@@ -26,12 +26,36 @@ export default function SpacingGrid() {
         setSpacing(Number(event.target.value));
     };
 
+let incomingInfo = [
+    {
+    id:0,
+    description: props.description[0],
+    activityName: props.activityName[0]
+    },
+    {
+    id:1,
+    description: props.description[1],
+    activityName: props.activityName[1]
+    },
+    {
+    id:2,
+    description: props.description[2],
+    activityName: props.activityName[2]
+    },
+    {
+    id:3,
+    description: props.description[3],
+    activityName: props.activityName[3]
+    }
+
+];
+
     return (
         <Container id="wcon">
             <Grid container className={classes.root} spacing={3}>
                 <Grid item xs={12}>
                     <Grid container justify="center" spacing={spacing}>
-                        {[0, 1, 2, 3].map(value => (
+                        {incomingInfo.map(value => ( // this one line has been stumping greg. Make this only display 4 results.
                             <Grid key={value} item>
                                 <Paper className={classes.paper} />
                             </Grid>
@@ -47,3 +71,6 @@ export default function SpacingGrid() {
         </Container>
     );
 }
+
+
+export default SpacingGrid()
