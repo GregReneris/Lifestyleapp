@@ -59,7 +59,7 @@ export default function DatePickers() {
         <div className="backgroundThing">
         <TextField
           id="date"
-          label="Choose a day!"
+          label={<h5>Choose a day!</h5>}
           type="date"
           defaultValue={Date}
           classes={{ root: classes.maxWidth }}

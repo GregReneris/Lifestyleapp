@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Weather from '../Weather/index'
 import AppBar from '../AppBar/index'
 import Time from '../Time/index'
@@ -7,9 +7,7 @@ import Carousel from '../Carousel/index'
 import API from '../../../utils/api'
 import Event from '../Event/index.js'
 import Table from '../../Table/index'
-
 import "./style.css";
-
 
 
 class MainPage extends React.Component {
@@ -57,9 +55,9 @@ class MainPage extends React.Component {
 render() {
     return (
         <div>
+                <AppBar />
             <div className="backgroundThree">
             <div className="test3">
-                <AppBar />
                 <Weather />
                 <Time/>
                 <EventType  

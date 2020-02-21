@@ -49,7 +49,7 @@ export default function MenuAppBar() {
 
           </FormGroup>
           <Typography  className={classes.title} >
-              <h1>spontinAIty</h1>
+              <h1>spontaneity</h1>
           </Typography>
           {auth && (
             <div>
@@ -79,7 +79,7 @@ export default function MenuAppBar() {
               >
                 <Link to='/main'><MenuItem onClick={handleClose}>Explore</MenuItem></Link>
                 <Link to='/profile'><MenuItem onClick={handleClose}>Profile</MenuItem></Link>
-                <Link to='/login'><MenuItem onClick={handleClose}>Logout</MenuItem></Link>
+                <Link to='/'><MenuItem onClick={handleClose}>Logout</MenuItem></Link>
               </Menu>
             </div>
           )}
