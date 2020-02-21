@@ -42,7 +42,11 @@ const API = {
 
     addEvent:(id) => {
         return axios.get (`${URL}/api/addactivity/${id}`)
+<<<<<<< HEAD
     },
+=======
+    }
+>>>>>>> origin
 
 }
 export default API;
