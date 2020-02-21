@@ -52,7 +52,6 @@ export default function OutlinedCard() {
         city: res.data.city
       })
       
-      
       // .then(
       //   API.getWeather()
       //   .then(res) => {
@@ -70,7 +69,7 @@ export default function OutlinedCard() {
 
   return (
     <Container id="wcon"  >
-      <Typography id="hello" variant="h3"> Hello,  {data.name} in {data.city} </Typography>
+      <Typography id="hello" variant="h3"> Hello, {data.name} in {data.city} </Typography>
       <h3><i class="wi wi-night-sleet"></i></h3>
       <Grid
         container
