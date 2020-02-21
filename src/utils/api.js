@@ -30,7 +30,19 @@ const API = {
 
     getWeather: (city) => {
         return axios.get(`${URL}/api/weather/${city}`)
-    }
+    },
+
+    getEvents: () => {
+        return axios.get (`${URL}/api/events`)
+    },
+
+    getHikes: () => {
+        return axios.get (`${URL}/api/hikes`)
+    },
+
+    addEvent:(id) => {
+        return axios.get (`${URL}/api/addactivity/${id}`)
+    },
 
 }
 export default API;
