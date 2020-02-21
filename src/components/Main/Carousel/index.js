@@ -62,7 +62,7 @@ class Carousel extends Component {
                     <CardContent >
                        {event.activityName}
                        {event.description}
-                       {/* <img src ={event.imgurl} /> */}
+                       <img src ={event.imgurl} />
                        
                     </CardContent>
                     {/* <Button onClick = {this.props.handleAdd2Event}> 
