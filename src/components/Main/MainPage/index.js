@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Weather from '../Weather/index'
 import AppBar from '../AppBar/index'
 import Time from '../Time/index'
@@ -13,9 +13,8 @@ import "./style.css";
 class MainPage extends React.Component {
 
         // changes needed to this state.
-    state = {
-      activities: [],
-      peoples: [],
+      state = {
+      activities: [] 
     };
 
     handleOnClick = event => {
@@ -35,7 +34,7 @@ class MainPage extends React.Component {
                 console.log(res);
                 this.setState({activities: res.data})
                 console.log(res.data);
-                console.log("I'm ACTIVITIES **************:" + activitiies);
+                console.log("I'm ACTIVITIES **************:" + activities);
             })
         // }        
         // this.setState({activities:activities});
