@@ -62,12 +62,14 @@ class Carousel extends Component {
                     <CardContent >
                        {event.activityName}
                        {event.description}
-                       <img src ={event.imgurl} />
+                       {/* <img src ={event.imgurl} /> */}
                        
-                    </CardContent>
-                    {/* <Button onClick = {this.props.handleAdd2Event}> 
-                        Click Me to Save Jenny from the monsters!
-                    </Button> */}
+                    </CardContent> 
+                    <Button data-id={event.id} onClick = {this.props.handleAdd2Event}> 
+                        <span data-id={event.id}>
+                            Click Me to Save This Activity! Reference id on this 
+                        </span>
+                    </Button>
                 </Card>
                         )                
                 })}
