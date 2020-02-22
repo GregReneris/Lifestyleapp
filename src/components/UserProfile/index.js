@@ -163,7 +163,7 @@ function UpdateAccount() {
         <div className="tablething">
           <strong><h3>Congratulations!</h3></strong>
           <h4>You got off the couch so many times!</h4>
-          <Table />
+          {/* <Table /> */}
           <br />
         </div>
       </div>

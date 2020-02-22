@@ -53,6 +53,10 @@ const API = {
 
     addCompletedActivity:(id) => { // this is to save the selected activity to the user collections and put the activitiy in the completedActivities collection within.
         return axios.post (`${URL}/api/saveEventToUser/${id}`, {withCredentials:true})
+    },
+
+    getUser:() => {
+        return axios.get (`${URL}/api/user`, {withCredentials:true})
     }
 
 }
