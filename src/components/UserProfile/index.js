@@ -5,6 +5,13 @@ import Table from '../Table/index'
 import AppBar from '../Main/AppBar/index'
 import TextField from '@material-ui/core/TextField'
 import API from "../../utils/api";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
 
 
 
@@ -72,7 +79,14 @@ function UpdateAccount() {
       name: data.name,
       city: data.city
     }
-     API.putUser(newUserData)
+    API.putUser(newUserData)
+  }
+
+  const [places, setPlaces] = useState([]);
+
+  
+  function updateCity() {
+
   }
 
   return (
@@ -84,71 +98,71 @@ function UpdateAccount() {
             <div className="row">
               <div className="col sm-12">
                 <h3 id="Hello"> Hello, {data.name}! </h3>
-                {/* <h3>Hello,  {data.name} in {data.city}</h3> */}
                 <br />
               </div>
             </div>
             <div className="topSec">
               <div className="row">
-                <div className="col sm-2 alignRight">
-                  <h5>Name:</h5>
+                <div className="col sm-6 alignRight">
+                  <h5>Update username:</h5>
                 </div>
-                <div className="col sm-8">
+                <div className="col sm-6 alignLeft">
                   <TextField
                     id="outlined-password-input"
                     label="name"
                     type="text"
                     autoComplete="current-name"
-                    //TODO: add variable for email pulled from db
+
                     variant="outlined"
                     name="name"
                     value={data.name}
                     onChange={inputChangeName}
                   />
                 </div>
-                <div className="col sm-2 alignLeft">
-                  {/* <Button variant="contained" data-id={data.id} >Update</Button> */}
-                </div>
               </div>
               <br />
-              <div className="row">
-                <div className="col sm-2 alignRight">
-                  <h5>City:</h5>
+                <div className="row">
+                <div className="col sm-6 alignRight">
+                  <h5>Update city:</h5>
                 </div>
-                <div className="col sm-8">
+                <div className="col sm-6 alignLeft">
                   <TextField
                     id="outlined-password-input"
                     label="City"
                     type="text"
                     name="city"
-                    //TODO: add variable for City pulled from db
+                    autoComplete="current-City"
                     variant="outlined"
                     value={data.city}
                     onChange={inputChangeCity}
                   />
-
-                </div>
-                <div className="col sm-2 alignLeft">
-                  {/* <Button variant="contained"   >Update</Button> */}
-                </div>
+                  {places.length > 0 ? (
+              <div className="imgbox">
+                {places.map((place, index) => (
+                  <div key={index}>
+                    <Button variant="contained" value="Create Profile" onClick={updateCity} >{place.structured_formatting.main_text}</Button>
+                  </div>
+                ))}
+              </div>
+            ) : (<div />)}
+                </div> 
+              </div>
+              <br />
+              <div className="row">
+              <div className="col sm-12">
+                    <Button variant="contained" data-id={data.id} onClick={() => { updateUser(data.id) }} >Update</Button>
               </div>
             </div>
-
-            <div className="row">
-              <div className="col sm-2"></div>
-              <div className="col sm-8">
-                <Button variant="contained" data-id={data.id} onClick={() => { updateUser(data.id) }} >Save</Button>
-              </div>
-              <div className="col sm-2 alignLeft">
-                {/* <Button variant="contained"   >Update</Button> */}
-              </div>
             </div>
           </div>
         </div>
+        
+        
         <br />
         <br />
         <div className="tablething">
-          <h4>Congratulations! You got off the couch so many times!</h4>
+          <strong><h3>Congratulations!</h3></strong>
+          <h4>You got off the couch so many times!</h4>
           <Table />
           <br />
         </div>
