@@ -10,6 +10,7 @@ import {
   BrowserRouter as Router,
   Link
 } from "react-router-dom";
+import Ratings from "../Ratings/index"
 
 
 function Home(props) {

@@ -75,6 +75,10 @@ function CreateAccount(props) {
 
   };
 
+  function updateCity() {
+
+  }
+
   return (
     <div>
       <div className="backgroundTwo">
@@ -133,7 +137,7 @@ function CreateAccount(props) {
               <div className="imgbox">
                 {places.map((place, index) => (
                   <div key={index}>
-                    {place.structured_formatting.main_text}
+                    <Button variant="contained" value="Create Profile" onClick={updateCity} >{place.structured_formatting.main_text}</Button>
                   </div>
                 ))}
               </div>
