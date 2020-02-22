@@ -8,6 +8,7 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid';
 import API from "../../../utils/api";
+import Date from "../Date/index"
 
 
 const useStyles = makeStyles({
@@ -69,24 +70,17 @@ export default function OutlinedCard() {
   
 
   return (
-    <Container id="wcon"  >
-      <Typography id="hello"><h3> Hello,  {data.name} in {data.city} </h3></Typography>
+    <div>
+      <div className="myContainer">
+    
+      {/* <Date/> */}
+      <Typography id="hello"><h3> Hello,  {data.name}.</h3></Typography>
+      <Typography id="hello"><h3> Today's weather in {data.city} is: </h3></Typography>
       <h3><i class="wi wi-night-sleet"></i></h3>
-      <Grid
-        container
-        direction="row"
-        justify="center"
-        alignItems="center">
-        <Card id="wcard" className={classes.root} >
-          {/* <CardContent> */}
-            {/* <Typography className={classes.title} color="textSecondary" gutterBottom>
-              Current Weather
-        </Typography> */}
-            {/* <CardMedia /> */}
-          {/* </CardContent> */}
-        </Card>
-      </Grid>
-    </Container>
+      
+   
+    </div>
+    </div>
   );
 }
 

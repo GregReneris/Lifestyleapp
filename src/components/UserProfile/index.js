@@ -15,34 +15,36 @@ function CreateAccount() {
         <div className="test4">
           <div className="row">
             <div className="col sm-12">
-              <h3>Hello, ! </h3>
+              <h3 id="Hello"> Hello, ! </h3>
               {/* <h3>Hello,  {data.name} in {data.city}</h3> */}
+              <br/>
             </div>
           </div>
           <div className="topSec">
           <div className="row">
-            <div className="col sm-3">
-              <h5>Email:</h5>
+            <div className="col sm-2 alignRight">
+              <h5>Name:</h5>
             </div>
-            <div className="col sm-6">
+            <div className="col sm-8">
               <TextField
                 id="outlined-password-input"
-                label="Email"
-                type="email"
-                autoComplete="current-email"
+                label="name"
+                type="text"
+                autoComplete="current-name"
                 //TODO: add variable for email pulled from db
                 variant="outlined"
               />
             </div>
-            <div className="col sm-3">
+            <div className="col sm-2 alignLeft">
               <Button variant="contained">Update</Button>
             </div>
           </div>
+          <br/>
           <div className="row">
-            <div className="col sm-3">
+            <div className="col sm-2 alignRight">
               <h5>City:</h5>
             </div>
-            <div className="col sm-6">
+            <div className="col sm-8">
               <TextField
                 id="outlined-password-input"
                 label="City"
@@ -52,7 +54,7 @@ function CreateAccount() {
                 variant="outlined"
               />
             </div>
-            <div className="col sm-3">
+            <div className="col sm-2 alignLeft">
               <Button variant="contained">Update</Button>
             </div>
             </div>

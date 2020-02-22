@@ -21,6 +21,7 @@ function Home(props) {
       <div className="backgroundOne">
         <AppBar />
         <br/>
+        <h3>Make every day an adventure.</h3>
         <br/>
         <br/>
             <Link to='/login'><Button variant="contained">Login</Button></Link>

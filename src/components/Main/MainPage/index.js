@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import Weather from '../Weather/index'
 import AppBar from '../AppBar/index'
-import Time from '../Time/index'
+// import Time from '../Time/index'
 import EventType from '../EventType/index'
 import Carousel from '../Carousel/index'
 import API from '../../../utils/api'
-import Event from '../Event/index.js'
+// import Event from '../Event/index.js'
 import Table from '../../Table/index'
 import "./style.css";
 
@@ -55,11 +55,11 @@ class MainPage extends React.Component {
 render() {
     return (
         <div>
-                <AppBar />
             <div className="backgroundThree">
+                <AppBar />
             <div className="test3">
                 <Weather />
-                <Time/>
+                {/* <Time/> */}
                 <EventType  
                     eventClick={this.handleEventClick}
                     hikeClick={this.handleHikeClick}
@@ -71,7 +71,7 @@ render() {
                 handleAdd2Event={this.handleAddEvent2Click}
 
                  />
-                <Event/>
+                {/* <Event/> */}
                 <Table id="wcom"/>
                 </div>
             </div>
