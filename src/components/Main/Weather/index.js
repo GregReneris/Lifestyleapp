@@ -8,7 +8,8 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid';
 import API from "../../../utils/api";
-import Date from "../Date/index"
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 
 const useStyles = makeStyles({
@@ -67,17 +68,24 @@ export default function OutlinedCard() {
     })
   }, [])
 
-  
-
+  const date = new Date();
   return (
     <div>
       <div className="myContainer">
-    
-      {/* <Date/> */}
+
       <Typography id="hello"><h3> Hello,  {data.name}.</h3></Typography>
       <Typography id="hello"><h3> Today's weather in {data.city} is: </h3></Typography>
       <h3><i class="wi wi-night-sleet"></i></h3>
       
+      <br/>
+      <h4><Moment format="dddd da">
+                {date}
+            </Moment>
+            <br/>
+            <br/>
+            <Moment format="MMMM, DD YYYY">
+                {date}
+            </Moment></h4>
    
     </div>
     </div>

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Weather from '../Weather/index'
 import AppBar from '../AppBar/index'
-// import Time from '../Time/index'
+// import Date from '../Date/index'
 import EventType from '../EventType/index'
 import Carousel from '../Carousel/index'
 import API from '../../../utils/api'
@@ -59,7 +59,7 @@ render() {
                 <AppBar />
             <div className="test3">
                 <Weather />
-                {/* <Time/> */}
+                {/* <Date/> */}
                 <EventType  
                     eventClick={this.handleEventClick}
                     hikeClick={this.handleHikeClick}

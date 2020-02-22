@@ -1,12 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect, Component } from 'react';
 import "./style.css";
 import Button from '@material-ui/core/Button';
 import Table from '../Table/index'
 import AppBar from '../Main/AppBar/index'
 import TextField from '@material-ui/core/TextField'
+import API from "../../utils/api";
 
 
-function CreateAccount() {
+
+
+function UpdateAccount() {
+
+  const [data, setdata] = useState({
+    name: "",
+    city: "",
+  
+  })
+
+  useEffect(() => {
+    API.isAuthenticated().then(res => {
+      // console.log(res.data);
+      
+      setdata({
+        name: res.data.name,
+        city: res.data.city
+      })
+      
+      
+      // .then(
+      //   API.getWeather()
+      //   .then(res) => {
+      //     setdata = {res.data}
+      //   })
+
+
+    }).catch(err => {
+      console.log("'Error fetching and parsing data'")
+      console.log(err.errorCode);
+    })
+  }, [])
+
   return (
     <div>
       <div className="backgroundFour">
@@ -15,7 +48,7 @@ function CreateAccount() {
         <div className="test4">
           <div className="row">
             <div className="col sm-12">
-              <h3 id="Hello"> Hello, ! </h3>
+              <h3 id="Hello"> Hello, {data.name}! </h3>
               {/* <h3>Hello,  {data.name} in {data.city}</h3> */}
               <br/>
             </div>
@@ -33,6 +66,7 @@ function CreateAccount() {
                 autoComplete="current-name"
                 //TODO: add variable for email pulled from db
                 variant="outlined"
+                value={data.name}
               />
             </div>
             <div className="col sm-2 alignLeft">
@@ -52,6 +86,7 @@ function CreateAccount() {
                 autoComplete="current-City"
                 //TODO: add variable for City pulled from db
                 variant="outlined"
+                value={data.city}
               />
             </div>
             <div className="col sm-2 alignLeft">
@@ -75,7 +110,7 @@ function CreateAccount() {
     );
 }
 
-export default CreateAccount;
+export default UpdateAccount;
 
 
 /* 
