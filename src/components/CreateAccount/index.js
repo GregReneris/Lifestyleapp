@@ -40,8 +40,8 @@ function CreateAccount(props) {
   function handleSubmit(event) {
     event.preventDefault();
     // const data = new FormData(event.target)
-    console.log("got to handle submit");
-    console.log(formdata);
+    // console.log("got to handle submit");
+    // console.log(formdata);
     fetch("http://localhost:8080/api/auth/signup", {
       method: 'POST',
       headers: {

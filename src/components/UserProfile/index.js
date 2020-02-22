@@ -12,21 +12,23 @@ import API from "../../utils/api";
 function UpdateAccount() {
 
   const [data, setdata] = useState({
+    id: "",
     name: "",
     city: "",
-  
+
   })
 
   useEffect(() => {
     API.isAuthenticated().then(res => {
-      // console.log(res.data);
-      
+      console.log(res.data);
+
       setdata({
+        id: res.data.id,
         name: res.data.name,
         city: res.data.city
       })
-      
-      
+
+
       // .then(
       //   API.getWeather()
       //   .then(res) => {
@@ -40,74 +42,121 @@ function UpdateAccount() {
     })
   }, [])
 
+  const inputChangeName = (event) => {
+    let value = event.target.value
+
+    setdata({
+      id: data.id,
+      name: value,
+      city: data.city
+    })
+
+  }
+
+  const inputChangeCity = (event) => {
+    let value = event.target.value
+
+    setdata({
+      id: data.id,
+      name: data.name,
+      city: value
+    })
+  }
+  const updateUser = id => {
+    console.log(id)
+
+
+    console.log(data.name, data.city)
+    const newUserData = {
+      id: id,
+      name: data.name,
+      city: data.city
+    }
+     API.putUser(newUserData)
+  }
+
   return (
     <div>
       <div className="backgroundFour">
         <AppBar />
-          <div className="topPart">
-        <div className="test4">
-          <div className="row">
-            <div className="col sm-12">
-              <h3 id="Hello"> Hello, {data.name}! </h3>
-              {/* <h3>Hello,  {data.name} in {data.city}</h3> */}
-              <br/>
+        <div className="topPart">
+          <div className="test4">
+            <div className="row">
+              <div className="col sm-12">
+                <h3 id="Hello"> Hello, {data.name}! </h3>
+                {/* <h3>Hello,  {data.name} in {data.city}</h3> */}
+                <br />
+              </div>
             </div>
-          </div>
-          <div className="topSec">
-          <div className="row">
-            <div className="col sm-2 alignRight">
-              <h5>Name:</h5>
+            <div className="topSec">
+              <div className="row">
+                <div className="col sm-2 alignRight">
+                  <h5>Name:</h5>
+                </div>
+                <div className="col sm-8">
+                  <TextField
+                    id="outlined-password-input"
+                    label="name"
+                    type="text"
+                    autoComplete="current-name"
+                    //TODO: add variable for email pulled from db
+                    variant="outlined"
+                    name="name"
+                    value={data.name}
+                    onChange={inputChangeName}
+                  />
+                </div>
+                <div className="col sm-2 alignLeft">
+                  {/* <Button variant="contained" data-id={data.id} >Update</Button> */}
+                </div>
+              </div>
+              <br />
+              <div className="row">
+                <div className="col sm-2 alignRight">
+                  <h5>City:</h5>
+                </div>
+                <div className="col sm-8">
+                  <TextField
+                    id="outlined-password-input"
+                    label="City"
+                    type="text"
+                    name="city"
+                    //TODO: add variable for City pulled from db
+                    variant="outlined"
+                    value={data.city}
+                    onChange={inputChangeCity}
+                  />
+
+                </div>
+                <div className="col sm-2 alignLeft">
+                  {/* <Button variant="contained"   >Update</Button> */}
+                </div>
+              </div>
             </div>
-            <div className="col sm-8">
-              <TextField
-                id="outlined-password-input"
-                label="name"
-                type="text"
-                autoComplete="current-name"
-                //TODO: add variable for email pulled from db
-                variant="outlined"
-                value={data.name}
-              />
-            </div>
-            <div className="col sm-2 alignLeft">
-              <Button variant="contained">Update</Button>
-            </div>
-          </div>
-          <br/>
-          <div className="row">
-            <div className="col sm-2 alignRight">
-              <h5>City:</h5>
-            </div>
-            <div className="col sm-8">
-              <TextField
-                id="outlined-password-input"
-                label="City"
-                type="text"
-                autoComplete="current-City"
-                //TODO: add variable for City pulled from db
-                variant="outlined"
-                value={data.city}
-              />
-            </div>
-            <div className="col sm-2 alignLeft">
-              <Button variant="contained">Update</Button>
-            </div>
-            </div>
+
+            <div className="row">
+              <div className="col sm-2"></div>
+              <div className="col sm-8">
+                <Button variant="contained" data-id={data.id} onClick={() => { updateUser(data.id) }} >Save</Button>
+              </div>
+              <div className="col sm-2 alignLeft">
+                {/* <Button variant="contained"   >Update</Button> */}
+              </div>
             </div>
           </div>
         </div>
         <br />
-      <br />
-      <div className="tablething">
-        <h4>Congratulations! You got off the couch so many times!</h4>
-        <Table />
         <br />
-      </div>
+        <div className="tablething">
+          <h4>Congratulations! You got off the couch so many times!</h4>
+          <Table />
+          <br />
+        </div>
       </div>
       <p className="copyright" alignItems="center"> Copyright © 2020 All Rights Reserved</p>
     </div>
-      
-    );
+
+  );
 }
 
 export default UpdateAccount;
