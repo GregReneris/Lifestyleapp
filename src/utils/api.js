@@ -35,7 +35,14 @@ const API = {
     getEvents: () => {
         return axios.get (`${URL}/api/events`)
     },
+    putUser: (newUserData) => {
+        return axios({
+            url:`${URL}/api/user`,
+            method: "PUT",
+            data: newUserData
 
+        })
+    },
     getHikes: () => {
         return axios.get (`${URL}/api/hikes`)
     },
