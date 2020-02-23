@@ -7,15 +7,19 @@ import Carousel from '../Carousel/index'
 import API from '../../../utils/api'
 // import Event from '../Event/index.js'
 import Table from '../../Table/index'
+import Button from '@material-ui/core/Button';
 import "./style.css";
+
 
 
 class MainPage extends React.Component {
 
     state = {
+        pageSize : 4,
         activities: [ ],
+        activitiesOffset : 0,
         selected: [ ],
-        userActivities: [] 
+        userActivities: [],
     };
 
 
@@ -29,18 +33,19 @@ class MainPage extends React.Component {
 
     handleHikeClick = event => {
         event.preventDefault();
-        event.preventDefault();
+        console.log ("handleHikeClick Main Page")
         API.getHikes()  
         .then(res => {
-            this.setState({activities: res.data})
+            this.setState({activities: res.data, activitiesOffset:0})
         })
     };
 
     handleEventClick = event => {
         event.preventDefault();
+        console.log ("handleEventClick Main Page")
         API.getEvents()  
         .then(res => {
-            this.setState({activities: res.data})
+            this.setState({activities: res.data, activitiesOffset:0})
         })
     };
 
@@ -58,8 +63,23 @@ class MainPage extends React.Component {
     };
 
 
+    nextPage = event => {
+        let startIndex = this.state.activitiesOffset;
+        let endIndex = startIndex+ this.state.pageSize;
+
+        if (startIndex < this.state.activities.length )
+        {
+            this.setState({activitiesOffset: endIndex})
+        }
+    }
+
+
+
 
 render() {
+    console.log(this.state.activitiesOffset)
+    console.log(this.state.pageSize)
+    
     return (
         <div>
             <div className="backgroundThree">
@@ -76,11 +96,20 @@ render() {
                     activities={this.state.activities}
                     selected={this.state.selected}
                     handleAdd2Event={this.handleAddEvent2Click}
+                    offset = {this.state.activitiesOffset}
+                    pageSize = {this.state.pageSize}
 
                  />
+                    <Button onClick = {this.nextPage}> 
+                        <span>
+                             Next 4 Items 
+                        </span>
+                    </Button>
                 {/* <Event/> */}
                 <Table id="wcom"
                     activities={this.state.userActivities}
+                    // offset = {this.state.activitiesOffset}
+                    // pageSize = {this.state.pageSize}
                 />
                 </div>
             </div>
