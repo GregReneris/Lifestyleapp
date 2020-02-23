@@ -22,11 +22,14 @@ function UpdateAccount() {
     id: "",
     name: "",
     city: "",
-
-  })
+  })  
+  
+  const [userActivities, setActivities] = useState([])
+  
 
   useEffect(() => {
     API.isAuthenticated().then(res => {
+      console.log("USE EFFECT")
       console.log(res.data);
 
       setdata({
@@ -34,8 +37,7 @@ function UpdateAccount() {
         name: res.data.name,
         city: res.data.city
       })
-
-
+        
       // .then(
       //   API.getWeather()
       //   .then(res) => {
@@ -47,6 +49,11 @@ function UpdateAccount() {
       console.log("'Error fetching and parsing data'")
       console.log(err.errorCode);
     })
+
+    API.getUser().then(res => {
+      setActivities( res.data.completedActivites )
+    })
+
   }, [])
 
   const inputChangeName = (event) => {
@@ -66,7 +73,7 @@ function UpdateAccount() {
     setdata({
       id: data.id,
       name: data.name,
-      city: value
+      city: value      
     })
   }
   const updateUser = id => {
@@ -89,6 +96,7 @@ function UpdateAccount() {
 
   }
 
+  
   return (
     <div>
       <div className="backgroundFour">
@@ -163,7 +171,7 @@ function UpdateAccount() {
         <div className="tablething">
           <strong><h3>Congratulations!</h3></strong>
           <h4>You got off the couch so many times!</h4>
-          {/* <Table /> */}
+          <Table  activities={userActivities}  />
           <br />
         </div>
       </div>
