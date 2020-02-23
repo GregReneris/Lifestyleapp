@@ -53,21 +53,6 @@ const flexContainer = {
 
 class Carousel extends Component {
 
-    // state = {
-    //     offset : 0,
-    //     pageSize: 4
-    //     };
-
-    //  nextPage = event => {
-    //     let startIndex = this.state.offset;
-    //     let endIndex = startIndex+this.state.pageSize;
-
-    //     if (startIndex < this.props.activities.length )
-    //     {
-    //         this.setState({offset: endIndex})
-    //     }
-    // }
-
 
     render() {
 
@@ -75,10 +60,7 @@ class Carousel extends Component {
         
         const { classes } = this.props;
         let startIndex = this.props.offset;
-        console.log (this.props);
         let endIndex = startIndex+this.props.pageSize;
-        console.log (startIndex);
-        console.log (endIndex);
 
         return (
             <div style={{ display: "inline-block" }} className="row">

@@ -77,8 +77,8 @@ class MainPage extends React.Component {
 
 
 render() {
-    console.log(this.state.activitiesOffset)
-    console.log(this.state.pageSize)
+    // console.log(this.state.activitiesOffset)
+    // console.log(this.state.pageSize)
     
     return (
         <div>
@@ -92,7 +92,7 @@ render() {
                     hikeClick={this.handleHikeClick}
                 />
                 <Carousel 
-                    // eventType={this.EventType}
+                
                     activities={this.state.activities}
                     selected={this.state.selected}
                     handleAdd2Event={this.handleAddEvent2Click}
@@ -108,8 +108,6 @@ render() {
                 {/* <Event/> */}
                 <Table id="wcom"
                     activities={this.state.userActivities}
-                    // offset = {this.state.activitiesOffset}
-                    // pageSize = {this.state.pageSize}
                 />
                 </div>
             </div>
