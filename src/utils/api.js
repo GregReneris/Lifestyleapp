@@ -57,6 +57,10 @@ const API = {
 
     getUser:() => {
         return axios.get (`${URL}/api/user`, {withCredentials:true})
+    },
+
+    deleteActivity:(id) => {
+        return axios.delete (`${URL}/api/delete/${id}`, {withCredentials:true})
     }
 
 }
