@@ -65,21 +65,29 @@ class MainPage extends React.Component {
 
     nextPage = event => {
         let startIndex = this.state.activitiesOffset;
-        let endIndex = startIndex+ this.state.pageSize;
+        // let endIndex = startIndex+ this.state.pageSize;
 
-        if (startIndex < this.state.activities.length )
+        if (startIndex + this.state.pageSize < this.state.activities.length )
         {
-            this.setState({activitiesOffset: endIndex})
+            this.setState({activitiesOffset: startIndex+this.state.pageSize})
         }
     }
 
+    prevPage = event => {
+        let startIndex = this.state.activitiesOffset;
+        // let endIndex = startIndex- this.state.pageSize;
+
+        if (startIndex > 0)
+        {
+            this.setState({activitiesOffset: startIndex-this.state.pageSize})
+        }
+    }
+    
 
 
 
 render() {
-    // console.log(this.state.activitiesOffset)
-    // console.log(this.state.pageSize)
-    
+
     return (
         <div>
             <div className="backgroundThree">
@@ -100,6 +108,11 @@ render() {
                     pageSize = {this.state.pageSize}
 
                  />
+                    <Button onClick = {this.prevPage}> 
+                        <span>
+                             Prev 4 Items 
+                        </span>
+                    </Button>
                     <Button onClick = {this.nextPage}> 
                         <span>
                              Next 4 Items 
