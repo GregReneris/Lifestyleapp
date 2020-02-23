@@ -33,7 +33,7 @@ const API = {
     },
 
     getEvents: () => {
-        return axios.get (`${URL}/api/events`)
+        return axios.get (`${URL}/api/events`, {withCredentials:true})
     },
     putUser: (newUserData) => {
         return axios({
@@ -44,7 +44,7 @@ const API = {
         })
     },
     getHikes: () => {
-        return axios.get (`${URL}/api/hikes`)
+        return axios.get (`${URL}/api/hikes`, {withCredentials:true})
     },
 
     addEvent:(id) => { // this saves to activities array. non functional rn.
@@ -53,6 +53,10 @@ const API = {
 
     addCompletedActivity:(id) => { // this is to save the selected activity to the user collections and put the activitiy in the completedActivities collection within.
         return axios.post (`${URL}/api/saveEventToUser/${id}`, {withCredentials:true})
+    },
+
+    getUser:() => {
+        return axios.get (`${URL}/api/user`, {withCredentials:true})
     }
 
 }
