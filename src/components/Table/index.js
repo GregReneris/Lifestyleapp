@@ -1,5 +1,5 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, {Component} from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -10,26 +10,18 @@ import Paper from '@material-ui/core/Paper';
 import Ratings from '../Ratings/index'
 import "./style.css";
 
-const useStyles = makeStyles({
+const styles =  theme => ({
   table: {
     minWidth: 650,
   },
 });
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
 
-const rows = [
-  createData('PooPoo Point Natural Preserve Hike', "1/1/2020", 2.5, <Ratings/>,  "Poo Poo Point is a beautiful hike in Issaquah, WA."),
-  createData('The Rolling Stones Concert', "1/6/2020", 3, <Ratings/>,  "The Rolling Stones is the best concert experience ever."),
-  createData('Sallyz Hot Yoga Class', "1/24/2020", 1, <Ratings/>,  "Learning how to Waltz is the best way to get a date."),
-  createData('Coderz Networking Event', "2/5/2020", 2, <Ratings/>,  "Networking with full-stack developers is the best way to get a job."),
-  createData('Bella Cucina Cooking Class', "2/15/2020", 3, <Ratings/>,  "Learn how to cook food with the best chefs in the PNW."),
-];
+class simpleTable extends Component {  
 
-export default function SimpleTable() {
-  const classes = useStyles();
+render() {
+  // console.log( "RENDERING TABLE HERE")
+  const { classes } = this.props;
 
   return (
       <div>
@@ -39,22 +31,22 @@ export default function SimpleTable() {
         <TableHead>
           <TableRow className="tableHeader">
             <TableCell>Activity</TableCell>
-            <TableCell align="right">Date</TableCell>
-            <TableCell align="right">Duration&nbsp;(hrs)</TableCell>
-            <TableCell align="right">My Rating&nbsp;</TableCell>
+            <TableCell align="left">Date</TableCell>
+            <TableCell align="left">Duration</TableCell>
+            <TableCell align="left">Type</TableCell>
+            <TableCell align="left">Rating</TableCell>
             
             
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map(row => (
+          {this.props.activities.map(row => (
             <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
+              <TableCell align="left">{row.activityName}</TableCell>
+              <TableCell align="left">{row.date.substring(0,9)}</TableCell>
+              <TableCell align="left">{row.travelTime}</TableCell>
+              <TableCell align="left">{row.type}</TableCell>
+              <TableCell align="left"><Ratings/></TableCell>
               
             </TableRow>
           ))}
@@ -64,4 +56,10 @@ export default function SimpleTable() {
     </div>
     </div>
   );
+
+  
 }
+
+
+}
+export default withStyles(styles)(simpleTable)

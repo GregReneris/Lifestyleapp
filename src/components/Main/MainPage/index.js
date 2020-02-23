@@ -14,11 +14,17 @@ class MainPage extends React.Component {
 
     state = {
         activities: [ ],
-        selected: [ ] 
+        selected: [ ],
+        userActivities: [] 
     };
 
 
     componentDidMount() {
+        API.getUser()
+        .then(res => {
+            // console.log(res.data)
+            this.setState({userActivities: res.data.completedActivites})
+        })
     };
 
     handleHikeClick = event => {
@@ -42,11 +48,12 @@ class MainPage extends React.Component {
         // id.preventDefault();
         event.preventDefault()
         const eventId= event.target.getAttribute(`data-id`)
-        console.log ("Got Here **********")
+        // console.log ("Got Here **********")
         API.addEvent(eventId)  
         .then(res => {
             this.setState({selected: res.data})
-        console.log (res.data);
+            // console.log (res.data);
+            this.componentDidMount();
         })
     };
 
@@ -65,14 +72,16 @@ render() {
                     hikeClick={this.handleHikeClick}
                 />
                 <Carousel 
-                // eventType={this.EventType}
-                activities={this.state.activities}
-                selected={this.state.selected}
-                handleAdd2Event={this.handleAddEvent2Click}
+                    // eventType={this.EventType}
+                    activities={this.state.activities}
+                    selected={this.state.selected}
+                    handleAdd2Event={this.handleAddEvent2Click}
 
                  />
                 {/* <Event/> */}
-                <Table id="wcom"/>
+                <Table id="wcom"
+                    activities={this.state.userActivities}
+                />
                 </div>
             </div>
             <p className="copyright" alignitems="center"> Copyright © 2020 All Rights Reserved</p>
