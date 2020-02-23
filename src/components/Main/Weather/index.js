@@ -46,8 +46,9 @@ export default function OutlinedCard() {
   })
 
   useEffect(() => {
+    console.log ("I'm Running Weather HERE");
     API.isAuthenticated().then(res => {
-      // console.log(res.data);
+      console.log(res.data);
       
       setdata({
         name: res.data.name,
