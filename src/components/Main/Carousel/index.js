@@ -57,17 +57,23 @@ const flexContainer = {
 class Carousel extends Component {
 
 
-
-
     render() {
+
+        console.log ("Beginning Render Carousel Page")
+        
         const { classes } = this.props;
+        let startIndex = this.props.offset;
+        let endIndex = startIndex+this.props.pageSize;
 
         return (
             <div style={{ display: "inline-block" }} className="row">
                  <Grid container className={classes.root} spacing={2}>
-                {this.props.activities.map(event => {
+                {this.props.activities.slice(startIndex,endIndex).map(event => {
 
                     return (
+                        <div>
+
+                        
                         <List style={flexContainer, { alignItems: 'center' }}>
                             <ListItem>
                                 <Card style={cardStyle}>
@@ -94,9 +100,16 @@ class Carousel extends Component {
                                     </CardActionArea>
                                 </Card>
                             </ListItem>
+                            
                         </List>
-                    )
+                        {/* <Button onClick = {this.nextPage}> 
+                            <span>
+                             Next 4 Items 
+                            </span>
+                        </Button> */}
 
+                    </div>
+                )
                 })}
                 </Grid>
             </div>
@@ -105,4 +118,4 @@ class Carousel extends Component {
         );
     }
 }
-export default withStyles(styles)(Carousel);
+export default withStyles(styles)(Carousel); 
