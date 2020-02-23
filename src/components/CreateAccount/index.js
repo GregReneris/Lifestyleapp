@@ -40,8 +40,8 @@ function CreateAccount(props) {
   function handleSubmit(event) {
     event.preventDefault();
     // const data = new FormData(event.target)
-    console.log("got to handle submit");
-    console.log(formdata);
+    // console.log("got to handle submit");
+    // console.log(formdata);
     fetch("http://localhost:8080/api/auth/signup", {
       method: 'POST',
       headers: {
@@ -74,6 +74,10 @@ function CreateAccount(props) {
     })
 
   };
+
+  function updateCity() {
+
+  }
 
   return (
     <div>
@@ -133,7 +137,7 @@ function CreateAccount(props) {
               <div className="imgbox">
                 {places.map((place, index) => (
                   <div key={index}>
-                    {place.structured_formatting.main_text}
+                    <Button variant="contained" value="Create Profile" onClick={updateCity} >{place.structured_formatting.main_text}</Button>
                   </div>
                 ))}
               </div>

@@ -13,7 +13,7 @@
 .test4 {
  margin: 0 auto;
  width: 80%;
- background-color: rgba(205, 206, 209, 0.9);
+ background-color: rgba(205, 206, 209, 0.6)
 }
 
 .topPart {
@@ -27,7 +27,7 @@
 .tablething {
     margin: 0 auto;
     width: 80%;
-    background-color: rgba(205, 206, 209, 0.9);
+    background-color: rgba(205, 206, 209, 0.6)
    }
 
 .tableHeader {
@@ -36,5 +36,18 @@ background-color: lightgrey;
 
 h4 {
     margin-top: 2%;
+    font-weight: 700;
 }
 
+.alignRight {
+    text-align: right;
+}
+
+.alignLeft {
+    text-align: left;
+}
+
+#hello {
+    padding: 5px;
+    text-shadow: #8f797b 2px 2px;
+ }

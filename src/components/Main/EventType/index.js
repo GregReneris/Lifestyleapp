@@ -23,18 +23,22 @@ export default function ContainedButtons(props) {
 
   return (
     <div className="container">
-    <div className="row1">
-        <Button className="btn1" variant="contained" onClick={props.eventClick} color="default">
-          Event
+      <br/>
+      <br/>
+      <div className="row">
+        <div className="col s6">
+          <Button className="btn1" variant="contained" onClick={props.eventClick} color="default">
+            Event
       </Button>
-
-
-        <Button className="btn2" variant="contained" onClick={props.hikeClick} color="default">
-        <FontAwesomeIcon icon="faHiking" />
-        Hike
+        </div>
+        <div className="col s6">
+          <Button className="btn2" variant="contained" onClick={props.hikeClick} color="default">
+            <FontAwesomeIcon icon="faHiking" />
+            Hike
       </Button>
+        </div>
       </div>
       </div>
-    
-  );
+
+      );
 }

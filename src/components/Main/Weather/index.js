@@ -8,84 +8,98 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid';
 import API from "../../../utils/api";
+import Moment from 'react-moment';
+import 'moment-timezone';
+import Time from "../Time/index"
 
 
-const useStyles = makeStyles({
-  root: {
-    display: 'flex',
-    minWidth: 250,
-    flexDirection: "column",
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-  media: {
-    height: 0,
-    paddingTop: '100%', // 16:9,
-    marginTop: '30'
-  }
-});
+// const withStyles = makeStyles({
+//   root: {
+//     display: 'flex',
+//     minWidth: 250,
+//     flexDirection: "column",
+//   },
+//   bullet: {
+//     display: 'inline-block',
+//     margin: '0 2px',
+//     transform: 'scale(0.8)',
+//   },
+//   title: {
+//     fontSize: 14,
+//   },
+//   pos: {
+//     marginBottom: 12,
+//   },
+//   media: {
+//     height: 0,
+//     paddingTop: '100%', // 16:9,
+//     marginTop: '30'
+//   }
+// });
 
 
-export default function OutlinedCard() {
-  const classes = useStyles();
-  const [data, setdata] = useState({
+class Weather extends React.Component {
+  state = {
+    isLoading: false,
+    temperature: 0,
+    weatherCondition: null,
+    error: null,
     name: "",
     city: "",
-  
-  })
+  };
 
-  useEffect(() => {
-    API.isAuthenticated().then(res => {
-      // console.log(res.data);
-      
-      setdata({
+  userAPICall() {
+    API.getUser().then(res => {
+      this.setState({
         name: res.data.name,
         city: res.data.city
       })
-      
-      // .then(
-      //   API.getWeather()
-      //   .then(res) => {
-      //     setdata = {res.data}
-      //   })
-
-
     }).catch(err => {
       console.log("'Error fetching and parsing data'")
       console.log(err.errorCode);
     })
-  }, [])
+  }
 
-  
+  weatherAPICall() {
+    API.getWeather().then(res => {
+      this.setState({
+        weather: res.data,
+      })
+    }).catch(err => {
+      console.log("'Error fetching weather'")
+      console.log(err.errorCode);
+    })
+  }
 
-  return (
-    <Container id="wcon"  >
-      <Typography id="hello" variant="h3"> Hello, {data.name} in {data.city} </Typography>
-      <h3><i class="wi wi-night-sleet"></i></h3>
-      <Grid
-        container
-        direction="row"
-        justify="center"
-        alignItems="center">
-        <Card id="wcard" className={classes.root} >
-          {/* <CardContent> */}
-            {/* <Typography className={classes.title} color="textSecondary" gutterBottom>
-              Current Weather
-        </Typography> */}
-            {/* <CardMedia /> */}
-          {/* </CardContent> */}
-        </Card>
-      </Grid>
-    </Container>
-  );
-}
+  componentDidMount() {
+    this.userAPICall();
+    this.weatherAPICall();
+  };
 
+
+render() {
+
+const date = new Date();
+return (
+  <div>
+    <div className="myContainer">
+
+      {/* <Typography id="hello"><h3> Hello, {data.name}.</h3></Typography>
+      <Typography id="hello"><h3> Today's weather in {data.city} is: </h3></Typography>
+      <h3><i class="wi wi-night-sleet"></i></h3> */}
+
+      <br />
+      <h4><Moment format="dddd da">
+        <Time />
+      </Moment>
+        <br />
+        <br />
+        <Moment format="MMMM, DD YYYY">
+          {date}
+        </Moment></h4>
+    </div>
+  </div>
+)
+}};
+
+export default Weather

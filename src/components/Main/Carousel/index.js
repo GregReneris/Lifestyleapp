@@ -16,7 +16,6 @@ import Button from '@material-ui/core/Button';
 
 
 
-
 const styles = theme => ({
     root: {
         minWidth: 275,
@@ -57,10 +56,10 @@ const flexContainer = {
 
 class Carousel extends Component {
 
+
+
+
     render() {
-
-
-        
         const { classes } = this.props;
 
         return (
@@ -88,7 +87,7 @@ class Carousel extends Component {
                                             </Typography>
                                             <Button data-id={event.id} onClick = {this.props.handleAdd2Event}> 
                                                 <span data-id={event.id}>
-                                                    Click 
+                                                    Save 
                                                 </span>
                                             </Button>
                                         </CardContent>
