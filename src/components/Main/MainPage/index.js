@@ -24,6 +24,7 @@ class MainPage extends React.Component {
 
 
     componentDidMount() {
+        console.log("Component Did Mount is running")
         API.getUser()
         .then(res => {
             // console.log(res.data)
@@ -87,6 +88,7 @@ class MainPage extends React.Component {
 
 
 render() {
+    console.log("Got here RENDERING!")
 
     return (
         <div>

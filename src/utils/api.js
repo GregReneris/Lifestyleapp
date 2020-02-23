@@ -39,8 +39,8 @@ const API = {
         return axios({
             url:`${URL}/api/user`,
             method: "PUT",
-            data: newUserData
-
+            data: newUserData,
+            withCredentials: true
         })
     },
     getHikes: () => {
