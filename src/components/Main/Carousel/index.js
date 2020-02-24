@@ -44,7 +44,7 @@ var cardStyle = {
     display: 'block',
     width: '15vw',
     transitionDuration: '0.3s',
-    height: '20vw',
+    height: '25vw',
 }
 
 const flexContainer = {
@@ -64,45 +64,45 @@ class Carousel extends Component {
 
         return (
             <div style={{ display: "inline-block" }} className="row">
-                <Grid container className={classes.root} spacing={2}>
-                    {this.props.activities.slice(startIndex, endIndex).map(event => {
+                 <Grid container className={classes.root} spacing={2}>
+                {this.props.activities.slice(startIndex,endIndex).map(event => {
 
-                        return (
-                            <div>
+                    return (
+                        <div>
 
+                        
+                        <List style={flexContainer, { alignItems: 'center' }}>
+                            <ListItem>
+                                <Card style={cardStyle}>
+                                    <CardActionArea>
+                                        <CardContent>
+                                            <img src={event.imgurl} width="175px" height="150px" display="block"/>
+                                            <Typography variant="body2" color="textPrimary" className={classes.title}>
+                                                {event.activityName}
+                                            </Typography>
+                                            <Moment format="MM/DD/YYYY">
+                                           {event.startTime}
+                                           </Moment>
+                                            <br/>
+                                            <hr/>
+                                            <Typography variant="body2" color="textSecondary" component="p">
+                                                Travel Time {event.travelTime} minutes
+                                            </Typography>
+                                            <Button style={{ background: "rgba(224,224,224)", height:"5vh"}} data-id={event.id} onClick = {this.props.handleAdd2Event}> 
+                                                <span data-id={event.id}>
+                                                    Save 
+                                                </span>
+                                            </Button>
+                                        </CardContent>
+                                    </CardActionArea>
+                                </Card>
+                            </ListItem>
+                            
+                        </List>
 
-                                <List style={flexContainer, { alignItems: 'center' }}>
-                                    <ListItem>
-                                        <Slide direction="left" in="true" mountOnEnter unmountOnExit>
-                                            <Card style={cardStyle}>
-                                                <CardActionArea>
-                                                    <CardContent>
-                                                        <img src={event.imgurl} width="100%" height="auto" display="block"  />
-                                                        <Typography variant="body2" color="textPrimary" className={classes.title}>
-                                                            {event.activityName}
-                                                        </Typography>
-                                                        <Moment format="MM/DD/YYYY">
-                                                            {event.startTime}
-                                                        </Moment>
-                                                        <hr />
-                                                        <hr />
-                                                        <Typography variant="body2" color="textSecondary" component="p">
-                                                            Travel Time {event.travelTime} minutes
-                                                            </Typography>
-                                                        <Button data-id={event.id} onClick={this.props.handleAdd2Event}>
-                                                            <span data-id={event.id}>
-                                                                Save
-                                                              </span>
-                                                        </Button>
-                                                    </CardContent>
-                                                </CardActionArea>
-                                            </Card>
-                                        </Slide>
-                                    </ListItem>
-                                </List>
-                            </div>
-                        )
-                    })}
+                    </div>
+                )
+                })}
                 </Grid>
             </div>
         );
