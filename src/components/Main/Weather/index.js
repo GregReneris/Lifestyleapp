@@ -65,8 +65,7 @@ return (
 <div className="hello">
       <Typography> <h3> Hello, {this.state.name}</h3></Typography>
       <Typography><h3> Weather in {this.state.city} is: </h3></Typography>
-      <Typography>{this.state.temp}</Typography>
-      <h3>° F</h3>
+      <Typography><h3>{Math.trunc(this.state.temp)} ° F</h3></Typography>
       <div id="icon"><img src={this.state.iconurl} alt="Weather icon"/></div>
 </div>
       <Typography id="weather">
