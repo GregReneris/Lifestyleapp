@@ -22,14 +22,18 @@ class MainPage extends React.Component {
         userActivities: [],
     };
 
-
-    componentDidMount() {
-        console.log("Component Did Mount is running")
+    getActivities = event =>{
+        console.log ("Getting Activites")
         API.getUser()
         .then(res => {
             // console.log(res.data)
             this.setState({userActivities: res.data.completedActivites})
         })
+    };
+
+    componentDidMount() {
+        console.log("Component Did Mount is running")
+        this.getActivities()
     };
 
     handleHikeClick = event => {
@@ -50,7 +54,7 @@ class MainPage extends React.Component {
         })
     };
 
-    handleAddEvent2Click = event => { // non functional rn. Gosh.
+    handleAddEvent2Click = event => {
         // id.preventDefault();
         event.preventDefault()
         const eventId= event.target.getAttribute(`data-id`)
@@ -59,7 +63,7 @@ class MainPage extends React.Component {
         .then(res => {
             this.setState({selected: res.data})
             // console.log (res.data);
-            this.componentDidMount();
+            this.getActivities();
         })
     };
 
@@ -122,6 +126,7 @@ render() {
                     </Button>
                 {/* <Event/> */}
                 <Table id="wcom"
+                    updateActivities={this.getActivities}
                     activities={this.state.userActivities}
                 />
                 </div>
