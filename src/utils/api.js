@@ -17,6 +17,11 @@ const API = {
     login:(user)=>{
         return axios.post(`${URL}/api/auth/login`,user,{withCredentials:true})
     },
+
+    logout: () => {
+        return axios.get(`${URL}/api/auth/logout`, { withCredentials: true });
+    },
+
     isAuthenticated:()=>{
         return axios.get(`${URL}/api/auth/loggedinuser`,{withCredentials:true});
     },
