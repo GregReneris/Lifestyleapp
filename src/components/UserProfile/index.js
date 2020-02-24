@@ -67,6 +67,7 @@ function UpdateAccount() {
 
   }
 
+
   const inputChangeCity = (event) => {
     let value = event.target.value
 
@@ -91,12 +92,16 @@ function UpdateAccount() {
 
   const [places, setPlaces] = useState([]);
 
-  
-  function updateCity() {
+  function updateCity(){}
 
+  const getActivities = (event) => {
+    console.log ("Getting Activites")
+    API.getUser()
+        .then(res => {     
+          setActivities( res.data.completedActivites )
+        })
   }
 
-  
   return (
     <div>
       <div className="backgroundFour">
@@ -175,7 +180,9 @@ function UpdateAccount() {
           <h3>Congratulations!</h3>
           </div>
           <h4>You got off the couch so many times!</h4>
-          <Table  activities={userActivities}  />
+          <Table  activities={userActivities}
+                  updateActivities={getActivities}
+          />
           <br />
         </div>
       </div>
