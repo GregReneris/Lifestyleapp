@@ -20,7 +20,6 @@ return (
       <Box component="fieldset" mb={3} borderColor="transparent">
         <Typography component="legend"></Typography>
         <Rating
-          name="simple-controlled"
           value={value}
           onChange={(event, newValue) => {
             setValue(newValue);

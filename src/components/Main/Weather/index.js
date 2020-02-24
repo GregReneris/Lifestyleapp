@@ -62,13 +62,13 @@ const date = new Date();
 return (
   <div>
     <div className="myContainer">
-
-      <Typography id="hello"><h3> Hello, {this.state.name}</h3></Typography>
-      <Typography id="hello"><h3> Weather in {this.state.city} is: </h3></Typography>
+<div className="hello">
+      <Typography> <h3> Hello, {this.state.name}</h3></Typography>
+      <Typography><h3> Weather in {this.state.city} is: </h3></Typography>
       <Typography>{this.state.temp}</Typography>
       <h3>° F</h3>
       <div id="icon"><img src={this.state.iconurl} alt="Weather icon"/></div>
-
+</div>
       <Typography id="weather">
       {JSON.stringify(this.state.newWeather).replace(/"/g,"")}
       </Typography>
