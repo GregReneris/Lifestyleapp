@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography'
 import API from "../../../utils/api";
 import Moment from 'react-moment';
 import 'moment-timezone';
-import Time from "../Time/index"
+// import Time from "../Time/index"
 
 class Weather extends React.Component {
   state = {
@@ -77,8 +77,8 @@ return (
       </Typography>
 
       <br />
-      <h4><Moment format="dddd hh a">
-        <Time />
+      <h4><Moment format="dddd h:mm a">
+        {/* <Time /> */}
       </Moment>
         <br />
         <br />

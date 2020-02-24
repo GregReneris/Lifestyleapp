@@ -67,7 +67,9 @@ function LoginPage(props) {
       <div className="backgroundOne">
         <AppBar />
         <div className="test1">
+          <div className="hello">
           <h3>Login</h3>
+          </div>
           <form className={classes.root} noValidate autoComplete="off" >
             <TextField
               id="outlined-password-input"
@@ -96,7 +98,7 @@ function LoginPage(props) {
             <Link to='/main'><Button variant="contained" onClick={handleSubmit}>Login</Button></Link>
             <br/>
             <br/>
-            <Link style={{ textDecoration: 'none' }} to='/create'><h5><strong>Create Account</strong></h5></Link>
+            <Link style={{ textDecoration: 'none' }} to='/create'><h4><strong>Create Account</strong></h4></Link>
             <br/>
           </form>
 

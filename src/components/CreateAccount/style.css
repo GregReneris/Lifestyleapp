@@ -14,6 +14,8 @@
     margin: 0 auto;
     width: 40%;
     background-color: rgba(205, 206, 209, 0.6);
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 .imgbox {
@@ -26,3 +28,7 @@ h3 {
     padding-top:2%;
 }
 
+.hello {
+    padding: 5px;
+    text-shadow: #8f797b 2px 2px;
+ }

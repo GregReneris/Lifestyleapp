@@ -5,27 +5,32 @@
 }
 
 
-#hello {
+.hello {
    padding: 5px;
    text-shadow: #8f797b 2px 2px;
 }
 
 .myContainer {
    margin: 0 auto;
-   
+   margin-top: 5%;
 }
 
 #weather {
    font-family: 'Poiret One';
    font-size: xx-large;
    font-weight: bold;
+   color:#434f57;
 }
 
 #weather2 {
    font-family: 'Poiret One';
    font-size: 20px;
    font-weight: bold;
+<<<<<<< HEAD
    text-shadow: #8f797b 1px 1px;
+=======
+   color:#434f57;
+>>>>>>> df79305a142903ef4a2d0a5311c961192fbef311
 }
 
 #icon {
