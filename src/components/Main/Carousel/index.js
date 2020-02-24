@@ -35,13 +35,16 @@ const styles = theme => ({
     control: {
         padding: theme.spacing(2),
     },
+    button: {
+        
+    }
 });
 
 var cardStyle = {
     display: 'block',
-    width: '20vw',
+    width: '15vw',
     transitionDuration: '0.3s',
-    height: '30vw',
+    height: '20vw',
 }
 
 const flexContainer = {
