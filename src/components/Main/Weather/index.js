@@ -1,12 +1,6 @@
 import React from 'react';
 import "./style.css";
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography'
-import Grid from '@material-ui/core/Grid';
 import API from "../../../utils/api";
 import Moment from 'react-moment';
 import 'moment-timezone';
@@ -19,32 +13,33 @@ class Weather extends React.Component {
     icon: {},
     name: "",
     city: "",
+    temp: 0,
   };
 
   userAPICall() {
-    var promise = new Promise( (resolve, reject) => {
+    return new Promise( (resolve, reject) => {
       API.isAuthenticated().then(res => {
         this.setState({
           name: res.data.name,
           city: res.data.city
         })
-        resolve()
+        resolve(res.data.city)
       }).catch(err => {
         console.log("'Error fetching and parsing data'")
-        console.log(err.errorCode);
+        reject(err.errorCode);
       })
      });
-    return promise
   }
 
-  weatherAPICall() {
-    API.getWeather(this.state.city).then(res => {
-      // console.log(res);
+  weatherAPICall(city = "seattle") {
+    API.getWeather(city).then(res => {
+      console.log(res.data);
       this.setState({
         newWeather: res.data.weather,
         desc: res.data.desc,
         icon: res.data.icon,
-        iconurl: "http://openweathermap.org/img/w/" + res.data.icon + ".png"
+        iconurl: "http://openweathermap.org/img/w/" + res.data.icon + ".png",
+        temp: res.data.temp
       })
         // console.log(this.state.newWeather);
     }).catch(err => {
@@ -55,7 +50,7 @@ class Weather extends React.Component {
 
   componentDidMount() {
     this.userAPICall().then((res)=>{
-      this.weatherAPICall();
+      this.weatherAPICall(res);
     })  
     
   };
@@ -69,15 +64,16 @@ return (
     <div className="myContainer">
 
       <Typography id="hello"><h3> Hello, {this.state.name}</h3></Typography>
-      <Typography id="hello"><h3> Today's weather in {this.state.city} is: </h3></Typography>
-     
+      <Typography id="hello"><h3> Weather in {this.state.city} is: </h3></Typography>
+      <Typography>{this.state.temp}</Typography>
+      <h3>° F</h3>
       <div id="icon"><img src={this.state.iconurl} alt="Weather icon"/></div>
 
       <Typography id="weather">
       {JSON.stringify(this.state.newWeather).replace(/"/g,"")}
       </Typography>
       <Typography id="weather2">
-      expect to see {JSON.stringify(this.state.desc).replace(/"/g,"")} today
+      expect {JSON.stringify(this.state.desc).replace(/"/g,"")}
       </Typography>
 
       <br />
