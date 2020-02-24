@@ -36,7 +36,9 @@ class simpleTable extends Component {
     console.log (eventId);
     // this.setState ({id: event.target.value})
     API.deleteActivity(eventId)
-    
+      .then( res => {
+        this.props.updateActivities();
+    })
   }
 
 
