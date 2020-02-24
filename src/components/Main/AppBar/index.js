@@ -77,9 +77,11 @@ export default function MenuAppBar() {
                 open={open}
                 onClose={handleClose}
               >
-                <Link to='/main'><MenuItem onClick={handleClose}>Explore</MenuItem></Link>
-                <Link to='/profile'><MenuItem onClick={handleClose}>Profile</MenuItem></Link>
-                <Link to='/'><MenuItem onClick={handleClose}>Logout</MenuItem></Link>
+                <div className="linkColor">
+                <Link style={{ textDecoration: 'none', color: '#472629' }} to='/main'><MenuItem onClick={handleClose}>Explore</MenuItem></Link>
+                <Link style={{ textDecoration: 'none', color: '#472629' }} to='/profile'><MenuItem onClick={handleClose}>Profile</MenuItem></Link>
+                <Link style={{ textDecoration: 'none', color: '#472629' }} to='/'><MenuItem onClick={handleClose}>Logout</MenuItem></Link>
+                </div>
               </Menu>
             </div>
           )}

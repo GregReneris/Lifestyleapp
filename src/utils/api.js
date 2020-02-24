@@ -32,20 +32,35 @@ const API = {
         return axios.get(`${URL}/api/weather/${city}`)
     },
 
-    getEvents: () => {
-        return axios.get (`${URL}/api/events`)
+    getEvents: (date) => {
+        return axios.get (`${URL}/api/events/${date}`, {withCredentials:true})
     },
-
+    putUser: (newUserData) => {
+        return axios({
+            url:`${URL}/api/user`,
+            method: "PUT",
+            data: newUserData,
+            withCredentials: true
+        })
+    },
     getHikes: () => {
-        return axios.get (`${URL}/api/hikes`)
+        return axios.get (`${URL}/api/hikes`, {withCredentials:true})
     },
 
     addEvent:(id) => { // this saves to activities array. non functional rn.
-        return axios.post (`${URL}/api/addactivity/${id}`)
+        return axios.get (`${URL}/api/addactivity/${id}`, {withCredentials:true})
     },
 
     addCompletedActivity:(id) => { // this is to save the selected activity to the user collections and put the activitiy in the completedActivities collection within.
-        return axios.post (`${URL}/api/saveEventToUser/${id}`)
+        return axios.post (`${URL}/api/saveEventToUser/${id}`, {withCredentials:true})
+    },
+
+    getUser:() => {
+        return axios.get (`${URL}/api/user`, {withCredentials:true})
+    },
+
+    deleteActivity:(id) => {
+        return axios.delete (`${URL}/api/delete/${id}`, {withCredentials:true})
     }
 
 }

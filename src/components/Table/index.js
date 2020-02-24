@@ -1,5 +1,5 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, {Component} from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -7,29 +7,46 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Ratings from '../Ratings/index'
+import Button from '@material-ui/core/Button';
+import API from '../../utils/api'
+
 import "./style.css";
 
-const useStyles = makeStyles({
+const URL = "http://localhost:8080"
+
+const styles =  theme => ({
   table: {
     minWidth: 650,
   },
 });
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
 
-const rows = [
-  createData('Hike', "1/1/2020", 6.1, 2.5, "Poo Poo Point is a beautiful hike in Issaquah, WA."),
-  createData('Concert', "1/6/2020", 0, 3, "The Rolling Stones is the best concert experience ever."),
-  createData('Dance Class', "1/24/2020", 0, 1, "Learning how to Waltz is the best way to get a date."),
-  createData('Networking', "2/5/2020", 0, 2, "Networking with full-stack developers is the best way to get a job."),
-  createData('Cooking Class', "2/15/2020", 0, 3, "Learn how to cook food with the best chefs in the PNW."),
-];
+class simpleTable extends Component {  
 
-export default function SimpleTable() {
-  const classes = useStyles();
+  state = {
+    id : ''
+  }
 
+
+  handleDeleteClick = event => {
+    event.preventDefault();
+    
+    const eventId= event.target.getAttribute(`data-id`)
+    console.log (eventId);
+    // this.setState ({id: event.target.value})
+    API.deleteActivity(eventId)
+      .then( res => {
+        this.props.updateActivities();
+    })
+  }
+
+
+
+
+  render() {
+  // console.log( "RENDERING TABLE HERE")
+  const { classes } = this.props;
   return (
       <div>
           <div className="testFive">
@@ -38,23 +55,30 @@ export default function SimpleTable() {
         <TableHead>
           <TableRow className="tableHeader">
             <TableCell>Activity</TableCell>
-            <TableCell align="right">Date</TableCell>
-            <TableCell align="right">Distance&nbsp;(mi)</TableCell>
-            <TableCell align="right">Duration&nbsp;(hrs)</TableCell>
-            <TableCell align="right">Description&nbsp;</TableCell>
+            <TableCell align="left">Date</TableCell>
+            <TableCell align="left">Duration</TableCell>
+            <TableCell align="left">Type</TableCell>
+            <TableCell align="left">Rating</TableCell>
+            <TableCell align="left">Delete</TableCell>
+            
             
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map(row => (
+          {this.props.activities.map(row => (
             <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell align="left">{row.activityName}</TableCell>
+              <TableCell align="left">{row.date.substring(0,9)}</TableCell>
+              <TableCell align="left">{row.travelTime}</TableCell>
+              <TableCell align="left">{row.type}</TableCell>
+              <TableCell align="left"><Ratings/></TableCell>
+              <TableCell align="left"> <Button data-id={row.id} onClick={this.handleDeleteClick}> 
+              <span data-id={row.id}>
+                  XXXXXXX 
+                </span>
+              </Button> </TableCell>
+            
+              
             </TableRow>
           ))}
         </TableBody>
@@ -63,4 +87,10 @@ export default function SimpleTable() {
     </div>
     </div>
   );
+
+  
 }
+
+
+}
+export default withStyles(styles)(simpleTable)

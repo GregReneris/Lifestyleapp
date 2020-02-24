@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from 'react';
+import React from 'react';
 import "./style.css";
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -8,85 +8,90 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid';
 import API from "../../../utils/api";
+import Moment from 'react-moment';
+import 'moment-timezone';
+import Time from "../Time/index"
 
-
-const useStyles = makeStyles({
-  root: {
-    display: 'flex',
-    minWidth: 250,
-    flexDirection: "column",
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-  media: {
-    height: 0,
-    paddingTop: '100%', // 16:9,
-    marginTop: '30'
-  }
-});
-
-
-export default function OutlinedCard() {
-  const classes = useStyles();
-  const [data, setdata] = useState({
+class Weather extends React.Component {
+  state = {
+    newWeather: {},
+    desc: {},
+    icon: {},
     name: "",
     city: "",
-  
-  })
+  };
 
-  useEffect(() => {
-    API.isAuthenticated().then(res => {
-      // console.log(res.data);
-      
-      setdata({
-        name: res.data.name,
-        city: res.data.city
+  userAPICall() {
+    var promise = new Promise( (resolve, reject) => {
+      API.isAuthenticated().then(res => {
+        this.setState({
+          name: res.data.name,
+          city: res.data.city
+        })
+        resolve()
+      }).catch(err => {
+        console.log("'Error fetching and parsing data'")
+        console.log(err.errorCode);
       })
-      
-      
-      // .then(
-      //   API.getWeather()
-      //   .then(res) => {
-      //     setdata = {res.data}
-      //   })
+     });
+    return promise
+  }
 
-
+  weatherAPICall() {
+    API.getWeather(this.state.city).then(res => {
+      // console.log(res);
+      this.setState({
+        newWeather: res.data.weather,
+        desc: res.data.desc,
+        icon: res.data.icon,
+        iconurl: "http://openweathermap.org/img/w/" + res.data.icon + ".png"
+      })
+        // console.log(this.state.newWeather);
     }).catch(err => {
-      console.log("'Error fetching and parsing data'")
+      console.log("'Error fetching weather'")
       console.log(err.errorCode);
     })
-  }, [])
+  }
 
-  
+  componentDidMount() {
+    this.userAPICall().then((res)=>{
+      this.weatherAPICall();
+    })  
+    
+  };
 
-  return (
-    <Container id="wcon"  >
-      <Typography id="hello"><h3> Hello,  {data.name} in {data.city} </h3></Typography>
-      <h3><i class="wi wi-night-sleet"></i></h3>
-      <Grid
-        container
-        direction="row"
-        justify="center"
-        alignItems="center">
-        <Card id="wcard" className={classes.root} >
-          {/* <CardContent> */}
-            {/* <Typography className={classes.title} color="textSecondary" gutterBottom>
-              Current Weather
-        </Typography> */}
-            {/* <CardMedia /> */}
-          {/* </CardContent> */}
-        </Card>
-      </Grid>
-    </Container>
-  );
-}
 
+render() {
+
+const date = new Date();
+return (
+  <div>
+    <div className="myContainer">
+
+      <Typography id="hello"><h3> Hello, {this.state.name}</h3></Typography>
+      <Typography id="hello"><h3> Today's weather in {this.state.city} is: </h3></Typography>
+     
+      <div id="icon"><img src={this.state.iconurl} alt="Weather icon"/></div>
+
+      <Typography id="weather">
+      {JSON.stringify(this.state.newWeather).replace(/"/g,"")}
+      </Typography>
+      <Typography id="weather2">
+      expect to see {JSON.stringify(this.state.desc).replace(/"/g,"")} today
+      </Typography>
+
+      <br />
+      <h4><Moment format="dddd hh a">
+        <Time />
+      </Moment>
+        <br />
+        <br />
+        <Moment format="MMMM, DD YYYY">
+          {date}
+        </Moment></h4>
+    </div>
+  </div>
+)
+}};
+
+export default Weather

@@ -1,76 +1,137 @@
 import React, {Component} from 'react';
 import Weather from '../Weather/index'
 import AppBar from '../AppBar/index'
-import Time from '../Time/index'
+// import Date from '../Date/index'
 import EventType from '../EventType/index'
 import Carousel from '../Carousel/index'
 import API from '../../../utils/api'
-import Event from '../Event/index.js'
+// import Event from '../Event/index.js'
 import Table from '../../Table/index'
+import Button from '@material-ui/core/Button';
 import "./style.css";
+
 
 
 class MainPage extends React.Component {
 
     state = {
+        pageSize : 4,
         activities: [ ],
-        selected: [ ] 
+        activitiesOffset : 0,
+        selected: [ ],
+        userActivities: [],
     };
 
+    getActivities = event =>{
+        console.log ("Getting Activites")
+        API.getUser()
+        .then(res => {
+            // console.log(res.data)
+            this.setState({userActivities: res.data.completedActivites})
+        })
+    };
 
     componentDidMount() {
+        console.log("Component Did Mount is running")
+        this.getActivities()
     };
 
     handleHikeClick = event => {
         event.preventDefault();
-        event.preventDefault();
+        console.log ("handleHikeClick Main Page")
+
         API.getHikes()  
-        .then(res => {
-            this.setState({activities: res.data})
-        })
+            .then(res => {
+                this.setState({activities: res.data, activitiesOffset:0})
+            })
     };
 
     handleEventClick = event => {
         event.preventDefault();
-        API.getEvents()  
+        console.log ("handleEventClick Main Page")
+        let date = Date()
+        console.log(date)
+        API.getEvents(date)  
+            .then(res => {
+                this.setState({activities: res.data, activitiesOffset:0})
+            })
+    };
+
+    handleAddEvent2Click = event => {
+        // id.preventDefault();
+        event.preventDefault()
+        const eventId= event.target.getAttribute(`data-id`)
+        // console.log ("Got Here **********")
+        API.addEvent(eventId)  
         .then(res => {
-            this.setState({activities: res.data})
+            this.setState({selected: res.data})
+            // console.log (res.data);
+            this.getActivities();
         })
     };
 
-    handleAddEvent2Click = event => { // non functional rn. Gosh.
-        event.preventDefault();
-        console.log ("Got Here")
-        API.addEvent()  
-        .then(res => {
-            this.setState({selected: res.data})
-        console.log (res.data);
-        })
-    };
+
+    nextPage = event => {
+        let startIndex = this.state.activitiesOffset;
+        // let endIndex = startIndex+ this.state.pageSize;
+
+        if (startIndex + this.state.pageSize < this.state.activities.length )
+        {
+            this.setState({activitiesOffset: startIndex+this.state.pageSize})
+        }
+    }
+
+    prevPage = event => {
+        let startIndex = this.state.activitiesOffset;
+        // let endIndex = startIndex- this.state.pageSize;
+
+        if (startIndex > 0)
+        {
+            this.setState({activitiesOffset: startIndex-this.state.pageSize})
+        }
+    }
+    
 
 
 
 render() {
+    console.log("Got here RENDERING!")
+
     return (
         <div>
-                <AppBar />
             <div className="backgroundThree">
+                <AppBar />
             <div className="test3">
                 <Weather />
-                <Time/>
+                {/* <Date/> */}
                 <EventType  
                     eventClick={this.handleEventClick}
                     hikeClick={this.handleHikeClick}
                 />
                 <Carousel 
-                // eventType={this.EventType}
-                activities={this.state.activities}
-                selected={this.state.selected}
-                handleAdd2Event={this.handleAddEvent2Click}
+                
+                    activities={this.state.activities}
+                    selected={this.state.selected}
+                    handleAdd2Event={this.handleAddEvent2Click}
+                    offset = {this.state.activitiesOffset}
+                    pageSize = {this.state.pageSize}
 
                  />
-                <Event/>
-                <Table id="wcom"/>
+                    <Button onClick = {this.prevPage}> 
+                        <span>
+                             Prev 4 Items 
+                        </span>
+                    </Button>
+                    <Button onClick = {this.nextPage}> 
+                        <span>
+                             Next 4 Items 
+                        </span>
+                    </Button>
+                {/* <Event/> */}
+                <Table id="wcom"
+                    updateActivities={this.getActivities}
+                    activities={this.state.userActivities}
+                />
                 </div>
             </div>
             <p className="copyright" alignitems="center"> Copyright © 2020 All Rights Reserved</p>

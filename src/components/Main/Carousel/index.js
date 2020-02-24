@@ -12,7 +12,7 @@ import ListItem from '@material-ui/core/ListItem';
 import Link from '@material-ui/core/Link';
 import Moment from 'react-moment';
 import Grid from '@material-ui/core/Grid';
-
+import Button from '@material-ui/core/Button';
 
 
 
@@ -35,13 +35,16 @@ const styles = theme => ({
     control: {
         padding: theme.spacing(2),
     },
+    button: {
+        
+    }
 });
 
 var cardStyle = {
     display: 'block',
-    width: '20vw',
+    width: '15vw',
     transitionDuration: '0.3s',
-    height: '30vw',
+    height: '20vw',
 }
 
 const flexContainer = {
@@ -53,18 +56,24 @@ const flexContainer = {
 
 class Carousel extends Component {
 
+
     render() {
 
-
+        console.log ("Beginning Render Carousel Page")
         
         const { classes } = this.props;
+        let startIndex = this.props.offset;
+        let endIndex = startIndex+this.props.pageSize;
 
         return (
             <div style={{ display: "inline-block" }} className="row">
                  <Grid container className={classes.root} spacing={2}>
-                {this.props.activities.map(event => {
+                {this.props.activities.slice(startIndex,endIndex).map(event => {
 
                     return (
+                        <div>
+
+                        
                         <List style={flexContainer, { alignItems: 'center' }}>
                             <ListItem>
                                 <Card style={cardStyle}>
@@ -82,13 +91,25 @@ class Carousel extends Component {
                                             <Typography variant="body2" color="textSecondary" component="p">
                                                 Travel Time {event.travelTime} minutes
                                             </Typography>
+                                            <Button data-id={event.id} onClick = {this.props.handleAdd2Event}> 
+                                                <span data-id={event.id}>
+                                                    Save 
+                                                </span>
+                                            </Button>
                                         </CardContent>
                                     </CardActionArea>
                                 </Card>
                             </ListItem>
+                            
                         </List>
-                    )
+                        {/* <Button onClick = {this.nextPage}> 
+                            <span>
+                             Next 4 Items 
+                            </span>
+                        </Button> */}
 
+                    </div>
+                )
                 })}
                 </Grid>
             </div>
@@ -97,4 +118,4 @@ class Carousel extends Component {
         );
     }
 }
-export default withStyles(styles)(Carousel);
+export default withStyles(styles)(Carousel); 

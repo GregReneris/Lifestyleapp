@@ -1,21 +1,32 @@
-/* #wcon {
+#wcon {
    width: 100vw;
    max-height: fit-content;
-   /* padding: 10px; */
-
-
-
-/* #wcard {
-   background: rgb(238,174,202);
-background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+   padding: 10px;
 }
+
 
 #hello {
    padding: 5px;
-   text-shadow: pink 2px 2px;
-} */
+   text-shadow: #8f797b 2px 2px;
+}
 
-/* #cw {
-   padding-top: 5px;
-} */
+.myContainer {
+   margin: 0 auto;
+   
+}
 
+#weather {
+   font-family: 'Poiret One';
+   font-size: xx-large;
+   font-weight: bold;
+}
+
+#weather2 {
+   font-family: 'Poiret One';
+   font-size: 20px;
+   font-weight: bold;
+}
+
+#icon {
+   width: 100%;
+}
