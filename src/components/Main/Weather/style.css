@@ -14,3 +14,19 @@
    margin: 0 auto;
    
 }
+
+#weather {
+   font-family: 'Poiret One';
+   font-size: xx-large;
+   font-weight: bold;
+}
+
+#weather2 {
+   font-family: 'Poiret One';
+   font-size: 20px;
+   font-weight: bold;
+}
+
+#icon {
+   width: 100%;
+}

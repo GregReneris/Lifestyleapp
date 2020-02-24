@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from 'react';
+import React from 'react';
 import "./style.css";
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -12,59 +12,41 @@ import Moment from 'react-moment';
 import 'moment-timezone';
 import Time from "../Time/index"
 
-
-// const withStyles = makeStyles({
-//   root: {
-//     display: 'flex',
-//     minWidth: 250,
-//     flexDirection: "column",
-//   },
-//   bullet: {
-//     display: 'inline-block',
-//     margin: '0 2px',
-//     transform: 'scale(0.8)',
-//   },
-//   title: {
-//     fontSize: 14,
-//   },
-//   pos: {
-//     marginBottom: 12,
-//   },
-//   media: {
-//     height: 0,
-//     paddingTop: '100%', // 16:9,
-//     marginTop: '30'
-//   }
-// });
-
-
 class Weather extends React.Component {
   state = {
-    isLoading: false,
-    temperature: 0,
-    weatherCondition: null,
-    error: null,
+    newWeather: {},
+    desc: {},
+    icon: {},
     name: "",
     city: "",
   };
 
   userAPICall() {
-    API.getUser().then(res => {
-      this.setState({
-        name: res.data.name,
-        city: res.data.city
+    var promise = new Promise( (resolve, reject) => {
+      API.isAuthenticated().then(res => {
+        this.setState({
+          name: res.data.name,
+          city: res.data.city
+        })
+        resolve()
+      }).catch(err => {
+        console.log("'Error fetching and parsing data'")
+        console.log(err.errorCode);
       })
-    }).catch(err => {
-      console.log("'Error fetching and parsing data'")
-      console.log(err.errorCode);
-    })
+     });
+    return promise
   }
 
   weatherAPICall() {
-    API.getWeather().then(res => {
+    API.getWeather(this.state.city).then(res => {
+      // console.log(res);
       this.setState({
-        weather: res.data,
+        newWeather: res.data.weather,
+        desc: res.data.desc,
+        icon: res.data.icon,
+        iconurl: "http://openweathermap.org/img/w/" + res.data.icon + ".png"
       })
+        // console.log(this.state.newWeather);
     }).catch(err => {
       console.log("'Error fetching weather'")
       console.log(err.errorCode);
@@ -72,8 +54,10 @@ class Weather extends React.Component {
   }
 
   componentDidMount() {
-    this.userAPICall();
-    this.weatherAPICall();
+    this.userAPICall().then((res)=>{
+      this.weatherAPICall();
+    })  
+    
   };
 
 
@@ -84,12 +68,20 @@ return (
   <div>
     <div className="myContainer">
 
-      {/* <Typography id="hello"><h3> Hello, {data.name}.</h3></Typography>
-      <Typography id="hello"><h3> Today's weather in {data.city} is: </h3></Typography>
-      <h3><i class="wi wi-night-sleet"></i></h3> */}
+      <Typography id="hello"><h3> Hello, {this.state.name}</h3></Typography>
+      <Typography id="hello"><h3> Today's weather in {this.state.city} is: </h3></Typography>
+     
+      <div id="icon"><img src={this.state.iconurl} alt="Weather icon"/></div>
+
+      <Typography id="weather">
+      {JSON.stringify(this.state.newWeather).replace(/"/g,"")}
+      </Typography>
+      <Typography id="weather2">
+      expect to see {JSON.stringify(this.state.desc).replace(/"/g,"")} today
+      </Typography>
 
       <br />
-      <h4><Moment format="dddd da">
+      <h4><Moment format="dddd hh a">
         <Time />
       </Moment>
         <br />

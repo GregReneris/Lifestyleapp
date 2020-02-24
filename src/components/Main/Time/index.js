@@ -1,19 +1,13 @@
 import React from "react";
 import Date from "../Date/index"
-
+import moment from "moment"
 
 class Time extends React.Component {
   constructor() {
       super();
 
-      const today = Date;
-
-      const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-
-      var dateTime = Date+' '+time;
-
       this.state = {
-          time: time
+          time: moment().format("dddd hh a")
       };
   }
 }
