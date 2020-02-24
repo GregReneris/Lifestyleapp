@@ -13,7 +13,7 @@ import API from '../../utils/api'
 
 import "./style.css";
 
-const URL = "http://localhost:8080"
+// const URL = "http://localhost:8080"
 
 const styles =  theme => ({
   table: {
