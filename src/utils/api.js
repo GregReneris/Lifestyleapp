@@ -32,8 +32,8 @@ const API = {
         return axios.get(`${URL}/api/weather/${city}`)
     },
 
-    getEvents: () => {
-        return axios.get (`${URL}/api/events`, {withCredentials:true})
+    getEvents: (date) => {
+        return axios.get (`${URL}/api/events/${date}`, {withCredentials:true})
     },
     putUser: (newUserData) => {
         return axios({
