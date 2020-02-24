@@ -103,7 +103,7 @@ render() {
                 <AppBar />
             <div className="test3">
                 <Weather />
-                {/* <Date/> */}
+                <div className="cards">
                 <EventType  
                     eventClick={this.handleEventClick}
                     hikeClick={this.handleHikeClick}
@@ -117,17 +117,26 @@ render() {
                     pageSize = {this.state.pageSize}
 
                  />
-                    <Button onClick = {this.prevPage}> 
-                        <span>
-                             Prev 4 Items 
-                        </span>
+                 </div>
+                 <br/>
+                 <br/>
+                 
+                 <div className="prevnext">
+                     <div className="row">
+                     <div className="col s3"></div>
+                     <div className="col s3">
+                    <Button style={{ background: "rgba(224,224,224)", height:"5vh"}} onClick = {this.prevPage}> 
+                             <h5>Prev 4 Items</h5>
                     </Button>
-                    <Button onClick = {this.nextPage}> 
-                        <span>
-                             Next 4 Items 
-                        </span>
+                    </div>
+                    <div className="col s3">
+                    <Button style={{ background: "rgba(224,224,224)", height:"5vh"}} onClick = {this.nextPage}> 
+                        <h5>Next 4 Items</h5>
                     </Button>
-                {/* <Event/> */}
+                    </div>
+                    <div className="col s3"></div>
+                    </div>
+                </div>
                 <Table id="wcom"
                     updateActivities={this.getActivities}
                     activities={this.state.userActivities}

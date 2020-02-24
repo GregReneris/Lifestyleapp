@@ -56,7 +56,7 @@ class simpleTable extends Component {
           <TableRow className="tableHeader">
             <TableCell>Activity</TableCell>
             <TableCell align="left">Date</TableCell>
-            <TableCell align="left">Duration</TableCell>
+            <TableCell align="left">Duration(hrs)</TableCell>
             <TableCell align="left">Type</TableCell>
             <TableCell align="left">Rating</TableCell>
             <TableCell align="left">Delete</TableCell>
@@ -66,15 +66,15 @@ class simpleTable extends Component {
         </TableHead>
         <TableBody>
           {this.props.activities.map(row => (
-            <TableRow key={row.name}>
+            <TableRow key={row.id}>
               <TableCell align="left">{row.activityName}</TableCell>
               <TableCell align="left">{row.date.substring(0,9)}</TableCell>
               <TableCell align="left">{row.travelTime}</TableCell>
               <TableCell align="left">{row.type}</TableCell>
-              <TableCell align="left"><Ratings/></TableCell>
+              <TableCell align="left"><Ratings activityId={row._id} activityName={row.activityName}/></TableCell>
               <TableCell align="left"> <Button data-id={row.id} onClick={this.handleDeleteClick}> 
               <span data-id={row.id}>
-                  XXXXXXX 
+                 Delete
                 </span>
               </Button> </TableCell>
             
