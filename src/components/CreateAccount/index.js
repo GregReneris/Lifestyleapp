@@ -42,7 +42,7 @@ function CreateAccount(props) {
     // const data = new FormData(event.target)
     // console.log("got to handle submit");
     // console.log(formdata);
-    fetch("http://localhost:8080/api/auth/signup", {
+    fetch("https://lifestyleapi.herokuapp.com/api/auth/signup", {
       method: 'POST',
       headers: {
         "Accept": "application/json, text/plain, */*",
