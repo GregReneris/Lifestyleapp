@@ -32,8 +32,8 @@ const API = {
         return axios.get(`${URL}/api/weather/${city}`)
     },
 
-    getEvents: () => {
-        return axios.get (`${URL}/api/events`, {withCredentials:true})
+    getEvents: (date) => {
+        return axios.get (`${URL}/api/events/${date}`, {withCredentials:true})
     },
     putUser: (newUserData) => {
         return axios({
@@ -57,6 +57,10 @@ const API = {
 
     getUser:() => {
         return axios.get (`${URL}/api/user`, {withCredentials:true})
+    },
+
+    deleteActivity:(id) => {
+        return axios.delete (`${URL}/api/delete/${id}`, {withCredentials:true})
     }
 
 }
