@@ -39,19 +39,22 @@ class MainPage extends React.Component {
     handleHikeClick = event => {
         event.preventDefault();
         console.log ("handleHikeClick Main Page")
+
         API.getHikes()  
-        .then(res => {
-            this.setState({activities: res.data, activitiesOffset:0})
-        })
+            .then(res => {
+                this.setState({activities: res.data, activitiesOffset:0})
+            })
     };
 
     handleEventClick = event => {
         event.preventDefault();
         console.log ("handleEventClick Main Page")
-        API.getEvents()  
-        .then(res => {
-            this.setState({activities: res.data, activitiesOffset:0})
-        })
+        let date = Date()
+        console.log(date)
+        API.getEvents(date)  
+            .then(res => {
+                this.setState({activities: res.data, activitiesOffset:0})
+            })
     };
 
     handleAddEvent2Click = event => {
