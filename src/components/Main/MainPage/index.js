@@ -96,7 +96,8 @@ class MainPage extends React.Component {
 
 render() {
     console.log("Got here RENDERING!")
-
+    console.log(this.state.pageSize);
+    
     return (
         <div>
             <div className="backgroundThree">
@@ -109,13 +110,11 @@ render() {
                     hikeClick={this.handleHikeClick}
                 />
                 <Carousel 
-                
                     activities={this.state.activities}
                     selected={this.state.selected}
                     handleAdd2Event={this.handleAddEvent2Click}
                     offset = {this.state.activitiesOffset}
                     pageSize = {this.state.pageSize}
-
                  />
                  </div>
                  <br/>
@@ -125,14 +124,14 @@ render() {
                      <div className="row">
                      <div className="col s3"></div>
                      <div className="col s3">
-                    <Button style={{ background: "rgba(224,224,224)", height:"5vh"}} onClick = {this.prevPage}> 
+                    {this.state.activities.length>0?<Button style={{ background: "rgba(224,224,224)", height:"5vh"}} onClick = {this.prevPage} > 
                              <h5>Prev 4 Items</h5>
-                    </Button>
+                    </Button>:null}
                     </div>
                     <div className="col s3">
-                    <Button style={{ background: "rgba(224,224,224)", height:"5vh"}} onClick = {this.nextPage}> 
+                    {this.state.activities.length>0?<Button style={{ background: "rgba(224,224,224)", height:"5vh"}} onClick = {this.nextPage}> 
                         <h5>Next 4 Items</h5>
-                    </Button>
+                    </Button>:null}
                     </div>
                     <div className="col s3"></div>
                     </div>
