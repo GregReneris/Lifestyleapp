@@ -1,5 +1,5 @@
 import axios from "axios";
-const URL = "https://lifestyleapi.herokuapp.com/"
+const URL = "https://lifestyleapi.herokuapp.com"
 
 const API = {
     // getAllAnimals: ()=>{
