@@ -71,7 +71,7 @@ class simpleTable extends Component {
               <TableCell align="left">{row.date.substring(0,9)}</TableCell>
               <TableCell align="left">{row.travelTime}</TableCell>
               <TableCell align="left">{row.type}</TableCell>
-              <TableCell align="left"><Ratings activityId={row._id} activityName={row.activityName}/></TableCell>
+              <TableCell align="left"><Ratings activityId={row.id} value={row.rating} /></TableCell>
               <TableCell align="left"> <Button data-id={row.id} onClick={this.handleDeleteClick}> 
               <span data-id={row.id}>
                  Delete
