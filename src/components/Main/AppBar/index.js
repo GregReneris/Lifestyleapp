@@ -46,7 +46,7 @@ function handleClick(event) {
       .then(res => {
         console.log(res.data)
         // redirect here
-        window.location.href = "http://localhost:3000/login";
+        window.location.href = "https://aqueous-savannah-60861.herokuapp.com/login";
       })
       .catch(err => {
         console.log(err);
