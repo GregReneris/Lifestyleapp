@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import Table from '../Table/index'
 import AppBar from '../Main/AppBar/index'
 import TextField from '@material-ui/core/TextField'
-import CitySearch from "../CitySearch/index"
+// import CitySearch from "../CitySearch/index"
 import API from "../../utils/api";
 import {
   BrowserRouter as Router,
@@ -143,7 +143,7 @@ function UpdateAccount() {
                     value={data.city}
                     onChange={inputChangeCity}
                   />
-                  <CitySearch/>
+                  {/* <CitySearch/> */}
                   {/* {places.length > 0 ? (
               <div className="imgbox">
                 {places.map((place, index) => (
