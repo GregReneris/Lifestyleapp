@@ -123,7 +123,7 @@ class MainPage extends React.Component {
                                     offset={this.state.activitiesOffset}
                                     pageSize={this.state.pageSize}
                                 />
-                            ) : (<h2>No Events Today</h2>)}
+                            ) : (<h3>No Events Today</h3>)}
                         </div>
                         <br />
                         <br />
