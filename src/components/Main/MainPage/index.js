@@ -96,38 +96,46 @@ class MainPage extends React.Component {
 
 render() {
     console.log("Got here RENDERING!")
-
+    console.log(this.state.pageSize);
+    
     return (
         <div>
             <div className="backgroundThree">
                 <AppBar />
             <div className="test3">
                 <Weather />
-                {/* <Date/> */}
+                <div className="cards">
                 <EventType  
                     eventClick={this.handleEventClick}
                     hikeClick={this.handleHikeClick}
                 />
                 <Carousel 
-                
                     activities={this.state.activities}
                     selected={this.state.selected}
                     handleAdd2Event={this.handleAddEvent2Click}
                     offset = {this.state.activitiesOffset}
                     pageSize = {this.state.pageSize}
-
                  />
-                    <Button onClick = {this.prevPage}> 
-                        <span>
-                             Prev 4 Items 
-                        </span>
-                    </Button>
-                    <Button onClick = {this.nextPage}> 
-                        <span>
-                             Next 4 Items 
-                        </span>
-                    </Button>
-                {/* <Event/> */}
+                 </div>
+                 <br/>
+                 <br/>
+                 
+                 <div className="prevnext">
+                     <div className="row">
+                     <div className="col s3"></div>
+                     <div className="col s3">
+                    {this.state.activities.length>0?<Button style={{ background: "rgba(224,224,224)", height:"5vh"}} onClick = {this.prevPage} > 
+                             <h5>Prev 4 Items</h5>
+                    </Button>:null}
+                    </div>
+                    <div className="col s3">
+                    {this.state.activities.length>0?<Button style={{ background: "rgba(224,224,224)", height:"5vh"}} onClick = {this.nextPage}> 
+                        <h5>Next 4 Items</h5>
+                    </Button>:null}
+                    </div>
+                    <div className="col s3"></div>
+                    </div>
+                </div>
                 <Table id="wcom"
                     updateActivities={this.getActivities}
                     activities={this.state.userActivities}

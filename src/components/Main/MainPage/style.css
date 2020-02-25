@@ -1,14 +1,23 @@
 .backgroundThree {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/runner.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/dude.jpg");
     background-size: 100vw;
     /* background-position-x: relative; */
     background-size: cover;
     background-position: center;
-    height: 200vh;
+    height: 250vh;
 }
 
 .test3 {
     margin: 0 auto;
     width: 80%;
-    background-color: rgba(205, 206, 209, 0.6)
+    background-color: rgba(205, 206, 209, 0.7)
    }
+
+.cards {
+    margin: 0 auto;
+}
+
+.prevnext {
+    margin: 0 auto;
+    padding: 1%
+}

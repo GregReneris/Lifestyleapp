@@ -7,7 +7,7 @@
     /* background-position-x: relative; */
     background-size: cover;
     background-position: center;
-    height: 150vh;
+    height: 200vh;
 }
  
 .test4 {
@@ -27,7 +27,8 @@
 .tablething {
     margin: 0 auto;
     width: 80%;
-    background-color: rgba(205, 206, 209, 0.6)
+    background-color: rgba(205, 206, 209, 0.6);
+    margin-bottom: 3%;
    }
 
 .tableHeader {
@@ -47,7 +48,7 @@ h4 {
     text-align: left;
 }
 
-#hello {
+.hello {
     padding: 5px;
     text-shadow: #8f797b 2px 2px;
  }

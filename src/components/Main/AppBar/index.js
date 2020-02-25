@@ -9,6 +9,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import API from "../../../utils/api"
 import "./style.css";
 
 const useStyles = makeStyles(theme => ({
@@ -38,12 +39,23 @@ export default function MenuAppBar() {
     setAnchorEl(null);
   };
 
-  
-
+function handleClick(event) {
+    event.preventDefault();
+    console.log("logged out");
+    API.logout()
+      .then(res => {
+        console.log(res.data)
+        // redirect here
+        window.location.href = "http://localhost:3000/login";
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    }
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" className="appbar" style={{ background: "rgba(205, 206, 209, 0.3)", height: "15vh" }}>
+      <AppBar position="static" className="appbar" style={{ background: "rgba(168,168,169, .9)", height: "15vh" }}>
         <Toolbar>
           <FormGroup>
 
@@ -80,7 +92,7 @@ export default function MenuAppBar() {
                 <div className="linkColor">
                 <Link style={{ textDecoration: 'none', color: '#472629' }} to='/main'><MenuItem onClick={handleClose}>Explore</MenuItem></Link>
                 <Link style={{ textDecoration: 'none', color: '#472629' }} to='/profile'><MenuItem onClick={handleClose}>Profile</MenuItem></Link>
-                <Link style={{ textDecoration: 'none', color: '#472629' }} to='/'><MenuItem onClick={handleClose}>Logout</MenuItem></Link>
+                <Link style={{ textDecoration: 'none', color: '#472629' }} to='/'><MenuItem onClick={handleClick}>Logout</MenuItem></Link>
                 </div>
               </Menu>
             </div>

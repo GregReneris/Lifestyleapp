@@ -67,6 +67,7 @@ function UpdateAccount() {
 
   }
 
+
   const inputChangeCity = (event) => {
     let value = event.target.value
 
@@ -91,12 +92,16 @@ function UpdateAccount() {
 
   const [places, setPlaces] = useState([]);
 
-  
-  function updateCity() {
+  function updateCity(){}
 
+  const getActivities = (event) => {
+    console.log ("Getting Activites")
+    API.getUser()
+        .then(res => {     
+          setActivities( res.data.completedActivites )
+        })
   }
 
-  
   return (
     <div>
       <div className="backgroundFour">
@@ -105,14 +110,16 @@ function UpdateAccount() {
           <div className="test4">
             <div className="row">
               <div className="col sm-12">
-                <h3 id="Hello"> Hello, {data.name}! </h3>
+                <div className="hello">
+                <h3> Hello, {data.name}! </h3>
+                </div>
                 <br />
               </div>
             </div>
             <div className="topSec">
               <div className="row">
                 <div className="col sm-6 alignRight">
-                  <h5>Update username:</h5>
+                  <h4>Update name:</h4>
                 </div>
                 <div className="col sm-6 alignLeft">
                   <TextField
@@ -131,7 +138,7 @@ function UpdateAccount() {
               <br />
                 <div className="row">
                 <div className="col sm-6 alignRight">
-                  <h5>Update city:</h5>
+                  <h4>Update city:</h4>
                 </div>
                 <div className="col sm-6 alignLeft">
                   <TextField
@@ -169,9 +176,13 @@ function UpdateAccount() {
         <br />
         <br />
         <div className="tablething">
-          <strong><h3>Congratulations!</h3></strong>
+          <div className="hello">
+          <h3>Congratulations!</h3>
+          </div>
           <h4>You got off the couch so many times!</h4>
-          <Table  activities={userActivities}  />
+          <Table  activities={userActivities}
+                  updateActivities={getActivities}
+          />
           <br />
         </div>
       </div>

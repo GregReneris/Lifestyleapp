@@ -17,6 +17,11 @@ const API = {
     login:(user)=>{
         return axios.post(`${URL}/api/auth/login`,user,{withCredentials:true})
     },
+
+    logout: () => {
+        return axios.get(`${URL}/api/auth/logout`, { withCredentials: true });
+    },
+
     isAuthenticated:()=>{
         return axios.get(`${URL}/api/auth/loggedinuser`,{withCredentials:true});
     },
@@ -61,7 +66,24 @@ const API = {
 
     deleteActivity:(id) => {
         return axios.delete (`${URL}/api/delete/${id}`, {withCredentials:true})
+    },
+
+    // setStars:(id, value) =>{
+    //     return axios.post  (`${URL}/api/setStars/${id}/${value}`, {withCredentials:true})
+    // },
+
+    setStars: (id, value) => {
+        console.log ("getting to set stars")
+        console.log(id)
+        console.log(value)
+        return axios({
+            url:`${URL}/api/setStars`,
+            method: "PUT",
+            data: {id:id, value: value},
+            withCredentials: true
+        })
     }
+
 
 }
 export default API;
