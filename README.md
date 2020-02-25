@@ -30,10 +30,10 @@ Out comes a list of events and hikes near the user that they can attend and rate
 * Unsplash - https://unsplash.com/
 * Moment.js - https://momentjs.com/
 
-![image of Main page](READMEimg/logged.png)
+![image of Main page](READMEimg/logged.PNG)
 
 ### Server-Side 
-* Distance: Google API- console.developers.google.com/google/maps-apis
+* Distance: Google API- https://console.developers.google.com/google/maps-apis
 * Trail Hikes: Hiking Project- https://www.hikingproject.com/data
 * Events: TicketMaster -https://developer.ticketmaster.com/
 * Weather: Open Weather - https://openweathermap.org/api
@@ -61,4 +61,4 @@ Out comes a list of events and hikes near the user that they can attend and rate
 * "react-router-dom": "^5.1.2",
 * "react-scripts": "3.4.0"
 
-![image of viewable events](READMEimg/events.png)
+![image of viewable events](READMEimg/events.PNG)
