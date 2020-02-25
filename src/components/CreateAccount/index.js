@@ -13,6 +13,7 @@ import {
   Link,
   Redirect
 } from "react-router-dom";
+// import CitySearch from '../CitySearch';
 
 
 
@@ -134,7 +135,8 @@ function CreateAccount(props) {
               value={formdata.city}
               onChange={handleInputChange}
             />
-            {places.length > 0 ? (
+            {/* <CitySearch/> */}
+            {/* {places.length > 0 ? (
               <div className="imgbox">
                 {places.map((place, index) => (
                   <div key={index}>
@@ -142,7 +144,7 @@ function CreateAccount(props) {
                   </div>
                 ))}
               </div>
-            ) : (<div />)}
+            ) : (<div />)} */}
 
             <br />
             <br />
