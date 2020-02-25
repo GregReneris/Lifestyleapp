@@ -26,20 +26,9 @@ ol.horizontal li{
 }
 
 /* img {
-    max-width: 100%;
-    height: auto;
     display: block;
-} */
-
-/* .truncate {
-    width: 160px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .line-clamp {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;  
+    max-width:100px;
+    max-height:100px;
+    width: auto;
+    height: auto;
   } */

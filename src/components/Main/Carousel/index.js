@@ -73,13 +73,13 @@ class Carousel extends Component {
                                 <List style={flexContainer, { alignItems: 'center' }}>
                                     <ListItem>
                                         <Card style={cardStyle}>
-                                            <CardActionArea>
+                                          
                                                 <CardContent>
-                                                    <img src={event.imgurl} width="175px" height="150px" display="block" />
+                                                    <img src={event.imgurl} width="175px" height="150px" display="block"/>
                                                     <Typography variant="body2" color="textPrimary" className={classes.title}>
                                                         {event.activityName}
                                                     </Typography>
-                                                    <Moment format="MM/DD/YYYY">
+                                                    <Moment format="hh:mm a" >
                                                         {event.startTime}
                                                     </Moment>
                                                     <br />
@@ -93,7 +93,6 @@ class Carousel extends Component {
                                                 </span>
                                                     </Button>
                                                 </CardContent>
-                                            </CardActionArea>
                                         </Card>
                                     </ListItem>
 
