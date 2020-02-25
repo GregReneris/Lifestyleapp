@@ -13,6 +13,7 @@ import {
   Link,
   Redirect
 } from "react-router-dom";
+import CitySearch from '../CitySearch';
 
 
 
@@ -124,7 +125,7 @@ function CreateAccount(props) {
             />
             <br />
             <br />
-            <TextField
+            {/* <TextField
               id="outlined-password-input autocomplete"
               label="City"
               type="text"
@@ -133,8 +134,9 @@ function CreateAccount(props) {
               variant="outlined"
               value={formdata.city}
               onChange={handleInputChange}
-            />
-            {places.length > 0 ? (
+            /> */}
+            <CitySearch/>
+            {/* {places.length > 0 ? (
               <div className="imgbox">
                 {places.map((place, index) => (
                   <div key={index}>
@@ -142,7 +144,7 @@ function CreateAccount(props) {
                   </div>
                 ))}
               </div>
-            ) : (<div />)}
+            ) : (<div />)} */}
 
             <br />
             <br />

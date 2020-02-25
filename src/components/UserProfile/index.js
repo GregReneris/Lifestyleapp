@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import Table from '../Table/index'
 import AppBar from '../Main/AppBar/index'
 import TextField from '@material-ui/core/TextField'
+import CitySearch from "../CitySearch/index"
 import API from "../../utils/api";
 import {
   BrowserRouter as Router,
@@ -12,9 +13,6 @@ import {
   Link,
   Redirect
 } from "react-router-dom";
-
-
-
 
 function UpdateAccount() {
 
@@ -37,13 +35,6 @@ function UpdateAccount() {
         name: res.data.name,
         city: res.data.city
       })
-        
-      // .then(
-      //   API.getWeather()
-      //   .then(res) => {
-      //     setdata = {res.data}
-      //   })
-
 
     }).catch(err => {
       console.log("'Error fetching and parsing data'")
@@ -66,7 +57,6 @@ function UpdateAccount() {
     })
 
   }
-
 
   const inputChangeCity = (event) => {
     let value = event.target.value
@@ -92,7 +82,9 @@ function UpdateAccount() {
 
   const [places, setPlaces] = useState([]);
 
-  function updateCity(){}
+  function updateCity(){
+
+  }
 
   const getActivities = (event) => {
     console.log ("Getting Activites")
@@ -151,7 +143,8 @@ function UpdateAccount() {
                     value={data.city}
                     onChange={inputChangeCity}
                   />
-                  {places.length > 0 ? (
+                  <CitySearch/>
+                  {/* {places.length > 0 ? (
               <div className="imgbox">
                 {places.map((place, index) => (
                   <div key={index}>
@@ -159,7 +152,7 @@ function UpdateAccount() {
                   </div>
                 ))}
               </div>
-            ) : (<div />)}
+            ) : (<div />)} */}
                 </div> 
               </div>
               <br />
@@ -193,33 +186,3 @@ function UpdateAccount() {
 }
 
 export default UpdateAccount;
-
-
-/* 
-        <h5>Email:  
-        <TextField
-          id="outlined-password-input"
-          label="Email"
-          type="email"
-          autoComplete="current-email"
-          //TODO: add variable for email pulled from db
-          variant="outlined"
-        /></h5>
-        <Button variant="contained">Update</Button>
-        <h5>City:
-        <TextField
-          id="outlined-password-input"
-          label="City"
-          type="number"
-          autoComplete="current-City"
-           //TODO: add variable for City pulled from db
-          variant="outlined"
-        /></h5>
-        <Button variant="contained">Update</Button>
-        <br/>
-        <br/>
-        <h5>Congratulations! You got off the couch so many times. You should be proud.</h5>
-        <Table/>
-            </div>   
-        </div> */
-{/* )} */ }
