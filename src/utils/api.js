@@ -66,7 +66,24 @@ const API = {
 
     deleteActivity:(id) => {
         return axios.delete (`${URL}/api/delete/${id}`, {withCredentials:true})
+    },
+
+    // setStars:(id, value) =>{
+    //     return axios.post  (`${URL}/api/setStars/${id}/${value}`, {withCredentials:true})
+    // },
+
+    setStars: (id, value) => {
+        console.log ("getting to set stars")
+        console.log(id)
+        console.log(value)
+        return axios({
+            url:`${URL}/api/setStars`,
+            method: "PUT",
+            data: {id:id, value: value},
+            withCredentials: true
+        })
     }
+
 
 }
 export default API;
