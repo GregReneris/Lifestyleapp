@@ -75,7 +75,7 @@ class Carousel extends Component {
                                         <Card style={cardStyle}>
                                           
                                                 <CardContent>
-                                                    <img src={event.imgurl} width="100%" height="auto" display="block"/>
+                                                    <img src={event.imgurl} width="175px" height="150px" display="block"/>
                                                     <Typography variant="body2" color="textPrimary" className={classes.title}>
                                                         {event.activityName}
                                                     </Typography>
