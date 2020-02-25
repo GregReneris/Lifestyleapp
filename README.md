@@ -1,68 +1,64 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Spontaneity
 
-## Available Scripts
+### A project by Alexa, Greg, Tyson and Jenny
 
-In the project directory, you can run:
+![image of landing page](READMEimg/adventure.png)
+## Table of Contents
+[User Problem We Solved](#UserProblemWeSolved)<br>
+[Our Solution](#OurSolution)<br>
+[Technology](#Technology)<br>
+[Feedback](#Feedback)<br>
+[Thoughts](#Thoughts)
+### User Problem We Solved
+With our incredibly busy lives we still have free time! But the challenge is that we don’t always know when we will have that free time and if we will feel motivated to research what to do during that time.
+We need a solution that easily gives us options of things to do near us in a given timeframe.
 
-### `npm start`
+### Our Solution
+Our web application allows users to indicate where they are and select from different events and hikes happening that day.
+Out comes a list of events and hikes near the user that they can attend and rate afterward. This information gets stored to a table in the user’s profile.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![image of Create Account](READMEimg/create.png)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Technology Used
+* Bycrpt
+* Express
+* Node
 
-### `npm test`
+### Third Party 
+* Styling: Material UI - https://material-ui.com/
+* Styling: Bootstrap - https://getbootstrap.com/
+* Unsplash - https://unsplash.com/
+* Moment.js - https://momentjs.com/
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![image of Main page](READMEimg/logged.png)
 
-### `npm run build`
+### Server-Side 
+* Distance: Google API- console.developers.google.com/google/maps-apis
+* Trail Hikes: Hiking Project- https://www.hikingproject.com/data
+* Events: TicketMaster -https://developer.ticketmaster.com/
+* Weather: Open Weather - https://openweathermap.org/api
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### NPM Packages
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* "@date-io/date-fns": "^2.4.0",
+* "@fortawesome/fontawesome-svg-core": "^1.2.27",
+* "@fortawesome/free-solid-svg-icons": "^5.12.1",
+* "@fortawesome/react-fontawesome": "^0.1.8",
+* "@material-ui/core": "^4.9.2",
+* "@material-ui/icons": "^4.9.1",
+* "@material-ui/lab": "^4.0.0-alpha.43",
+* "@testing-library/jest-dom": "^4.2.4",
+* "@testing-library/react": "^9.4.0",
+* "@testing-library/user-event": "^7.2.1",
+* "axios": "^0.19.2",
+* "materialize": "^1.0.0",
+* "moment": "^2.24.0",
+* "moment-timezone": "^0.5.28",
+* "react": "^16.12.0",
+* "react-dom": "^16.12.0",
+* "react-moment": "^0.9.7",
+* "react-places-autocomplete": "^7.2.1",
+* "react-router-dom": "^5.1.2",
+* "react-scripts": "3.4.0"
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+![image of viewable events](READMEimg/events.png)
