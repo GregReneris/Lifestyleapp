@@ -13,6 +13,7 @@ import {
   Link,
   Redirect
 } from "react-router-dom";
+// import CitySearch from '../CitySearch';
 
 
 
@@ -51,7 +52,7 @@ function CreateAccount(props) {
       body: JSON.stringify(formdata)
     })
       .then(event => {
-        history.push("/main")
+        history.push("/login")
       }
       )
   }
@@ -134,7 +135,8 @@ function CreateAccount(props) {
               value={formdata.city}
               onChange={handleInputChange}
             />
-            {places.length > 0 ? (
+            {/* <CitySearch/> */}
+            {/* {places.length > 0 ? (
               <div className="imgbox">
                 {places.map((place, index) => (
                   <div key={index}>
@@ -142,11 +144,11 @@ function CreateAccount(props) {
                   </div>
                 ))}
               </div>
-            ) : (<div />)}
+            ) : (<div />)} */}
 
             <br />
             <br />
-            <Link to='/main'><Button variant="contained" value="Create Profile" onClick={handleSubmit} >Submit</Button></Link>
+            <Link to='/login'><Button variant="contained" value="Create Profile" onClick={handleSubmit} >Submit</Button></Link>
             <br />
             <br />
           </form>

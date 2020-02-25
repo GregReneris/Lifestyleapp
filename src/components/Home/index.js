@@ -12,7 +12,6 @@ import {
 } from "react-router-dom";
 import Ratings from "../Ratings/index"
 
-
 function Home(props) {
   
   return (
