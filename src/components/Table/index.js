@@ -68,7 +68,7 @@ class simpleTable extends Component {
           {this.props.activities.map(row => (
             <TableRow key={row.id}>
               <TableCell align="left">{row.activityName}</TableCell>
-              <TableCell align="left">{row.date.substring(0,9)}</TableCell>
+              <TableCell align="left">{row.date.substring(0,10)}</TableCell>
               <TableCell align="left">{row.travelTime}</TableCell>
               <TableCell align="left">{row.type}</TableCell>
               <TableCell align="left"><Ratings activityId={row.id} value={row.rating} /></TableCell>
